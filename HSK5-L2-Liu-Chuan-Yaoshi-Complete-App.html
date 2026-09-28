@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>新HSK5（上）· 第2课 · 《留一串钥匙给父母》 Liú yí chuàn yàoshi gěi fùmǔ — Leaving a Bunch of Keys to Our Parents</title>
+<style>
+:root{--ink:#2c2118;--soft:#6b5a49;--paper:#fdf8f0;--card:#fff;
+  --red:#c0392b;--reddeep:#8e2b18;--redsoft:#f7e2de;--gold:#e6a817;--teal:#1f8a80;--tealsoft:#dff2ef;
+  --line:#e7dccb;--green:#2e8b57;--greensoft:#e4f4ea;--plum:#6b54a8;--plumsoft:#eeeaf6;
+  --clay:#a8763e;--claysoft:#f7eedf;--blue:#2c5e92;--bluesoft:#e7eef7;
+  --shadow:0 2px 0 rgba(0,0,0,.05),0 8px 22px rgba(80,60,30,.09);
+  --serif:'Noto Serif SC',ui-serif,"Songti SC","Source Han Serif SC",serif;
+  --zh:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{color:var(--ink);background:radial-gradient(circle at 10% 5%,#fff5e3 0,transparent 40%),
+  radial-gradient(circle at 92% 3%,#e8f5f2 0,transparent 36%),var(--paper);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-tap-highlight-color:transparent}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.zh{font-family:var(--zh)}
+#app{max-width:920px;margin:0 auto;padding:12px 14px 50px}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:12px 16px;margin:8px 0 12px}
+.brand{display:flex;align-items:center;gap:12px}
+.mascot{width:42px;height:42px;flex:0 0 auto;border-radius:10px;background:var(--reddeep);display:grid;place-items:center;
+  font-family:var(--serif);font-weight:900;font-size:22px;color:#fff}
+.brand h1{margin:0;font-size:18px;font-weight:800}
+.brand p{margin:2px 0 0;font-size:12.5px;color:var(--soft)}
+.score{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{background:var(--tealsoft);border:1px solid #bfe4de;color:#146b62;border-radius:999px;padding:6px 13px;font-size:13px;font-weight:700;white-space:nowrap}
+.chip.g{background:#fdf0d8;border-color:#f0d79a;color:#8a6408}
+.chip.r{background:var(--redsoft);border-color:#eec4bc;color:#93291c}
+
+.namebar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:10px 15px;margin-bottom:12px;box-shadow:var(--shadow)}
+.namebar label{font-size:13px;font-weight:700;color:var(--soft)}
+#who{font:inherit;font-size:16px;font-weight:700;padding:8px 12px;border:1.5px solid var(--line);border-radius:11px;
+  background:#fffdf8;color:var(--ink);min-width:180px;flex:1 1 180px}
+#who:focus{outline:none;border-color:var(--gold)}
+.sw{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:var(--card);
+  border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:700;color:var(--soft)}
+.sw .dot{width:34px;height:19px;border-radius:999px;background:#e3d6c0;position:relative;transition:.16s}
+.sw .dot::after{content:"";position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:#fff;
+  transition:.16s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.sw.on{color:var(--teal);border-color:#bfe4de;background:var(--tealsoft)}
+.sw.on .dot{background:var(--teal)}
+.sw.on .dot::after{left:17px}
+body.nopy .pyon{display:none!important}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;position:sticky;top:0;z-index:40;padding:8px 0;
+  background:linear-gradient(var(--paper) 72%,rgba(253,248,240,.9))}
+.tab{flex:1 1 150px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:9px 12px;font-weight:700;font-size:14.5px;transition:.15s}
+.tab span{display:block;font-size:11px;font-weight:600;color:var(--soft);margin-top:1px}
+.tab:hover{border-color:#d9c7a9;transform:translateY(-1px)}
+.tab.on{background:var(--red);border-color:var(--red);color:#fff}
+.tab.on span{color:#fbe4e0}
+
+section.screen{display:none}
+section.screen.active{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px 18px 20px;margin-bottom:14px}
+h2.sec{margin:0 0 4px;font-size:17px;font-weight:800}
+p.scene{margin:0 0 14px;font-size:13px;color:var(--soft);line-height:1.6}
+.center{text-align:center}
+.prog{font-size:12.5px;color:var(--soft);font-weight:700;letter-spacing:.4px;text-transform:uppercase;text-align:center}
+.hint-line{text-align:center;font-size:12.5px;color:var(--soft);margin-top:12px}
+.btnrow{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.btn{font-weight:700;font-size:14px;border-radius:999px;padding:9px 18px;border:1.5px solid var(--line);background:var(--card);transition:.13s}
+.btn:hover{transform:translateY(-1px);border-color:#d9c7a9}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn:disabled{opacity:.5;cursor:default;transform:none}
+.fb{min-height:30px;text-align:center;font-size:16px;font-weight:700;margin-top:12px}
+.fb.ok{color:var(--green)} .fb.no{color:var(--red)}
+.fb small{display:block;font-size:13px;font-weight:600;color:var(--soft);margin-top:3px}
+.done{text-align:center;padding:18px 10px}
+.done .n{font-size:42px;font-weight:800;color:var(--red);line-height:1}
+.done p{color:var(--soft);font-size:14px;margin:8px 0 0}
+
+/* ---------- 1 · flashcards ---------- */
+.fc-index{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:14px}
+.fc-index button{font-family:var(--zh);font-size:17px;width:34px;height:34px;border-radius:9px;border:1.5px solid var(--line);background:#fffdf8}
+.fc-index button.cur{border-color:var(--red);background:var(--redsoft);color:var(--reddeep);font-weight:700}
+.flip{perspective:1400px;max-width:560px;margin:0 auto}
+.flip-in{position:relative;transition:transform .55s;transform-style:preserve-3d;min-height:430px}
+.flip.back .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;
+  border:1px solid var(--line);background:#fffdf8;box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;align-items:center}
+.face.b{transform:rotateY(180deg);align-items:stretch;overflow-y:auto}
+.glyph{width:min(72vw,280px);aspect-ratio:1;position:relative}
+.glyph svg{width:100%;height:100%;display:block}
+.glyph .hw{position:absolute;inset:0;display:none;background:#fffdf8}
+.glyph .hw.on{display:block}
+.front-hint{font-size:12.5px;color:var(--soft);margin-top:10px;font-weight:600}
+.legend{font-size:11.5px;color:var(--soft);margin-top:6px}
+.bk-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.bk-head .c{font-family:var(--serif);font-size:58px;font-weight:700;line-height:1}
+.bk-head .p{font-size:22px;font-weight:800;color:var(--reddeep)}
+.bk-head .m{font-size:15px;font-weight:700;color:var(--ink);flex-basis:100%}
+.badge{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;margin:8px 0 2px}
+.k-pic{background:var(--tealsoft);color:var(--teal)} .k-idea{background:var(--bluesoft);color:var(--blue)}
+.k-mm{background:var(--claysoft);color:var(--clay)} .k-ms{background:var(--plumsoft);color:var(--plum)}
+.k-loan{background:var(--redsoft);color:var(--reddeep)} .k-gram{background:#efeae0;color:#6e5a38}
+.ety{font-size:14.2px;line-height:1.68;color:#463c33;margin:8px 0 10px}
+.ety b{color:var(--ink)}
+.parts{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.part{background:var(--claysoft);border:1px solid #eadcc2;border-radius:11px;padding:6px 10px;text-align:center;min-width:64px}
+.part .pc{font-family:var(--serif);font-size:24px;color:var(--clay);line-height:1.15}
+.part .pr{font-size:10.5px;font-weight:700;color:var(--clay)}
+.plus{color:var(--soft);font-weight:800}
+.inword{font-size:13px;color:var(--soft);font-weight:600;border-top:1px dashed var(--line);padding-top:9px}
+.inword span{font-family:var(--zh);font-size:17px;color:var(--ink);font-weight:700;margin-right:10px;white-space:nowrap}
+
+/* ---------- 2 · match ---------- */
+.mgrid{display:grid;grid-template-columns:1fr 1.6fr;gap:12px;align-items:start}
+.mcol{display:flex;flex-direction:column;gap:9px}
+.mhead{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);text-align:center;margin-bottom:2px}
+.mtile{border:1.5px solid var(--line);background:#fffdf8;border-radius:13px;padding:10px;text-align:center;transition:.13s;line-height:1.3}
+.mtile.h{font-family:var(--zh);font-size:32px;font-weight:600}
+.mtile.h small{display:block;font-family:system-ui,sans-serif;font-size:13px;font-weight:800;color:var(--reddeep)}
+.mtile.d{font-size:14.5px;font-weight:700;padding:14px 10px}
+.mtile:hover:not(.gone){border-color:var(--gold)}
+.mtile.sel{border-color:var(--gold);background:#fdf6e6;box-shadow:0 0 0 3px #f6e5c2}
+.mtile.gone{border-color:var(--green);background:var(--greensoft);color:#1d6b3f;opacity:.55;pointer-events:none}
+.bad{animation:shk .34s;border-color:var(--red)!important;background:var(--redsoft)!important}
+@keyframes shk{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+/* ---------- 3 · combine ---------- */
+.cword{display:flex;justify-content:center;align-items:center;gap:10px;margin:10px 0 4px}
+.cchar{width:94px;height:94px;border-radius:14px;border:2px solid var(--line);background:#fffdf8;display:grid;place-items:center;
+  font-family:var(--zh);font-size:54px;font-weight:600;position:relative}
+.cchar small{position:absolute;bottom:3px;left:0;right:0;text-align:center;font-family:system-ui,sans-serif;font-size:11.5px;font-weight:800;color:var(--reddeep)}
+.cslot{border:2.5px dashed #d9c7a9;background:#fffaf0;color:var(--ink)}
+.cslot.over{border-color:var(--gold);background:#fdf0d8}
+.cslot.good{border:2.5px solid var(--green);background:var(--greensoft);color:#1d6b3f}
+.cmean{text-align:center;font-size:15px;font-weight:700;color:var(--soft);margin-bottom:6px}
+.cpool{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.ptile{width:72px;height:72px;border-radius:14px;border:1.5px solid var(--line);background:#fff;display:grid;place-items:center;
+  font-family:var(--zh);font-size:36px;font-weight:600;position:relative;touch-action:none;user-select:none;
+  box-shadow:0 3px 10px -5px rgba(60,40,20,.35);transition:.12s}
+.ptile small{position:absolute;bottom:2px;left:0;right:0;text-align:center;font-family:system-ui,sans-serif;font-size:10.5px;font-weight:800;color:var(--reddeep)}
+.ptile.sel{outline:3px solid var(--gold);outline-offset:2px}
+.ptile.drag{position:fixed;z-index:200;pointer-events:none;transform:scale(1.08);box-shadow:0 14px 26px -10px rgba(60,40,20,.5)}
+.ptile.dead{opacity:.25;pointer-events:none}
+
+/* ---------- 4 · MCQ ---------- */
+.qword{font-family:var(--zh);font-size:76px;line-height:1.15;text-align:center;font-weight:500;margin:6px 0;letter-spacing:4px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;max-width:700px;margin:12px auto 0}
+.opt{border:1.5px solid var(--line);background:#fffdf8;border-radius:14px;padding:14px;text-align:left;font-size:15.5px;font-weight:700;transition:.12s}
+.opt:hover:not(:disabled){border-color:var(--gold);background:#fffaf0}
+.opt.good{background:var(--greensoft);border-color:var(--green);color:#1d6b3f}
+.opt.badopt{background:var(--redsoft);border-color:var(--red);color:var(--red)}
+
+/* ---------- 5 · report ---------- */
+.bignum{text-align:center;padding:10px 0 6px}
+.bignum .n{font-size:56px;font-weight:800;color:var(--red);line-height:1}
+.bignum .of{font-size:16px;color:var(--soft);font-weight:700}
+.bignum .nm{font-family:var(--zh);font-size:22px;font-weight:800;margin-top:6px}
+.bars{display:grid;gap:9px;margin:14px 0 4px}
+.bar{display:grid;grid-template-columns:150px 1fr 80px;gap:10px;align-items:center;font-size:13px;font-weight:700}
+.bar .t{color:var(--soft)} .bar .v{text-align:right}
+.bar .track{height:14px;border-radius:999px;background:#f2e9d8;overflow:hidden}
+.bar .fill{height:100%;background:linear-gradient(90deg,#e6a817,#2e8b57);width:0;transition:width .5s}
+.tally{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:14px 0 4px}
+.tcell{border:1.5px solid var(--line);border-radius:14px;padding:11px 14px;background:#fffdf8}
+.tcell .lab{font-size:12px;font-weight:800;color:var(--soft);text-transform:uppercase;letter-spacing:.05em}
+.tcell .num{font-size:30px;font-weight:800;color:var(--red);line-height:1.15;margin-top:3px}
+.tcell .sub{font-size:12px;color:var(--soft);font-weight:600}
+.tcell.clean .num{color:var(--green)}
+table.rev,table.board{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+table.rev th,table.board th{background:#f7efe1;text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#7a6647;border-bottom:1px solid var(--line)}
+table.rev td,table.board td{padding:8px 10px;border-bottom:1px solid #f2ebde;vertical-align:top}
+table.rev td.c{font-family:var(--zh);font-size:25px;font-weight:600;white-space:nowrap;line-height:1.2}
+table.rev td.n{font-weight:800;color:var(--red);text-align:center;width:66px}
+table.rev td.w{color:var(--red);font-weight:700} table.rev td.r{color:var(--green);font-weight:700}
+table.board .sc{font-weight:800;color:var(--green);text-align:right}
+table.board tr.me td{background:#fffaf0}
+.empty{text-align:center;color:var(--green);font-weight:700;padding:14px 8px}
+h3.sub{margin:18px 0 4px;font-size:15px;font-weight:800}
+h3.sub:first-child{margin-top:0}
+p.note{font-size:12.5px;color:var(--soft);margin:2px 0 8px;line-height:1.6}
+footer{text-align:center;font-size:11.5px;color:var(--soft);margin-top:18px;line-height:1.8}
+@media(max-width:600px){.mgrid{grid-template-columns:1fr}.qword{font-size:58px}.cchar{width:78px;height:78px;font-size:44px}
+  .bar{grid-template-columns:104px 1fr 66px}.flip-in{min-height:470px}}
+
+.voicebar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12.5px;color:var(--soft);font-weight:700}
+.voicebar select{font:inherit;font-size:12.5px;font-weight:700;padding:5px 8px;border:1.5px solid var(--line);
+  border-radius:9px;background:#fffdf8;color:var(--ink);max-width:190px}
+.kin{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+.kin th{background:#f7efe1;text-align:left;padding:7px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#7a6647;border-bottom:1px solid var(--line)}
+.kin td{padding:7px 10px;border-bottom:1px solid #f2ebde}
+.kin td.c{font-family:var(--zh);font-size:22px;font-weight:600;white-space:nowrap}
+.kin td.p{font-weight:800;color:var(--reddeep);white-space:nowrap}
+.kin tr.p td.c{color:#8e2b18} .kin tr.m td.c{color:#1f6f8a} .kin tr.s td.c{color:#2e6b3f}
+#kL,#kR{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+#kL .mtile{flex:0 0 auto;min-width:116px}
+#kR .mtile{flex:1 1 210px}
+.sidekey{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;font-weight:700;color:var(--soft);margin:2px 0 6px}
+.sidekey b.p{color:#8e2b18} .sidekey b.m{color:#1f6f8a} .sidekey b.s{color:#2e6b3f}
+.sent{border:1px solid var(--line);border-left:5px solid var(--gold);background:#fffdf8;border-radius:14px;
+  padding:13px 15px;margin-bottom:11px}
+.sent .para{font-size:11px;font-weight:800;color:var(--soft);letter-spacing:.06em}
+.sent .zhs{font-family:var(--zh);font-size:21px;line-height:1.85;font-weight:500;margin:4px 0}
+.sent .py{font-size:13.5px;color:var(--reddeep);font-weight:700;line-height:1.6}
+.sent .en{font-size:14px;color:#463c33;line-height:1.6;margin-top:5px}
+.sent .row{display:flex;gap:7px;margin-top:8px;flex-wrap:wrap}
+.sent .mini{font-size:12px;font-weight:700;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px}
+.sent.hid .en{display:none}
+.ordpool{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.ochip{font-family:var(--zh);font-size:16px;line-height:1.6;text-align:left;border:1.5px solid var(--line);
+  background:#fffdf8;border-radius:13px;padding:10px 13px;transition:.12s}
+.ochip:hover:not(.gone){border-color:var(--gold)}
+.ochip.gone{border-color:var(--green);background:var(--greensoft);color:#1d6b3f;pointer-events:none}
+.ochip .num{display:inline-block;min-width:24px;font-family:system-ui,sans-serif;font-weight:800;color:var(--reddeep)}
+.gcard{border:1px solid var(--line);border-left:5px solid var(--plum);background:#fffdf8;border-radius:14px;padding:14px 16px;margin-bottom:12px}
+.gcard h3{margin:0;font-size:24px;font-family:var(--zh);font-weight:700}
+.gcard h3 small{font-family:system-ui,sans-serif;font-size:14px;font-weight:800;color:var(--reddeep);margin-left:9px}
+.gcard .rule{font-size:14px;line-height:1.7;color:#463c33;margin:8px 0 10px}
+.gex{border-top:1px dashed var(--line);padding-top:9px;margin-top:9px}
+.gex .z{font-family:var(--zh);font-size:18px;line-height:1.7;font-weight:500}
+.gex .p{font-size:12.5px;color:var(--reddeep);font-weight:700}
+.gex .e{font-size:13px;color:var(--soft);line-height:1.55}
+.gmore{font-size:13px;line-height:1.8;color:#463c33;background:#f7f3ea;border-radius:11px;padding:10px 13px;margin-top:10px}
+.gmore i{color:var(--reddeep);font-style:normal;font-weight:700}
+.bank{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0 4px}
+.bw{font-family:var(--zh);font-size:19px;font-weight:600;border:1.5px solid var(--line);background:#fff;
+  border-radius:12px;padding:8px 14px;transition:.12s;touch-action:none}
+.bw:hover:not(.dead){border-color:var(--gold)}
+.bw.sel{outline:3px solid var(--gold);outline-offset:2px}
+.bw.dead{opacity:.25;pointer-events:none}
+.qsent{font-family:var(--zh);font-size:26px;line-height:1.9;text-align:center;font-weight:500;margin:10px 0}
+.qsent u{color:var(--red);text-decoration:none;border-bottom:3px solid var(--gold);padding:0 14px}
+.slotbtn{display:inline-block;min-width:26px;height:26px;line-height:22px;border:2px dashed #d9c7a9;background:#fffaf0;
+  border-radius:8px;font-size:13px;font-weight:800;color:var(--clay);margin:0 3px;vertical-align:middle;font-family:system-ui,sans-serif}
+.slotbtn:hover{border-color:var(--gold);background:#fdf0d8}
+.slotbtn.good{border:2px solid var(--green);background:var(--greensoft);color:#1d6b3f}
+.slotbtn.wrong{border:2px solid var(--red);background:var(--redsoft);color:var(--red)}
+.retell{font-family:var(--zh);font-size:19px;line-height:2.2;color:var(--ink)}
+.gap{display:inline-block;min-width:88px;border-bottom:2.5px solid var(--clay);text-align:center;line-height:1.5;
+  vertical-align:-2px;font-family:var(--zh);font-size:19px;font-weight:600;color:var(--clay);padding:0 6px;margin:0 3px;cursor:pointer}
+.gap.sel{background:#fdf0d8;border-color:var(--gold)}
+.gap.good{color:#1d6b3f;border-color:var(--green);background:var(--greensoft);border-radius:7px;cursor:default}
+.talk{border:1px solid var(--line);border-left:5px solid var(--teal);background:#fffdf8;border-radius:14px;padding:13px 15px;margin-bottom:11px}
+.talk .q{font-family:var(--zh);font-size:18px;font-weight:600;line-height:1.7}
+.talk .qp{font-size:12.5px;color:var(--reddeep);font-weight:700}
+.talk .qe{font-size:13px;color:var(--soft);margin:3px 0 8px}
+.talk .a{background:var(--tealsoft);border-radius:11px;padding:10px 12px;font-family:var(--zh);font-size:17px;line-height:1.75}
+.talk .ap{font-family:system-ui,sans-serif;font-size:12.5px;color:#146b62;font-weight:700;line-height:1.5;margin-top:4px}
+.tips{font-size:13.5px;line-height:1.8;color:#463c33;padding-left:20px;margin:8px 0 0}
+.keybox{background:var(--redsoft);border:1px solid #eec4bc;border-radius:14px;padding:14px 16px;text-align:center}
+.keybox .z{font-family:var(--zh);font-size:21px;line-height:1.85;font-weight:600;color:#7a2113}
+.keybox .p{font-size:13px;font-weight:700;color:var(--reddeep);margin-top:6px}
+.keybox .e{font-size:13.5px;color:#6b4a42;margin-top:5px;line-height:1.6}
+.wlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:8px;margin-top:10px}
+.wl{border:1.5px solid var(--line);background:#fffdf8;border-radius:12px;padding:9px 12px;display:flex;gap:10px;align-items:baseline}
+.wl .c{font-family:var(--zh);font-size:20px;font-weight:600;white-space:nowrap}
+.wl .p{font-size:12.5px;font-weight:800;color:var(--reddeep);white-space:nowrap}
+.wl .m{font-size:12.5px;color:var(--soft);font-weight:600}
+.wfront{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:14px}
+.wfront .w{font-family:var(--zh);font-size:min(17vw,70px);font-weight:600;line-height:1.25;text-align:center}
+.wfront .n{font-size:12.5px;color:var(--soft);font-weight:600}
+.bk-big{text-align:center;padding:6px 0 10px;border-bottom:1px dashed var(--line);margin-bottom:12px}
+.bk-big .c{font-family:var(--zh);font-size:min(14vw,56px);font-weight:600;line-height:1.25}
+.bk-big .p{font-size:21px;font-weight:800;color:var(--reddeep);margin-top:6px}
+.bk-big .m{font-size:15px;font-weight:700;margin-top:5px}
+.breakdown{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.bd{border:1.5px solid var(--line);background:#fffdf8;border-radius:12px;padding:8px 10px;min-width:82px;text-align:center}
+.bd .c{font-family:var(--zh);font-size:28px;font-weight:600;line-height:1.2}
+.bd .p{font-size:12.5px;font-weight:800;color:var(--reddeep)}
+.bd .m{font-size:11.5px;color:var(--soft);font-weight:600;line-height:1.35}
+.wordgrid{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:12px}
+.wordgrid button{font-family:var(--zh);font-size:14.5px;border-radius:9px;border:1.5px solid var(--line);background:#fffdf8;padding:5px 9px}
+.wordgrid button.cur{border-color:var(--red);background:var(--redsoft);color:var(--reddeep);font-weight:700}
+.ans{font:inherit;font-size:22px;font-weight:700;text-align:center;padding:11px 16px;border:2px solid var(--line);
+  border-radius:14px;background:#fffdf8;color:var(--ink);width:min(420px,92%);letter-spacing:1px}
+.ans:focus{outline:none;border-color:var(--gold)}
+.noaudio{display:inline-block;font-size:12px;font-weight:700;color:var(--soft);background:#f2ebde;border-radius:999px;padding:5px 13px}
+table.rev td.w{color:var(--red);font-weight:700} table.rev td.r{color:var(--green);font-weight:800}
+.empty{text-align:center;color:var(--soft);font-size:14px;padding:16px}
+@media(max-width:560px){ .mgrid{grid-template-columns:1fr} .qsent{font-size:21px} .retell{font-size:17px;line-height:2.4} }
+</style></head>
+<body>
+<div id="app">
+  <div class="topbar">
+    <div class="brand"><div class="mascot">爱</div>
+      <div><h1>新HSK5（上）· 第2课</h1><p>《留一串钥匙给父母》 Liú yí chuàn yàoshi gěi fùmǔ — Leaving a Bunch of Keys to Our Parents</p></div></div>
+    <div class="score"><span class="chip" id="cScore">Score 0</span><span class="chip r" id="cMiss">Wrong 0</span>
+      <button class="sw on" id="pyBtn"><span class="dot"></span>拼音 Pinyin</button></div>
+  </div>
+  <div class="namebar"><label for="who">姓名 Name</label><input id="who" placeholder="type your name…" autocomplete="off">
+    <div class="voicebar">🔊 <select id="voiceSel"></select><button class="btn" id="vTest" style="padding:5px 12px;font-size:12.5px">试听</button><span id="voiceNote"></span></div></div>
+
+  <div class="tabs">
+    <button class="tab on" data-s="s-warm">1 · 热身<span>Family words (20)</span></button>
+    <button class="tab" data-s="s-words">2 · 生词<span>Flashcards (40)</span></button>
+    <button class="tab" data-s="s-pin">3 · 写拼音<span>Type pinyin (80)</span></button>
+    <button class="tab" data-s="s-mcq">4 · 词义<span>Meaning MCQ (40)</span></button>
+    <button class="tab" data-s="s-text">5 · 课文<span>Read &amp; order (8)</span></button>
+    <button class="tab" data-s="s-gram">6 · 语法<span>以来 · 临 · 立刻 (9)</span></button>
+    <button class="tab" data-s="s-ex">7 · 练习<span>Book exercises (20)</span></button>
+    <button class="tab" data-s="s-say">8 · 复述·说写<span>Retell · speak · write (9)</span></button>
+    <button class="tab" data-s="s-report">9 · 成绩单<span>Score · mistakes</span></button>
+  </div>
+
+  <!-- 1 warm-up -->
+  <section class="screen active" id="s-warm"><div class="card">
+    <h2 class="sec">1 · 热身 — 亲属称呼 Family words</h2>
+    <p class="scene">你了解汉语中表示亲属关系的词语吗？ <i>Nǐ liǎojiě Hànyǔ zhōng biǎoshì qīnshǔ guānxì de cíyǔ ma?</i><br>
+      Tap a Chinese word, then tap the English that matches it. Five pairs at a time, 20 pairs in all — one point each.</p>
+    <div class="prog" id="kProg"></div>
+    <div class="mgrid" style="margin-top:10px"><div class="mcol"><div class="mhead">称呼</div><div id="kL"></div></div>
+      <div class="mcol"><div class="mhead">Who is it?</div><div id="kR"></div></div></div>
+    <div class="fb" id="kFb"></div>
+    <div class="hint-line">配对 <b id="kScore">0</b> / 20</div>
+  </div>
+  <div class="card"><h3 class="sub">亲属称呼表 — reference</h3>
+    <div class="sidekey"><b class="p">■ 爸爸这边 father’s side</b><b class="m">■ 妈妈这边 mother’s side</b><b class="s">■ 自己这一辈 own generation</b></div>
+    <table class="kin"><tr><th>称呼</th><th class="pyon">拼音</th><th>English</th></tr><tr class="p"><td class="c zh">爷爷</td><td class="p pyon">yéye</td><td>father's father — paternal grandfather</td></tr><tr class="p"><td class="c zh">奶奶</td><td class="p pyon">nǎinai</td><td>father's mother — paternal grandmother</td></tr><tr class="m"><td class="c zh">姥爷</td><td class="p pyon">lǎoye</td><td>mother's father — maternal grandfather</td></tr><tr class="m"><td class="c zh">姥姥</td><td class="p pyon">lǎolao</td><td>mother's mother — maternal grandmother</td></tr><tr class="p"><td class="c zh">伯父</td><td class="p pyon">bófù</td><td>father's elder brother</td></tr><tr class="p"><td class="c zh">伯母</td><td class="p pyon">bómǔ</td><td>wife of father's elder brother</td></tr><tr class="p"><td class="c zh">姑姑</td><td class="p pyon">gūgu</td><td>father's sister</td></tr><tr class="p"><td class="c zh">姑父</td><td class="p pyon">gūfu</td><td>husband of father's sister</td></tr><tr class="s"><td class="c zh">爸爸</td><td class="p pyon">bàba</td><td>father</td></tr><tr class="s"><td class="c zh">妈妈</td><td class="p pyon">māma</td><td>mother</td></tr><tr class="m"><td class="c zh">舅舅</td><td class="p pyon">jiùjiu</td><td>mother's brother</td></tr><tr class="m"><td class="c zh">舅妈</td><td class="p pyon">jiùmā</td><td>wife of mother's brother</td></tr><tr class="m"><td class="c zh">姨妈</td><td class="p pyon">yímā</td><td>mother's sister</td></tr><tr class="m"><td class="c zh">姨父</td><td class="p pyon">yífu</td><td>husband of mother's sister</td></tr><tr class="s"><td class="c zh">哥哥</td><td class="p pyon">gēge</td><td>elder brother</td></tr><tr class="s"><td class="c zh">嫂子</td><td class="p pyon">sǎozi</td><td>elder brother's wife</td></tr><tr class="s"><td class="c zh">姐姐</td><td class="p pyon">jiějie</td><td>elder sister</td></tr><tr class="s"><td class="c zh">妹妹</td><td class="p pyon">mèimei</td><td>younger sister</td></tr><tr class="s"><td class="c zh">表姐</td><td class="p pyon">biǎojiě</td><td>elder female cousin — 表 = mother’s side, or father’s sister’s child</td></tr><tr class="s"><td class="c zh">表弟</td><td class="p pyon">biǎodì</td><td>younger male cousin — 表, not 堂 (father’s brother’s child)</td></tr></table>
+    <p class="note" style="margin-top:12px">在你们国家，一般怎么称呼家人和亲戚？跟中国人的称呼有什么不同？<br><i>Zài nǐmen guójiā, yìbān zěnme chēnghu jiārén hé qīnqi? Gēn Zhōngguórén de chēnghu yǒu shénme bùtóng?</i><br>In your country, how do people normally address family and relatives? How is it different from Chinese?<br><br><b>参考回答</b>：在我的国家，人们有时候用名字称呼亲戚，但是汉语中对不同的亲属有很多具体的称呼。<br><i>Zài wǒ de guójiā, rénmen yǒushíhou yòng míngzi chēnghu qīnqi, dànshì Hànyǔ zhōng duì bùtóng de qīnshǔ yǒu hěn duō jùtǐ de chēnghu.</i></p></div>
+  </section>
+
+  <!-- 2 flashcards -->
+  <section class="screen" id="s-words"><div class="card">
+    <h2 class="sec">2 · 生词 — Word flashcards</h2>
+    <p class="scene">Read the word, say the pinyin and the meaning, then tap the card to check. The back also splits the word
+      into its characters. Tap any word below to jump to it. Not scored — study here, test yourself in tabs 3 and 4.</p>
+    <div class="wordgrid" id="fIndex"></div><div class="prog" id="fProg"></div>
+    <div class="flip" id="fFlip" style="margin-top:10px"><div class="flip-in" style="min-height:400px">
+      <div class="face f" id="fFront"></div><div class="face b" id="fBack"></div></div></div>
+    <div class="btnrow"><button class="btn" id="fPrev">◀ 上一个</button><button class="btn primary" id="fTurn">↻ 翻面 Turn</button>
+      <button class="btn" id="fNext">下一个 ▶</button></div>
+    <div class="btnrow" style="margin-top:8px"><button class="btn" id="fSay">🔊 Hear it</button><button class="btn" id="fShuf">🔀 Shuffle</button></div>
+  </div></section>
+
+  <!-- 3 type pinyin -->
+  <section class="screen" id="s-pin"><div class="card">
+    <h2 class="sec">3 · 写拼音 — Type the pinyin</h2>
+    <p class="scene">The word alone — <b>no pinyin, no meaning, no audio</b>. Type the pinyin <b>without tones</b>; spaces don’t
+      matter. 2 points first try, 1 after a miss. Every wrong spelling is kept for your report.</p>
+    <div class="center"><span class="noaudio">🔇 no pinyin · no meaning · no audio</span></div>
+    <div class="prog" id="pProg" style="margin-top:10px"></div><div class="qword zh" id="pWord">…</div>
+    <div class="center"><input class="ans" id="pInput" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="pinyin…"></div>
+    <div class="fb" id="pFb"></div>
+    <div class="btnrow"><button class="btn primary" id="pCheck">检查 Check</button><button class="btn" id="pSkip">跳过 Skip →</button></div>
+    <div class="hint-line">得分 <b id="pScore">0</b> / 80</div>
+  </div></section>
+
+  <!-- 4 meaning mcq -->
+  <section class="screen" id="s-mcq"><div class="card">
+    <h2 class="sec">4 · 词义 — What does it mean?</h2>
+    <p class="scene">Chinese only — <b>no pinyin</b>. Choose the English meaning. One point each.</p>
+    <div class="prog" id="mProg"></div><div class="qword zh" id="mWord">…</div>
+    <div class="opts" id="mOpts"></div><div class="fb" id="mFb"></div>
+    <div class="hint-line">得分 <b id="mScore">0</b> / 40</div>
+  </div></section>
+
+  <!-- 5 text -->
+  <section class="screen" id="s-text">
+    <div class="card"><h2 class="sec">5 · 课文 — 《留一串钥匙给父母》</h2>
+      <p class="scene">句子一句一句地读。用上面的开关可以关掉拼音；每句都可以听，也可以隐藏英文意思先自己想一想。<br>
+        Read sentence by sentence. The switch at the top hides the pinyin; each sentence can be heard, and you can hide the
+        English to test yourself first.</p>
+      <div class="btnrow" style="margin-top:0"><button class="btn" id="tAllOff">隐藏全部英文 Hide all meanings</button>
+        <button class="btn" id="tAllOn">显示全部英文 Show all</button></div>
+      <div style="margin-top:14px"><div class="sent hid" id="sn0">
+  <div class="para">段落 ① · 第 1 句</div>
+  <div class="zhs zh">父母一辈子住在农村老家，对老屋的感情，就像没断奶的孩子对母亲一样。</div>
+  <div class="py pyon">Fùmǔ yí bèizi zhù zài nóngcūn lǎojiā, duì lǎowū de gǎnqíng, jiù xiàng méi duàn nǎi de háizi duì mǔqīn yíyàng.</div>
+  <div class="en">My parents have lived their whole lives in the old family home in the countryside; their feeling for that old house is like an unweaned child’s for its mother.</div>
+  <div class="row"><button class="mini say" data-t="父母一辈子住在农村老家，对老屋的感情，就像没断奶的孩子对母亲一样。">🔊 听</button>
+    <button class="mini rev" data-i="0">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn1">
+  <div class="para">段落 ① · 第 2 句</div>
+  <div class="zhs zh">因此长年以来，父母很少离开老屋，尽管姥姥、舅舅和姑姑都在城里，父母也坚决不在城里住。</div>
+  <div class="py pyon">Yīncǐ chángnián yǐlái, fùmǔ hěn shǎo líkāi lǎowū, jǐnguǎn lǎolao, jiùjiu hé gūgu dōu zài chénglǐ, fùmǔ yě jiānjué bú zài chénglǐ zhù.</div>
+  <div class="en">So for many years they rarely left it. Even though Grandma, Uncle and Auntie all lived in town, my parents flatly refused to live there.</div>
+  <div class="row"><button class="mini say" data-t="因此长年以来，父母很少离开老屋，尽管姥姥、舅舅和姑姑都在城里，父母也坚决不在城里住。">🔊 听</button>
+    <button class="mini rev" data-i="1">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn2">
+  <div class="para">段落 ② · 第 3 句</div>
+  <div class="zhs zh">去年，在我和妻子的努力下，我们终于用打工挣的钱，在县里买了一套新房。</div>
+  <div class="py pyon">Qùnián, zài wǒ hé qīzi de nǔlì xià, wǒmen zhōngyú yòng dǎgōng zhèng de qián, zài xiàn lǐ mǎi le yí tào xīnfáng.</div>
+  <div class="en">Last year, with my wife’s effort and mine, we finally bought a new flat in the county town with money we had earned working away from home.</div>
+  <div class="row"><button class="mini say" data-t="去年，在我和妻子的努力下，我们终于用打工挣的钱，在县里买了一套新房。">🔊 听</button>
+    <button class="mini rev" data-i="2">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn3">
+  <div class="para">段落 ② · 第 4 句</div>
+  <div class="zhs zh">新房装修完，父母第一次走进新房时，高兴得不得了。</div>
+  <div class="py pyon">Xīnfáng zhuāngxiū wán, fùmǔ dì-yī cì zǒu jìn xīnfáng shí, gāoxìng de bùdéliǎo.</div>
+  <div class="en">When the flat had been fitted out and my parents walked into it for the first time, they were overjoyed.</div>
+  <div class="row"><button class="mini say" data-t="新房装修完，父母第一次走进新房时，高兴得不得了。">🔊 听</button>
+    <button class="mini rev" data-i="3">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn4">
+  <div class="para">段落 ② · 第 5 句</div>
+  <div class="zhs zh">妻子提出留一串钥匙给父母，可他们拒绝了。</div>
+  <div class="py pyon">Qīzi tíchū liú yí chuàn yàoshi gěi fùmǔ, kě tāmen jùjué le.</div>
+  <div class="en">My wife offered to leave them a bunch of keys, but they refused.</div>
+  <div class="row"><button class="mini say" data-t="妻子提出留一串钥匙给父母，可他们拒绝了。">🔊 听</button>
+    <button class="mini rev" data-i="4">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn5">
+  <div class="para">段落 ③ · 第 6 句</div>
+  <div class="zhs zh">那天，父亲喝醉了，等他醒时，天色已晚。</div>
+  <div class="py pyon">Nà tiān, fùqīn hē zuì le, děng tā xǐng shí, tiānsè yǐ wǎn.</div>
+  <div class="en">That day Father got drunk; by the time he woke, it was already late.</div>
+  <div class="row"><button class="mini say" data-t="那天，父亲喝醉了，等他醒时，天色已晚。">🔊 听</button>
+    <button class="mini rev" data-i="5">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn6">
+  <div class="para">段落 ③ · 第 7 句</div>
+  <div class="zhs zh">我和妻子强烈要求父母在新房住一夜，第二天再回，但他们仍坚持坐上了最后一趟回老家的车。</div>
+  <div class="py pyon">Wǒ hé qīzi qiángliè yāoqiú fùmǔ zài xīnfáng zhù yí yè, dì-èr tiān zài huí, dàn tāmen réng jiānchí zuò shàng le zuìhòu yí tàng huí lǎojiā de chē.</div>
+  <div class="en">We pressed them hard to stay the night and go back the next day, but they still insisted on catching the last bus home.</div>
+  <div class="row"><button class="mini say" data-t="我和妻子强烈要求父母在新房住一夜，第二天再回，但他们仍坚持坐上了最后一趟回老家的车。">🔊 听</button>
+    <button class="mini rev" data-i="6">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn7">
+  <div class="para">段落 ④ · 第 8 句</div>
+  <div class="zhs zh">一段时间后，我和妻子又准备去外地打工，新房只能上锁空着。</div>
+  <div class="py pyon">Yí duàn shíjiān hòu, wǒ hé qīzi yòu zhǔnbèi qù wàidì dǎgōng, xīnfáng zhǐ néng shàngsuǒ kōngzhe.</div>
+  <div class="en">After a while my wife and I were getting ready to go away to work again, and the new flat could only be locked up and left empty.</div>
+  <div class="row"><button class="mini say" data-t="一段时间后，我和妻子又准备去外地打工，新房只能上锁空着。">🔊 听</button>
+    <button class="mini rev" data-i="7">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn8">
+  <div class="para">段落 ④ · 第 9 句</div>
+  <div class="zhs zh">临走那天，父亲从老家赶来送我们。</div>
+  <div class="py pyon">Lín zǒu nà tiān, fùqīn cóng lǎojiā gǎn lái sòng wǒmen.</div>
+  <div class="en">On the day we were about to leave, Father came all the way from the old home to see us off.</div>
+  <div class="row"><button class="mini say" data-t="临走那天，父亲从老家赶来送我们。">🔊 听</button>
+    <button class="mini rev" data-i="8">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn9">
+  <div class="para">段落 ④ · 第 10 句</div>
+  <div class="zhs zh">父亲悄悄把我拉到一边说：“你妈说了，你还是留一串新房的钥匙给我们，要是我和你妈什么时候想来了，就住上几天，顺便给你们晒晒被子，打扫打扫卫生。”</div>
+  <div class="py pyon">Fùqīn qiāoqiāo bǎ wǒ lā dào yìbiān shuō: “Nǐ mā shuō le, nǐ háishi liú yí chuàn xīnfáng de yàoshi gěi wǒmen, yàoshi wǒ hé nǐ mā shénme shíhou xiǎng lái le, jiù zhù shàng jǐ tiān, shùnbiàn gěi nǐmen shài shai bèizi, dǎsǎo dǎsǎo wèishēng.”</div>
+  <div class="en">Father quietly pulled me aside: “Your mum says you should leave us a bunch of keys to the new place after all. If your mum and I ever feel like coming, we can stay a few days — and air your quilts and give the place a clean while we’re at it.”</div>
+  <div class="row"><button class="mini say" data-t="父亲悄悄把我拉到一边说：“你妈说了，你还是留一串新房的钥匙给我们，要是我和你妈什么时候想来了，就住上几天，顺便给你们晒晒被子，打扫打扫卫生。”">🔊 听</button>
+    <button class="mini rev" data-i="9">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn10">
+  <div class="para">段落 ④ · 第 11 句</div>
+  <div class="zhs zh">父亲说这话时，轻声细语，还红着脸，像个害羞的孩子。</div>
+  <div class="py pyon">Fùqīn shuō zhè huà shí, qīngshēng-xìyǔ, hái hóngzhe liǎn, xiàng ge hàixiū de háizi.</div>
+  <div class="en">As he said it he spoke very softly, blushing, like a shy child.</div>
+  <div class="row"><button class="mini say" data-t="父亲说这话时，轻声细语，还红着脸，像个害羞的孩子。">🔊 听</button>
+    <button class="mini rev" data-i="10">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn11">
+  <div class="para">段落 ⑤ · 第 12 句</div>
+  <div class="zhs zh">转眼又是半年，我们回家时是一个深冬的夜里。</div>
+  <div class="py pyon">Zhuǎnyǎn yòu shì bàn nián, wǒmen huí jiā shí shì yí ge shēndōng de yèlǐ.</div>
+  <div class="en">Half a year slipped by in no time; we came home on a deep-winter night.</div>
+  <div class="row"><button class="mini say" data-t="转眼又是半年，我们回家时是一个深冬的夜里。">🔊 听</button>
+    <button class="mini rev" data-i="11">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn12">
+  <div class="para">段落 ⑤ · 第 13 句</div>
+  <div class="zhs zh">下了长途车，儿子被冻得大哭。</div>
+  <div class="py pyon">Xià le chángtú chē, érzi bèi dòng de dà kū.</div>
+  <div class="en">Getting off the long-distance coach, our son was so cold he burst into tears.</div>
+  <div class="row"><button class="mini say" data-t="下了长途车，儿子被冻得大哭。">🔊 听</button>
+    <button class="mini rev" data-i="12">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn13">
+  <div class="para">段落 ⑤ · 第 14 句</div>
+  <div class="zhs zh">我和妻子想象着打开家门满是灰尘、冷冷清清的景象，觉得心里发寒。</div>
+  <div class="py pyon">Wǒ hé qīzi xiǎngxiàngzhe dǎkāi jiāmén mǎn shì huīchén, lěnglěng-qīngqīng de jǐngxiàng, juéde xīnli fā hán.</div>
+  <div class="en">My wife and I pictured opening the door onto dust and emptiness, and felt a chill inside.</div>
+  <div class="row"><button class="mini say" data-t="我和妻子想象着打开家门满是灰尘、冷冷清清的景象，觉得心里发寒。">🔊 听</button>
+    <button class="mini rev" data-i="13">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn14">
+  <div class="para">段落 ⑤ · 第 15 句</div>
+  <div class="zhs zh">来到楼下，抬头一看，却发现自家亮着灯光。</div>
+  <div class="py pyon">Lái dào lóuxià, táitóu yí kàn, què fāxiàn zìjiā liàngzhe dēngguāng.</div>
+  <div class="en">We got to the foot of the building, looked up — and found the lights on in our own flat.</div>
+  <div class="row"><button class="mini say" data-t="来到楼下，抬头一看，却发现自家亮着灯光。">🔊 听</button>
+    <button class="mini rev" data-i="14">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn15">
+  <div class="para">段落 ⑥ · 第 16 句</div>
+  <div class="zhs zh">上了楼，开门的竟是微笑着的父母，温暖的气息立刻扑面而来：暖气开着，水已温热，卧室床上的被子已铺好，厨房里飘来阵阵饭菜香……</div>
+  <div class="py pyon">Shàng le lóu, kāimén de jìng shì wēixiàozhe de fùmǔ, wēnnuǎn de qìxī lìkè pūmiàn ér lái: nuǎnqì kāizhe, shuǐ yǐ wēnrè, wòshì chuáng shàng de bèizi yǐ pū hǎo, chúfáng lǐ piāo lái zhènzhèn fàncài xiāng……</div>
+  <div class="en">Upstairs, the door was opened by my smiling parents, and warmth rushed straight at us: the heating on, the water already warm, the quilt laid out on the bedroom bed, waves of cooking smells drifting from the kitchen…</div>
+  <div class="row"><button class="mini say" data-t="上了楼，开门的竟是微笑着的父母，温暖的气息立刻扑面而来：暖气开着，水已温热，卧室床上的被子已铺好，厨房里飘来阵阵饭菜香……">🔊 听</button>
+    <button class="mini rev" data-i="15">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn16">
+  <div class="para">段落 ⑦ · 第 17 句</div>
+  <div class="zhs zh">父亲说：“你妈昨天接到电话，知道你们今天回来，今天忙了一天了。”</div>
+  <div class="py pyon">Fùqīn shuō: “Nǐ mā zuótiān jiē dào diànhuà, zhīdào nǐmen jīntiān huílái, jīntiān máng le yì tiān le.”</div>
+  <div class="en">Father said: “Your mum got the call yesterday, knew you were coming today, and has been busy the whole day.”</div>
+  <div class="row"><button class="mini say" data-t="父亲说：“你妈昨天接到电话，知道你们今天回来，今天忙了一天了。”">🔊 听</button>
+    <button class="mini rev" data-i="16">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn17">
+  <div class="para">段落 ⑦ · 第 18 句</div>
+  <div class="zhs zh">原来父母要我留下一串钥匙，只是为了让我们回来时，能立刻感受到家的温暖！</div>
+  <div class="py pyon">Yuánlái fùmǔ yào wǒ liú xià yí chuàn yàoshi, zhǐshì wèile ràng wǒmen huílái shí, néng lìkè gǎnshòu dào jiā de wēnnuǎn!</div>
+  <div class="en">So that was it — my parents wanted a bunch of keys only so that when we came home we would feel the warmth of home at once!</div>
+  <div class="row"><button class="mini say" data-t="原来父母要我留下一串钥匙，只是为了让我们回来时，能立刻感受到家的温暖！">🔊 听</button>
+    <button class="mini rev" data-i="17">中文意思 Show / hide meaning</button></div></div><div class="sent hid" id="sn18">
+  <div class="para">段落 ⑦ · 第 19 句</div>
+  <div class="zhs zh">我鼻子一酸，流下了热泪……</div>
+  <div class="py pyon">Wǒ bízi yì suān, liú xià le rèlèi……</div>
+  <div class="en">My nose stung, and hot tears ran down.</div>
+  <div class="row"><button class="mini say" data-t="我鼻子一酸，流下了热泪……">🔊 听</button>
+    <button class="mini rev" data-i="18">中文意思 Show / hide meaning</button></div></div></div></div>
+    <div class="card"><h3 class="sub">课文排序 — put the story in order</h3>
+      <p class="note">用自己的话复述的八个句子，顺序被打乱了。按故事发生的顺序一个一个点。点错了不扣分，再想一想。<br>
+        Eight sentences retelling the story are shuffled. Tap them in the order the story happens — one point each.</p>
+      <div class="prog" id="oProg"></div><div class="ordpool" id="oPool"></div><div class="fb" id="oFb"></div>
+      <div class="hint-line">排序 <b id="oScore">0</b> / 8</div></div>
+  </section>
+
+  <!-- 6 grammar -->
+  <section class="screen" id="s-gram">
+    <div class="card"><h2 class="sec">6 · 语法 — 以来 · 临 · 立刻 · 悄悄/偷偷</h2>
+      <p class="scene">先看规则和例句，再做下面的小练习。</p><div class="gcard">
+  <h3 class="zh">以来<small>yǐlái</small></h3>
+  <span class="badge k-gram">时间 + 以来</span>
+  <div class="rule"><b>以来</b> marks a stretch of time that starts at some point in the past and <b>runs up to now</b>. It comes <u>after</u> the time expression, and the clause after it describes what has happened in that stretch.</div>
+  <div class="gex"><div class="z zh">改革开放以来，中国发生了巨大的变化。</div><div class="p pyon">Gǎigé kāifàng yǐlái, Zhōngguó fāshēng le jùdà de biànhuà.</div><div class="e">Since reform and opening-up, China has undergone enormous change.</div>
+    <div class="row" style="margin-top:6px"><button class="mini say" data-t="改革开放以来，中国发生了巨大的变化。">🔊 听</button></div></div><div class="gex"><div class="z zh">长年以来，父母很少离开老屋。</div><div class="p pyon">Chángnián yǐlái, fùmǔ hěn shǎo líkāi lǎowū.</div><div class="e">For many years my parents rarely left the old house.</div>
+    <div class="row" style="margin-top:6px"><button class="mini say" data-t="长年以来，父母很少离开老屋。">🔊 听</button></div></div><div class="gex"><div class="z zh">一直以来，“80后”这个词儿都含有年轻的味道。</div><div class="p pyon">Yìzhí yǐlái, “bā líng hòu” zhège cír dōu hányǒu niánqīng de wèidao.</div><div class="e">All along, the word “post-80s” has carried a flavour of youth.</div>
+    <div class="row" style="margin-top:6px"><button class="mini say" data-t="一直以来，“80后”这个词儿都含有年轻的味道。">🔊 听</button></div></div>
+  <div class="gmore"><b>练一练 model answers</b><br>到中国以来，我学会了很多东西。<i>Dào Zhōngguó yǐlái, wǒ xuéhuì le hěn duō dōngxi.</i><br>他们结婚以来，关系一直很好。<i>Tāmen jiéhūn yǐlái, guānxì yìzhí hěn hǎo.</i><br>近几年以来，空气污染越来越严重。<i>Jìn jǐ nián yǐlái, kōngqì wūrǎn yuèláiyuè yánzhòng.</i></div></div><div class="gcard">
+  <h3 class="zh">临<small>lín</small></h3>
+  <span class="badge k-gram">① 临 + 地方　② 临 + 动作</span>
+  <div class="rule"><b>临</b> has two jobs. ① <b>facing / next to</b> a place — 临街、临海. ② <b>just before</b> something happens — 临走、临睡前、临考试. In sense ② it is followed by a verb, never by a noun of time.</div>
+  <div class="gex"><div class="z zh">我想买一套不临街的房子。</div><div class="p pyon">Wǒ xiǎng mǎi yí tào bù lín jiē de fángzi.</div><div class="e">I want to buy a flat that does not face the street.</div>
+    <div class="row" style="margin-top:6px"><button class="mini say" data-t="我想买一套不临街的房子。">🔊 听</button></div></div><div class="gex"><div class="z zh">临走那天，父亲从老家赶来送我们。</div><div class="p pyon">Lín zǒu nà tiān, fùqīn cóng lǎojiā gǎn lái sòng wǒmen.</div><div class="e">On the day we were about to leave, Father came from the old home to see us off.</div>
+    <div class="row" style="margin-top:6px"><button class="mini say" data-t="临走那天，父亲从老家赶来送我们。">🔊 听</button></div></div>
+  </div><div class="gcard">
+  <h3 class="zh">立刻<small>lìkè</small></h3>
+  <span class="badge k-gram">立刻 + 动词</span>
+  <div class="rule"><b>立刻</b> = immediately, at once. It is an adverb, so it sits <u>before the verb</u>, never after it and never at the end of the sentence. 立刻 is a little more formal than 马上; 马上 can also mean “very soon” about the future, 立刻 stresses <i>no gap at all</i>.</div>
+  <div class="gex"><div class="z zh">温暖的气息立刻扑面而来。</div><div class="p pyon">Wēnnuǎn de qìxī lìkè pūmiàn ér lái.</div><div class="e">A wave of warmth rushed straight into our faces.</div>
+    <div class="row" style="margin-top:6px"><button class="mini say" data-t="温暖的气息立刻扑面而来。">🔊 听</button></div></div><div class="gex"><div class="z zh">我回来时，能立刻感受到家的温暖。</div><div class="p pyon">Wǒ huílái shí, néng lìkè gǎnshòu dào jiā de wēnnuǎn.</div><div class="e">When I come home I can feel the warmth of home at once.</div>
+    <div class="row" style="margin-top:6px"><button class="mini say" data-t="我回来时，能立刻感受到家的温暖。">🔊 听</button></div></div>
+  <div class="gmore"><b>练一练 model answers</b><br>一下课，我立刻回家。<i>Yí xiàkè, wǒ lìkè huí jiā.</i><br>我快被气死了！我立刻去找他。<i>Wǒ kuài bèi qì sǐ le! Wǒ lìkè qù zhǎo tā.</i><br>A：你能帮我通知他这件事吗？　B：好的，我立刻通知他。<i>Hǎo de, wǒ lìkè tōngzhī tā.</i></div></div><div class="gcard">
+  <h3 class="zh">悄悄 / 偷偷<small>qiāoqiāo / tōutōu</small></h3>
+  <span class="badge k-gram">词语辨析</span>
+  <div class="rule">Both describe doing something without being noticed, but the <b>focus differs</b>.<br><b>悄悄</b> — the <u>sound / the fuss</u> is small: softly, quietly, without drawing attention. It may or may not be secret.<br><b>偷偷</b> — the <u>concealment</u> is the point: behind someone’s back, afraid of being found out; often a slightly guilty flavour.<br>Because 悄悄 is the wider word, 偷偷 can often replace it; 悄悄 cannot replace 偷偷 where the hiding is the whole point (偷偷看别人的手机).</div>
+  <div class="gex"><div class="z zh">父亲悄悄把我拉到一边说。</div><div class="p pyon">Fùqīn qiāoqiāo bǎ wǒ lā dào yìbiān shuō.</div><div class="e">Father quietly pulled me aside and spoke — low-key, without making a scene.</div>
+    <div class="row" style="margin-top:6px"><button class="mini say" data-t="父亲悄悄把我拉到一边说。">🔊 听</button></div></div><div class="gex"><div class="z zh">她偷偷地把这件事告诉了我。</div><div class="p pyon">Tā tōutōu de bǎ zhè jiàn shì gàosu le wǒ.</div><div class="e">She told me about it on the sly (nobody else was to know).</div>
+    <div class="row" style="margin-top:6px"><button class="mini say" data-t="她偷偷地把这件事告诉了我。">🔊 听</button></div></div>
+  </div></div>
+    <div class="card"><h3 class="sub">语法小练习 — choose the right word</h3>
+      <div class="prog" id="gProg"></div><div class="qsent zh" id="gSent">…</div>
+      <div class="opts" id="gOpts"></div><div class="fb" id="gFb"></div>
+      <div class="hint-line">得分 <b id="gScore">0</b> / 9</div></div>
+  </section>
+
+  <!-- 7 exercises -->
+  <section class="screen" id="s-ex">
+    <div class="card"><h2 class="sec">7 · 练习一 — 选择合适的词语填空</h2>
+      <p class="scene">Tap the word from the bank that fills the blank. Each word is used once.</p>
+      <div class="prog" id="e1Prog"></div><div class="qsent zh" id="e1Sent">…</div>
+      <div class="bank" id="e1Bank"></div><div class="fb" id="e1Fb"></div>
+      <div class="hint-line">得分 <b id="e1Score">0</b> / 8</div></div>
+    <div class="card"><h3 class="sub">练习二 — 选择正确答案</h3>
+      <div class="prog" id="e2Prog"></div><div class="qsent zh" id="e2Sent">…</div>
+      <div class="opts" id="e2Opts"></div><div class="fb" id="e2Fb"></div>
+      <div class="hint-line">得分 <b id="e2Score">0</b> / 4</div></div>
+    <div class="card"><h3 class="sub">练习三 — 词语放在哪里？</h3>
+      <p class="note">句子里有四个空格。点一下这个词应该放进去的那个空格。</p>
+      <div class="prog" id="e3Prog"></div>
+      <div class="center" style="margin:6px 0"><span class="chip g" id="e3Word">…</span></div>
+      <div class="qsent zh" id="e3Sent">…</div><div class="fb" id="e3Fb"></div>
+      <div class="hint-line">得分 <b id="e3Score">0</b> / 4</div></div>
+    <div class="card"><h3 class="sub">扩展 — 亲属称谓与性格</h3>
+      <div class="wlist"><div class="wl"><span class="c zh">外公</span><span class="p pyon">wàigōng</span><span class="m">maternal grandfather (= 姥爷)</span></div><div class="wl"><span class="c zh">姥姥</span><span class="p pyon">lǎolao</span><span class="m">maternal grandmother</span></div><div class="wl"><span class="c zh">姑姑</span><span class="p pyon">gūgu</span><span class="m">father’s sister</span></div><div class="wl"><span class="c zh">舅舅</span><span class="p pyon">jiùjiu</span><span class="m">mother’s brother</span></div><div class="wl"><span class="c zh">老婆</span><span class="p pyon">lǎopo</span><span class="m">wife — informal, spoken (我老婆)</span></div><div class="wl"><span class="c zh">太太</span><span class="p pyon">tàitai</span><span class="m">wife — polite; Mrs after a surname</span></div><div class="wl"><span class="c zh">兄弟</span><span class="p pyon">xiōngdì</span><span class="m">brothers</span></div><div class="wl"><span class="c zh">小气</span><span class="p pyon">xiǎoqi</span><span class="m">stingy; mean</span></div><div class="wl"><span class="c zh">周到</span><span class="p pyon">zhōudào</span><span class="m">thoughtful; attentive</span></div><div class="wl"><span class="c zh">坦率</span><span class="p pyon">tǎnshuài</span><span class="m">frank; straightforward</span></div></div>
+      <div class="prog" id="e4Prog" style="margin-top:14px"></div><div class="qsent zh" id="e4Sent">…</div>
+      <div class="opts" id="e4Opts"></div><div class="fb" id="e4Fb"></div>
+      <div class="hint-line">得分 <b id="e4Score">0</b> / 4</div></div>
+  </section>
+
+  <!-- 8 retell / speak / write -->
+  <section class="screen" id="s-say">
+    <div class="card"><h2 class="sec">8 · 课文复述 — fill the gaps</h2>
+      <p class="scene">点一个词，再点一个空格。One point per gap.</p>
+      <div class="bank" id="rBank"></div>
+      <div class="retell zh" id="rText"></div><div class="fb" id="rFb"></div>
+      <div class="hint-line">得分 <b id="rScore">0</b> / 9</div>
+      <div class="btnrow"><button class="btn" id="rPy">显示拼音 Show pinyin</button></div>
+      <div class="gmore" id="rPyBox" style="display:none">Fùmǔ yí bèizi zhù zài nóngcūn lǎojiā, duì lǎowū yǒu hěn shēn de gǎnqíng. Hòulái, érzi hé qīzi kào dǎgōng zhèngqián mǎi le yí tào xīnfáng, dànshì fùmǔ jiānjué bú yuànyì zhù jìnqù. Fūqī liǎ zhǔnbèi qù wàidì dǎgōng yǐqián, fùqīn qiāoqiāo gàosu érzi, xīwàng tāmen liú xià xīnfáng de yàoshi. Bàn nián yǐhòu, tāmen huí dào jiā, fāxiàn fùmǔ yǐjīng bǎ fángzi dǎsǎo de gāngānjìngjìng, zhǔnbèi hǎo le bèizi hé fàncài. Érzi zhōngyú míngbai, fùmǔ liú xià yàoshi de zhēnzhèng mùdì, shì ràng háizimen huí jiā shí nénggòu lìkè gǎnshòu dào jiā de wēnnuǎn.</div></div>
+    <div class="card"><h3 class="sub">运用 — 背景 Background</h3>
+      <div class="sent" style="border-left-color:var(--teal)"><div class="zhs zh">人们常说，父母对子女的爱是无私的、伟大的。父母对孩子的关心和照顾，不只是在孩子小的时候。即使孩子已经长大、自己已经变老，父母们也会继续为子女付出很多，只不过，爱的方式和以前不同了。</div>
+        <div class="py pyon">Rénmen cháng shuō, fùmǔ duì zǐnǚ de ài shì wúsī de, wěidà de. Fùmǔ duì háizi de guānxīn hé zhàogù, bù zhǐ shì zài háizi xiǎo de shíhou. Jíshǐ háizi yǐjīng zhǎng dà, zìjǐ yǐjīng biàn lǎo, fùmǔmen yě huì jìxù wèi zǐnǚ fùchū hěn duō, zhǐbúguò, ài de fāngshì hé yǐqián bù tóng le.</div><div class="en">People often say that parents’ love for their children is selfless and great. Their care does not stop when the children are small. Even when the children have grown up and the parents themselves have aged, parents go on giving a great deal — only the way they show that love has changed.</div>
+        <div class="row"><button class="mini say" data-t="人们常说，父母对子女的爱是无私的、伟大的。父母对孩子的关心和照顾，不只是在孩子小的时候。即使孩子已经长大、自己已经变老，父母们也会继续为子女付出很多，只不过，爱的方式和以前不同了。">🔊 听</button></div></div></div>
+    <div class="card"><h3 class="sub">话题讨论 — speak</h3>
+      <p class="note">先自己说一说，再看参考答案。</p><div class="talk">
+  <div class="q zh">你同意“父母对子女的爱是无私和伟大的”这种说法吗？</div><div class="qp pyon">Nǐ tóngyì “fùmǔ duì zǐnǚ de ài shì wúsī hé wěidà de” zhè zhǒng shuōfa ma?</div><div class="qe">Do you agree that parents’ love for their children is selfless and great?</div>
+  <div class="a zh">我基本同意这种说法，因为很多父母会在生活中关心、照顾和支持自己的孩子。<div class="ap pyon">Wǒ jīběn tóngyì zhè zhǒng shuōfa, yīnwèi hěn duō fùmǔ huì zài shēnghuó zhōng guānxīn, zhàogù hé zhīchí zìjǐ de háizi.</div></div>
+  <div class="row" style="margin-top:8px"><button class="mini say" data-t="我基本同意这种说法，因为很多父母会在生活中关心、照顾和支持自己的孩子。">🔊 听答案</button></div></div><div class="talk">
+  <div class="q zh">你觉得课文中的这对父母一开始拒绝接受新房钥匙，原因是什么？</div><div class="qp pyon">Nǐ juéde kèwén zhōng de zhè duì fùmǔ yì kāishǐ jùjué jiēshòu xīnfáng yàoshi, yuányīn shì shénme?</div><div class="qe">Why do you think the parents in the text refused the keys at first?</div>
+  <div class="a zh">我觉得他们不想给孩子增加负担，也不想让孩子觉得他们需要依靠孩子。<div class="ap pyon">Wǒ juéde tāmen bù xiǎng gěi háizi zēngjiā fùdān, yě bù xiǎng ràng háizi juéde tāmen xūyào yīkào háizi.</div></div>
+  <div class="row" style="margin-top:8px"><button class="mini say" data-t="我觉得他们不想给孩子增加负担，也不想让孩子觉得他们需要依靠孩子。">🔊 听答案</button></div></div><div class="talk">
+  <div class="q zh">请说说你记得最清楚的父母关心你、爱你的一件事。</div><div class="qp pyon">Qǐng shuōshuo nǐ jìde zuì qīngchu de fùmǔ guānxīn nǐ, ài nǐ de yí jiàn shì.</div><div class="qe">Tell us the clearest memory you have of your parents caring for you.</div>
+  <div class="a zh">我生病的时候，父母一直陪着我，照顾我的生活。他们虽然很累，但是从来没有抱怨过。<div class="ap pyon">Wǒ shēngbìng de shíhou, fùmǔ yìzhí péizhe wǒ, zhàogù wǒ de shēnghuó. Tāmen suīrán hěn lèi, dànshì cónglái méiyǒu bàoyuàn guo.</div></div>
+  <div class="row" style="margin-top:8px"><button class="mini say" data-t="我生病的时候，父母一直陪着我，照顾我的生活。他们虽然很累，但是从来没有抱怨过。">🔊 听答案</button></div></div></div>
+    <div class="card"><h3 class="sub">命题写作 —《最深的爱》</h3>
+      <ul class="tips"><li>开头：说明观点 —— 父母的爱是最深的爱。</li><li>中间：用课文的例子 —— 钥匙、打扫、被子、饭菜。</li><li>结尾：谈自己的感受 —— 爱常常藏在小小的行动里。</li></ul>
+      <div class="sent" style="border-left-color:var(--plum);margin-top:12px"><div class="zhs zh">父母对子女的爱往往是最深的爱。课文中的父母一辈子住在农村老家，他们虽然不愿意接受儿子留下的钥匙，但是心里一直惦记着孩子。儿子和妻子外出打工以后，父母悄悄来到新房，打扫卫生、铺好被子，还准备了饭菜。孩子回家时，他们立刻让孩子感受到家的温暖。我觉得父母的爱不一定总是通过语言表达出来，有时候一个小小的行动就能让我们感受到他们的关心。</div>
+        <div class="en">Parents’ love for their children is often the deepest love of all. The parents in this lesson spent their whole lives in the old village house. They would not take the keys their son offered, yet their children were never out of their thoughts. Once the couple had gone away to work, the parents quietly came to the new flat, cleaned it, made up the bed and cooked. When the children came home, they felt the warmth of home at once. I think a parent’s love is not always put into words — sometimes one small action is enough to let us feel how much they care.</div>
+        <div class="row"><button class="mini say" data-t="父母对子女的爱往往是最深的爱。课文中的父母一辈子住在农村老家，他们虽然不愿意接受儿子留下的钥匙，但是心里一直惦记着孩子。儿子和妻子外出打工以后，父母悄悄来到新房，打扫卫生、铺好被子，还准备了饭菜。孩子回家时，他们立刻让孩子感受到家的温暖。我觉得父母的爱不一定总是通过语言表达出来，有时候一个小小的行动就能让我们感受到他们的关心。">🔊 听</button></div></div></div>
+    <div class="card"><h3 class="sub">必背句 — must-memorise sentence</h3>
+      <div class="keybox"><div class="z zh">原来父母要我留下一串钥匙，只是为了让我们回来时，能立刻感受到家的温暖！</div><div class="p pyon">Yuánlái fùmǔ yào wǒ liú xià yí chuàn yàoshi, zhǐshì wèile ràng wǒmen huílái shí, néng lìkè gǎnshòu dào jiā de wēnnuǎn!</div>
+        <div class="e">So that was it — my parents wanted me to leave them a bunch of keys simply so that when we came home we could feel the warmth of home at once.</div>
+        <div class="btnrow"><button class="btn say" data-t="原来父母要我留下一串钥匙，只是为了让我们回来时，能立刻感受到家的温暖！">🔊 听</button></div></div></div>
+  </section>
+
+  <!-- 9 report -->
+  <section class="screen" id="s-report">
+    <div class="card"><h2 class="sec">9 · 成绩单 — Report</h2>
+      <div class="bignum"><div><span class="n" id="rTot">0</span><span class="of"> / 186</span></div><div class="nm zh" id="rName">—</div></div>
+      <div class="bars" id="rBars"></div>
+      <div class="tally" id="rTally"></div>
+      <div class="btnrow"><button class="btn primary" id="rSave">记录成绩 Add to the name board</button><button class="btn" id="rNew">下一位同学 Next student</button></div>
+      <div class="fb" id="rFb2"></div></div>
+    <div class="card"><h3 class="sub">错题复习 — every mistake, and how many times</h3>
+      <p class="note">Worst first: what was asked, how many times it was wrong, what was answered, and the right answer.</p>
+      <div id="rMiss"></div></div>
+    <div class="card"><h3 class="sub">光荣榜 Name board</h3>
+      <p class="note">Everyone who has finished on this device in this sitting, best first. Closing the page clears it.</p>
+      <div id="rBoard"></div></div>
+  </section>
+  <footer style="text-align:center;font-size:12px;color:#8b7a63;padding:18px 0">爱睿娜的课堂 · Aruna's Class<br>www.chinesefrench.in</footer>
+</div>
+<script>
+var KIN=[["爷爷","yéye","father's father — paternal grandfather","p"],["奶奶","nǎinai","father's mother — paternal grandmother","p"],["姥爷","lǎoye","mother's father — maternal grandfather","m"],["姥姥","lǎolao","mother's mother — maternal grandmother","m"],["伯父","bófù","father's elder brother","p"],["伯母","bómǔ","wife of father's elder brother","p"],["姑姑","gūgu","father's sister","p"],["姑父","gūfu","husband of father's sister","p"],["爸爸","bàba","father","s"],["妈妈","māma","mother","s"],["舅舅","jiùjiu","mother's brother","m"],["舅妈","jiùmā","wife of mother's brother","m"],["姨妈","yímā","mother's sister","m"],["姨父","yífu","husband of mother's sister","m"],["哥哥","gēge","elder brother","s"],["嫂子","sǎozi","elder brother's wife","s"],["姐姐","jiějie","elder sister","s"],["妹妹","mèimei","younger sister","s"],["表姐","biǎojiě","elder female cousin — 表 = mother’s side, or father’s sister’s child","s"],["表弟","biǎodì","younger male cousin — 表, not 堂 (father’s brother’s child)","s"]], WORDS=[["串","chuàn","a bunch / a string of; measure word",[]],["钥匙","yàoshi","key",["yàoshí"]],["一辈子","yí bèizi","all one’s life; a lifetime",["yíbèizi","yībèizi"]],["农村","nóngcūn","countryside; rural area",[]],["屋","wū","house; room",[]],["断","duàn","to break; to cut off; to stop",[]],["以来","yǐlái","since (a time in the past)",[]],["姥姥","lǎolao","maternal grandmother",["lǎolǎo"]],["舅舅","jiùjiu","mother’s brother; uncle",["jiùjiù"]],["姑姑","gūgu","father’s sister; aunt",["gūgū"]],["坚决","jiānjué","firm; resolute; determined",[]],["打工","dǎgōng","to work for someone else; casual work",[]],["挣","zhèng","to earn (money)",[]],["县","xiàn","county; county town",[]],["套","tào","a set; measure word for flats and suits",[]],["装修","zhuāngxiū","to decorate; to fit out; to renovate",[]],["不得了","bùdéliǎo","extremely; terribly; awful",[]],["醉","zuì","drunk; to get drunk",[]],["强烈","qiángliè","strong; intense",[]],["夜","yè","night",[]],["锁","suǒ","a lock; to lock",[]],["临","lín","just before; about to; to face",[]],["悄悄","qiāoqiāo","quietly; softly; without making a sound",[]],["晒","shài","to air / dry in the sun",[]],["被子","bèizi","quilt; duvet",[]],["长途","chángtú","long-distance",[]],["冻","dòng","to freeze; to be very cold",[]],["想象","xiǎngxiàng","to imagine; imagination",[]],["灰尘","huīchén","dust",[]],["亮","liàng","bright; to be lit; to shine",[]],["微笑","wēixiào","a smile; to smile",[]],["温暖","wēnnuǎn","warm; warmth",[]],["立刻","lìkè","immediately; at once",[]],["扑","pū","to rush at; to throw oneself at",[]],["卧室","wòshì","bedroom",[]],["铺","pū","to spread out; to make (a bed)",[]],["飘","piāo","to float; to waft; to drift",[]],["阵","zhèn","measure word for a burst / spell of something",[]],["感受","gǎnshòu","to feel; to experience; a feeling",[]],["流泪","liúlèi","to shed tears",[]]], CH={"串":["chuàn","a string of things"],"钥":["yào","key"],"匙":["shi (chí)","spoon — neutral tone in 钥匙"],"一":["yī","one"],"辈":["bèi","generation"],"子":["zi","(noun suffix); child"],"农":["nóng","farming"],"村":["cūn","village"],"屋":["wū","house; room"],"断":["duàn","to break off"],"以":["yǐ","with; by means of"],"来":["lái","to come"],"姥":["lǎo","maternal grandmother"],"舅":["jiù","mother’s brother"],"姑":["gū","father’s sister"],"坚":["jiān","hard; firm"],"决":["jué","to decide"],"打":["dǎ","to hit; to do"],"工":["gōng","work"],"挣":["zhèng","to earn"],"县":["xiàn","county"],"套":["tào","a set; a cover"],"装":["zhuāng","to fit; to install"],"修":["xiū","to repair; to build"],"不":["bù","not"],"得":["dé","to get"],"了":["liǎo","to finish; to be able"],"醉":["zuì","drunk"],"强":["qiáng","strong"],"烈":["liè","fierce; intense"],"夜":["yè","night"],"锁":["suǒ","a lock"],"临":["lín","to face; to be about to"],"悄":["qiāo","quiet; soft"],"晒":["shài","to sun; to dry"],"被":["bèi","quilt; (passive marker)"],"长":["cháng","long"],"途":["tú","road; journey"],"冻":["dòng","to freeze"],"想":["xiǎng","to think"],"象":["xiàng","image; elephant"],"灰":["huī","ash; grey"],"尘":["chén","dust"],"亮":["liàng","bright"],"微":["wēi","tiny; slight"],"笑":["xiào","to laugh; to smile"],"温":["wēn","warm"],"暖":["nuǎn","warm"],"立":["lì","to stand"],"刻":["kè","to carve; a moment"],"扑":["pū","to pounce"],"卧":["wò","to lie down"],"室":["shì","room"],"铺":["pū","to spread out"],"飘":["piāo","to drift on the wind"],"阵":["zhèn","a burst; a spell"],"感":["gǎn","to feel"],"受":["shòu","to receive; to bear"],"流":["liú","to flow"],"泪":["lèi","tear"]}, ORDER=["父母一辈子住在农村，不愿意离开老屋。","儿子和妻子打工挣钱，在县里买了一套新房。","父母第一次进新房很高兴，可是拒绝了妻子给的钥匙。","临走那天，父亲悄悄说：还是留一串钥匙吧。","半年以后，一家人在冬天的夜里坐长途车回来。","到了楼下，他们发现自己家亮着灯。","开门的是微笑的父母，屋里暖气开着，被子已经铺好了。","儿子明白了：父母要钥匙，只是为了让孩子回来时立刻感到家的温暖。"], GDRILL=[["他来中国 ___ ，汉语进步得非常快。",["以来","以前","立刻"],0,"时间 + 以来 — “since he came to China”."],["___ 走那天，父亲从老家赶来送我们。",["临","立刻","以来"],0,"临 + verb = just before doing something."],["我想买一套不 ___ 街的房子。",["临","悄悄","强烈"],0,"临街 = facing the street."],["一下课，我 ___ 回家。",["立刻","一辈子","以来"],0,"立刻 goes before the verb 回."],["温暖的气息 ___ 扑面而来。",["立刻","以来","不得了"],0,"Adverb before the verb 扑."],["为了不影响别人，他 ___ 地走进了教室。",["悄悄","偷偷","强烈"],0,"为了不影响别人 — the problem is noise, not hiding. Small sound = 悄悄."],["孩子睡着了，爸爸在妈妈耳边 ___ 说了几句话。",["悄悄","偷偷","立刻"],0,"Whispering = small sound = 悄悄."],["上课的时候他 ___ 玩儿手机，结果被老师发现了。",["偷偷","悄悄","坚决"],0,"Playing on a phone makes no noise — the point is hiding it from the teacher = 偷偷."],["长年 ___ ，父母很少离开老屋。",["以来","以后","以前"],0,"A stretch of time up to now = 以来."]],
+    EX1=[["你觉得我穿这一___西服去电视台参加节目怎么样？","套","Nǐ juéde wǒ chuān zhè yí tào xīfú qù diànshìtái cānjiā jiémù zěnmeyàng?","How about I wear this suit to the TV studio for the programme?"],["我不能___她喝醉了会是什么样子。","想象","Wǒ bù néng xiǎngxiàng tā hē zuì le huì shì shénme yàngzi.","I can’t imagine what she would be like drunk."],["国际___电话很贵，现在我们一般上网聊天儿。","长途","Guójì chángtú diànhuà hěn guì, xiànzài wǒmen yìbān shàngwǎng liáotiānr.","International long-distance calls are expensive; these days we usually chat online."],["因为同学们___要求，我们决定这个周末出去活动。","强烈","Yīnwèi tóngxuémen qiángliè yāoqiú, wǒmen juédìng zhège zhōumò chūqù huódòng.","Because the class asked so insistently, we decided to go out this weekend."],["房门被反___上了，他进不来。","锁","Fángmén bèi fǎnsuǒ shàng le, tā jìn bu lái.","The door was locked from the inside, so he couldn’t get in."],["他从窗户里跳出来，把腿摔___了。","断","Tā cóng chuānghu lǐ tiào chūlái, bǎ tuǐ shuāi duàn le.","He jumped out of the window and broke his leg."],["暑假的时候我想去南方___。","打工","Shǔjià de shíhou wǒ xiǎng qù nánfāng dǎgōng.","In the summer holiday I want to go south to do casual work."],["我想去打工，___点儿钱。","挣","Wǒ xiǎng qù dǎgōng, zhèng diǎnr qián.","I want to go and work to earn some money."]], EX2=[["他的态度很___，恐怕不会改变主意了。",["坚决","强烈"],0,"态度 goes with 坚决 (firm, resolute). 强烈 describes feelings, light, smells — not an attitude."],["只有一个星期了，春节___就要到了。",["立刻","马上"],1,"For something coming up in the near future use 马上……就要……. 立刻 means “with no gap at all”."],["最近气温太低，河里的水都被___住了。",["冻","晒"],0,"冻住 = frozen solid. 晒 is to dry in the sun."],["女服务员给了我一个___的微笑。",["暖和","温暖"],1,"温暖 is used of feelings and atmosphere — 温暖的微笑. 暖和 is only about physical temperature (天气暖和、屋里很暖和), so it cannot modify 微笑."]], EX3=[["一辈子",["虽然她全身瘫痪了，","但我","会照顾她","。"],2,"虽然她全身瘫痪了，但我会照顾她一辈子。","Suīrán tā quánshēn tānhuàn le, dàn wǒ huì zhàogù tā yí bèizi."],["不得了了",["","他们俩","大吵了","一架！"],0,"不得了了，他们俩大吵了一架！","Bùdéliǎo le, tāmen liǎ dà chǎo le yí jià!"],["立刻",["他病了，","老师和同学们","把他送进了","医院。"],1,"他病了，老师和同学们立刻把他送进了医院。","Tā bìng le, lǎoshī hé tóngxuémen lìkè bǎ tā sòng jìn le yīyuàn."],["阵",["花园里","飘来","一","花香。"],2,"花园里飘来一阵花香。","Huāyuán lǐ piāo lái yí zhèn huāxiāng."]], EX4=[["妈妈的弟弟，我应该叫___。",["舅舅","叔叔","姑父"],0,"舅舅 jiùjiu — mother’s brother. 叔叔 is father’s younger brother."],["他说话很___，想什么就说什么。",["坦率","周到","小气"],0,"坦率 tǎnshuài — frank, straightforward."],["他很___，连一块钱都舍不得花。",["小气","坦率","周到"],0,"小气 xiǎoqi — stingy, mean with money."],["她照顾客人非常___，什么都想到了。",["周到","小气","坦率"],0,"周到 zhōudào — thoughtful, attentive to every detail."]], GAPS=["一辈子","打工","套","坚决","悄悄","钥匙","被子","立刻","温暖"], RETELL="父母{0}住在农村老家，对老屋有很深的感情。后来，儿子和妻子靠{1}挣钱买了一{2}新房，但是父母{3}不愿意住进去。夫妻俩准备去外地打工以前，父亲{4}告诉儿子，希望他们留下新房的{5}。半年以后，他们回到家，发现父母已经把房子打扫得干干净净，准备好了{6}和饭菜。儿子终于明白，父母留下钥匙的真正目的，是让孩子们回家时能够{7}感受到家的{8}。";
+var MAX=186, MAX_KIN=20, MAX_PIN=80, MAX_MCQ=40, MAX_ORD=8,
+    MAX_GRM=9, MAX_RET=9;
+</script>
+<script>
+(function(){
+'use strict';
+/* ---------- state ---------- */
+var score=0, MISS={}, BOARD=[];
+var SEC={kin:0,pin:0,mcq:0,ord:0,grm:0,e1:0,e2:0,e3:0,e4:0,ret:0};
+var zhVoice=null, allVoices=[];
+
+/* ---------- helpers ---------- */
+function $(i){ return document.getElementById(i); }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.random()*(i+1)|0,t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function strip(s){ return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/ü/g,'v').replace(/[^a-z]/g,''); }
+function bump(q,gave,right){ if(!MISS[q]) MISS[q]={n:0,gave:[],right:right}; MISS[q].n++; MISS[q].gave.push(gave); paint(); }
+function missTotal(){ var n=0; for(var k in MISS) n+=MISS[k].n; return n; }
+function add(sec,pts){ score+=pts; SEC[sec]+=pts; paint(); }
+function paint(){ $('cScore').textContent='Score '+score; $('cMiss').textContent='Wrong '+missTotal(); }
+
+/* ---------- audio ---------- */
+function loadV(){
+  if(!('speechSynthesis' in window)) return;
+  allVoices=speechSynthesis.getVoices();
+  var zh=allVoices.filter(function(v){ return /zh|chinese|中文|普通话/i.test(v.lang+' '+v.name); });
+  var sel=$('voiceSel'); if(!sel) return;
+  var list=zh.length?zh:allVoices;
+  sel.innerHTML=list.length?list.map(function(v){ return '<option value="'+allVoices.indexOf(v)+'">'+esc(v.name)+' ('+v.lang+')</option>'; }).join('')
+    :'<option value="-1">(no voice)</option>';
+  var saved=NaN; try{ saved=parseInt(localStorage.getItem('hsk5l2_voice')); }catch(e){}
+  var idx=(!isNaN(saved)&&allVoices[saved])?saved:(zh.length?allVoices.indexOf(zh[0]):-1);
+  if(idx>=0){ zhVoice=allVoices[idx]; sel.value=idx; } else zhVoice=null;
+  if(!sel._w){ sel._w=1; sel.addEventListener('change',function(){ var i=+sel.value; zhVoice=i>=0?allVoices[i]:null;
+    try{ localStorage.setItem('hsk5l2_voice',i); }catch(e){} say('你好'); }); }
+  var n=$('voiceNote'); if(n) n.textContent=zh.length?'✓ 中文':'⚠ 没有中文语音 no Chinese voice';
+}
+function say(t){ if(!('speechSynthesis' in window)||!t) return; speechSynthesis.cancel();
+  var u=new SpeechSynthesisUtterance(t); u.lang='zh-CN'; u.rate=.76; if(zhVoice) u.voice=zhVoice; speechSynthesis.speak(u); }
+function ding(ok){ try{ var a=ding._c=ding._c||new (window.AudioContext||window.webkitAudioContext)();
+  var o=a.createOscillator(),g=a.createGain(); o.connect(g); g.connect(a.destination);
+  o.type=ok?'sine':'sawtooth'; o.frequency.value=ok?680:170;
+  g.gain.setValueAtTime(.0001,a.currentTime); g.gain.exponentialRampToValueAtTime(.09,a.currentTime+.02);
+  g.gain.exponentialRampToValueAtTime(.0001,a.currentTime+.26); o.start(); o.stop(a.currentTime+.28); }catch(e){} }
+
+/* ---------- tabs & pinyin switch ---------- */
+function show(id){
+  Array.prototype.forEach.call(document.querySelectorAll('.tab'),function(x){ x.classList.toggle('on',x.dataset.s===id); });
+  Array.prototype.forEach.call(document.querySelectorAll('section.screen'),function(s){ s.classList.toggle('active',s.id===id); });
+  if('speechSynthesis' in window) speechSynthesis.cancel();
+  if(id==='s-report') report();
+  if(id==='s-pin') $('pInput').focus();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ---------- 1 · kinship matching ---------- */
+var K=(function(){
+  var pool=[], round=[], sel=null, doneN=0;
+  function next(){
+    if(!pool.length){ $('kProg').textContent='全部配对完成 — all '+MAX_KIN+' pairs matched';
+      $('kL').innerHTML=''; $('kR').innerHTML='';
+      $('kFb').className='fb ok'; $('kFb').innerHTML='<div class="done"><div class="n">'+SEC.kin+' / '+MAX_KIN+'</div><p>亲属称呼全部做完了！</p></div>'; return; }
+    round=pool.splice(0,5); sel=null;
+    $('kProg').textContent='还剩 '+(pool.length+round.length)+' 个 · remaining';
+    $('kFb').className='fb'; $('kFb').textContent='';
+    var L=shuffle(round), R=shuffle(round);
+    $('kL').innerHTML=L.map(function(k){ return '<button class="mtile h zh" data-k="'+esc(k[0])+'">'+k[0]+'<small class="pyon">'+k[1]+'</small></button>'; }).join('');
+    $('kR').innerHTML=R.map(function(k){ return '<button class="mtile d" data-k="'+esc(k[0])+'">'+esc(k[2])+'</button>'; }).join('');
+    Array.prototype.forEach.call($('kL').querySelectorAll('.mtile'),function(b){ b.addEventListener('click',function(){ pick(b); }); });
+    Array.prototype.forEach.call($('kR').querySelectorAll('.mtile'),function(b){ b.addEventListener('click',function(){ pick(b); }); });
+  }
+  function pick(b){
+    if(b.classList.contains('gone')) return;
+    if(!sel){ sel=b; b.classList.add('sel'); return; }
+    if(sel===b){ b.classList.remove('sel'); sel=null; return; }
+    var a=sel; a.classList.remove('sel'); sel=null;
+    if(a.parentNode===b.parentNode){ sel=b; b.classList.add('sel'); return; }
+    if(a.dataset.k===b.dataset.k){
+      a.classList.add('gone'); b.classList.add('gone'); add('kin',1); doneN++;
+      $('kScore').textContent=SEC.kin; ding(true); say(a.dataset.k);
+      $('kFb').className='fb ok'; $('kFb').textContent='✓ 对了！';
+      if(!$('kL').querySelector('.mtile:not(.gone)')) setTimeout(next,700);
+    } else {
+      var kk=KIN.filter(function(x){ return x[0]===(a.classList.contains('h')?a.dataset.k:b.dataset.k); })[0];
+      bump('称呼 '+kk[0],'wrong pair',kk[2]); ding(false);
+      a.classList.add('bad'); b.classList.add('bad');
+      setTimeout(function(){ a.classList.remove('bad'); b.classList.remove('bad'); },340);
+      $('kFb').className='fb no'; $('kFb').textContent='✗ 不对 — 再看看';
+    }
+  }
+  return { reset:function(){ pool=shuffle(KIN); doneN=0; $('kScore').textContent='0'; next(); } };
+})();
+
+/* ---------- 2 · flashcards ---------- */
+(function(){
+  var order=WORDS.slice(), i=0;
+  function load(){
+    var w=order[i]; $('fFlip').classList.remove('back');
+    $('fProg').textContent='Card '+(i+1)+' of '+order.length;
+    $('fFront').innerHTML='<div class="wfront"><div class="w zh">'+w[0]+'</div><div class="n">点一下翻面 · tap to turn over</div></div>';
+    var bd=w[0].split('').map(function(c){ var x=CH[c]||['','']; return '<div class="bd"><div class="c zh">'+c+'</div><div class="p">'+x[0]+'</div><div class="m">'+esc(x[1])+'</div></div>'; }).join('');
+    $('fBack').innerHTML='<div class="bk-big"><div class="c zh">'+w[0]+'</div><div class="p">'+w[1]+'</div><div class="m">'+esc(w[2])+'</div></div><div class="breakdown">'+bd+'</div>';
+    var box=$('fIndex'); box.innerHTML='';
+    order.forEach(function(x,k){ var b=document.createElement('button'); b.className='zh'+(k===i?' cur':''); b.textContent=x[0];
+      b.addEventListener('click',function(){ i=k; load(); }); box.appendChild(b); });
+  }
+  function turn(){ $('fFlip').classList.toggle('back'); }
+  $('fFlip').addEventListener('click',turn); $('fTurn').addEventListener('click',turn);
+  $('fPrev').addEventListener('click',function(){ i=(i-1+order.length)%order.length; load(); });
+  $('fNext').addEventListener('click',function(){ i=(i+1)%order.length; load(); });
+  $('fShuf').addEventListener('click',function(){ order=shuffle(order); i=0; load(); });
+  $('fSay').addEventListener('click',function(){ say(order[i][0]); });
+  load();
+})();
+
+/* ---------- 3 · type the pinyin ---------- */
+var P=(function(){
+  var order=[], idx=0, tries=0;
+  function finish(){ $('pProg').textContent=''; $('pWord').textContent='🎉'; $('pInput').style.display='none';
+    $('pCheck').disabled=true; $('pSkip').disabled=true; $('pFb').className='fb ok';
+    $('pFb').innerHTML='<div class="done"><div class="n">'+SEC.pin+' / '+MAX_PIN+'</div><p>拼音全部写完了！</p></div>'; }
+  function load(){ if(idx>=order.length) return finish(); var w=order[idx]; tries=0;
+    $('pProg').textContent=(idx+1)+' of '+order.length; $('pWord').textContent=w[0];
+    $('pInput').value=''; $('pInput').style.display=''; $('pCheck').disabled=false; $('pSkip').disabled=false;
+    $('pFb').className='fb'; $('pFb').innerHTML=''; $('pInput').focus(); }
+  function ok(w,raw){ var g=strip(raw); if(!g) return false; if(g===strip(w[1])) return true;
+    return (w[3]||[]).some(function(a){ return strip(a)===g; }); }
+  function check(){ var w=order[idx]; if(!w) return; var typed=$('pInput').value.trim(); if(!typed) return;
+    if(ok(w,typed)){ var g=tries?1:2; add('pin',g); $('pScore').textContent=SEC.pin; ding(true);
+      $('pFb').className='fb ok'; $('pFb').innerHTML='✓ 对了！ <b>'+w[1]+'</b><small>'+esc(w[2])+' · +'+g+' points</small>';
+      idx++; setTimeout(load,1250);
+    } else { tries++; bump('拼音 '+w[0],typed,w[1]); ding(false);
+      $('pFb').className='fb no'; $('pFb').innerHTML='✗ 不对 — 再试一次<small>'+(tries===1?'还可以得 1 分':'一个字一个字地读')+'</small>';
+      $('pInput').select(); } }
+  $('pCheck').addEventListener('click',check);
+  $('pInput').addEventListener('keydown',function(e){ if(e.key==='Enter') check(); });
+  $('pSkip').addEventListener('click',function(){ var w=order[idx]; if(!w) return; bump('拼音 '+w[0],'skipped',w[1]);
+    $('pFb').className='fb no'; $('pFb').innerHTML='答案 Answer: <b>'+w[1]+'</b><small>'+esc(w[2])+'</small>'; idx++; setTimeout(load,1150); });
+  return { reset:function(){ order=shuffle(WORDS); idx=0; $('pScore').textContent='0'; load(); } };
+})();
+
+/* ---------- generic MCQ engine ---------- */
+function mcq(cfg){
+  var order=[], idx=0;
+  function finish(){ $(cfg.prog).textContent=''; $(cfg.sent).innerHTML=''; $(cfg.opts).innerHTML='';
+    $(cfg.fb).className='fb ok';
+    $(cfg.fb).innerHTML='<div class="done"><div class="n">'+SEC[cfg.sec]+' / '+order.length+'</div><p>'+cfg.doneMsg+'</p></div>'; }
+  function load(){
+    if(idx>=order.length) return finish();
+    var q=order[idx];
+    $(cfg.prog).textContent=(idx+1)+' of '+order.length;
+    $(cfg.sent).innerHTML=cfg.render(q);
+    $(cfg.fb).className='fb'; $(cfg.fb).innerHTML='';
+    var opts=cfg.options(q);
+    $(cfg.opts).innerHTML=opts.map(function(o,k){ return '<button class="opt'+(cfg.zhOpts?' zh':'')+'" data-k="'+k+'">'+o.html+'</button>'; }).join('');
+    Array.prototype.forEach.call($(cfg.opts).querySelectorAll('.opt'),function(b){
+      b.addEventListener('click',function(){
+        var o=opts[+b.dataset.k];
+        Array.prototype.forEach.call($(cfg.opts).querySelectorAll('.opt'),function(x){ x.disabled=true; });
+        if(o.right){ b.classList.add('good'); add(cfg.sec,1); $(cfg.score).textContent=SEC[cfg.sec]; ding(true);
+          $(cfg.fb).className='fb ok'; $(cfg.fb).innerHTML='✓ 对了！<small>'+cfg.why(q)+'</small>';
+        } else { b.classList.add('badopt'); ding(false);
+          Array.prototype.forEach.call($(cfg.opts).querySelectorAll('.opt'),function(x,k2){ if(opts[k2].right) x.classList.add('good'); });
+          bump(cfg.label(q), o.plain, cfg.answer(q));
+          $(cfg.fb).className='fb no'; $(cfg.fb).innerHTML='✗ 正确答案：<b>'+esc(cfg.answer(q))+'</b><small>'+cfg.why(q)+'</small>'; }
+        if(cfg.speak) say(cfg.speak(q));
+        idx++; setTimeout(load,1700);
+      });
+    });
+  }
+  return { reset:function(){ order=cfg.build(); idx=0; $(cfg.score).textContent='0'; load(); } };
+}
+
+/* 4 · meaning MCQ */
+var M=mcq({ sec:'mcq', prog:'mProg', sent:'mWord', opts:'mOpts', fb:'mFb', score:'mScore',
+  doneMsg:'词义全部做完了！',
+  build:function(){ return shuffle(WORDS).map(function(w){
+      var others=shuffle(WORDS.filter(function(x){ return x[0]!==w[0]; })).slice(0,3);
+      return { w:w, opts:shuffle([w].concat(others)) }; }); },
+  render:function(q){ return q.w[0]; },
+  options:function(q){ return q.opts.map(function(o){ return { html:esc(o[2]), plain:o[2], right:o[0]===q.w[0] }; }); },
+  why:function(q){ return esc(q.w[0]+' — '+q.w[1]); },
+  label:function(q){ return '词义 '+q.w[0]; },
+  answer:function(q){ return q.w[2]; },
+  speak:function(q){ return q.w[0]; } });
+
+/* 6 · grammar drill */
+var G=mcq({ sec:'grm', prog:'gProg', sent:'gSent', opts:'gOpts', fb:'gFb', score:'gScore', zhOpts:true,
+  doneMsg:'语法练习做完了！',
+  build:function(){ return shuffle(GDRILL); },
+  render:function(q){ return q[0].replace('___','<u>？</u>'); },
+  options:function(q){ var pairs=q[1].map(function(o,k){ return { html:o, plain:o, right:k===q[2] }; }); return shuffle(pairs); },
+  why:function(q){ return esc(q[3]); },
+  label:function(q){ return '语法 '+q[0].replace('___','＿'); },
+  answer:function(q){ return q[1][q[2]]; },
+  speak:function(q){ return q[0].replace('___',q[1][q[2]]); } });
+
+/* 7b · 练习二 */
+var E2=mcq({ sec:'e2', prog:'e2Prog', sent:'e2Sent', opts:'e2Opts', fb:'e2Fb', score:'e2Score', zhOpts:true,
+  doneMsg:'练习二做完了！',
+  build:function(){ return shuffle(EX2); },
+  render:function(q){ return q[0].replace('___','<u>？</u>'); },
+  options:function(q){ return q[1].map(function(o,k){ return { html:o, plain:o, right:k===q[2] }; }); },
+  why:function(q){ return esc(q[3]); },
+  label:function(q){ return '练习二 '+q[0].replace('___','＿'); },
+  answer:function(q){ return q[1][q[2]]; },
+  speak:function(q){ return q[0].replace('___',q[1][q[2]]); } });
+
+/* 7d · 扩展 */
+var E4=mcq({ sec:'e4', prog:'e4Prog', sent:'e4Sent', opts:'e4Opts', fb:'e4Fb', score:'e4Score', zhOpts:true,
+  doneMsg:'扩展练习做完了！',
+  build:function(){ return shuffle(EX4); },
+  render:function(q){ return q[0].replace('___','<u>？</u>'); },
+  options:function(q){ return q[1].map(function(o,k){ return { html:o, plain:o, right:k===q[2] }; }); },
+  why:function(q){ return esc(q[3]); },
+  label:function(q){ return '扩展 '+q[0].replace('___','＿'); },
+  answer:function(q){ return q[1][q[2]]; },
+  speak:function(q){ return q[0].replace('___',q[1][q[2]]); } });
+
+/* ---------- 5 · text: reveal + order ---------- */
+(function(){
+  $('tAllOff').addEventListener('click',function(){ Array.prototype.forEach.call(document.querySelectorAll('#s-text .sent'),function(s){ s.classList.add('hid'); }); });
+  $('tAllOn').addEventListener('click',function(){ Array.prototype.forEach.call(document.querySelectorAll('#s-text .sent'),function(s){ s.classList.remove('hid'); }); });
+  Array.prototype.forEach.call(document.querySelectorAll('.rev'),function(b){
+    b.addEventListener('click',function(e){ e.stopPropagation(); $('sn'+b.dataset.i).classList.toggle('hid'); }); });
+})();
+
+var O=(function(){
+  var want=0;
+  function render(){
+    var chips=shuffle(ORDER.map(function(s,i){ return {s:s,i:i}; }));
+    $('oPool').innerHTML=chips.map(function(c){ return '<button class="ochip zh" data-i="'+c.i+'"><span class="num">'+'…'+'</span>'+esc(c.s)+'</button>'; }).join('');
+    Array.prototype.forEach.call($('oPool').querySelectorAll('.ochip'),function(b){
+      b.addEventListener('click',function(){
+        var i=+b.dataset.i;
+        if(i===want){ b.classList.add('gone'); b.querySelector('.num').textContent=(want+1)+'.';
+          add('ord',1); $('oScore').textContent=SEC.ord; ding(true); want++;
+          $('oProg').textContent='已排好 '+want+' / '+ORDER.length;
+          $('oFb').className='fb ok'; $('oFb').textContent='✓ 对了！';
+          if(want>=ORDER.length){ $('oFb').innerHTML='<div class="done"><div class="n">'+SEC.ord+' / '+MAX_ORD+'</div><p>故事的顺序全部排好了！</p></div>'; }
+        } else { bump('排序 第'+(want+1)+'句', esc(b.textContent.replace(/^…/,'')).slice(0,18)+'…', ORDER[want]); ding(false);
+          b.classList.add('bad'); setTimeout(function(){ b.classList.remove('bad'); },340);
+          $('oFb').className='fb no'; $('oFb').textContent='✗ 还不是这一句 — 想想故事的顺序'; }
+      });
+    });
+  }
+  return { reset:function(){ want=0; $('oScore').textContent='0'; $('oProg').textContent='已排好 0 / '+ORDER.length;
+    $('oFb').className='fb'; $('oFb').textContent=''; render(); } };
+})();
+
+/* ---------- 7a · 练习一 word bank ---------- */
+var E1=(function(){
+  var order=[], idx=0, used={};
+  function finish(){ $('e1Prog').textContent=''; $('e1Sent').innerHTML=''; $('e1Bank').innerHTML='';
+    $('e1Fb').className='fb ok';
+    $('e1Fb').innerHTML='<div class="done"><div class="n">'+SEC.e1+' / '+EX1.length+'</div><p>练习一做完了！</p></div>'; }
+  function load(){
+    if(idx>=order.length) return finish();
+    var q=order[idx];
+    $('e1Prog').textContent=(idx+1)+' of '+order.length;
+    $('e1Sent').innerHTML=q[0].replace('___','<u>？</u>');
+    $('e1Fb').className='fb'; $('e1Fb').innerHTML='';
+    $('e1Bank').innerHTML=EX1.map(function(e){ return '<button class="bw zh'+(used[e[1]]?' dead':'')+'" data-w="'+esc(e[1])+'">'+e[1]+'</button>'; }).join('');
+    Array.prototype.forEach.call($('e1Bank').querySelectorAll('.bw'),function(b){
+      b.addEventListener('click',function(){
+        var w=b.dataset.w;
+        if(w===q[1]){ used[w]=1; add('e1',1); $('e1Score').textContent=SEC.e1; ding(true); say(q[0].replace('___',q[1]));
+          $('e1Fb').className='fb ok'; $('e1Fb').innerHTML='✓ '+esc(q[0].replace('___',q[1]))+'<small>'+esc(q[2])+' — '+esc(q[3])+'</small>';
+          idx++; setTimeout(load,2000);
+        } else { bump('练习一 '+q[0].replace('___','＿'), w, q[1]); ding(false);
+          b.classList.add('bad'); setTimeout(function(){ b.classList.remove('bad'); },340);
+          $('e1Fb').className='fb no'; $('e1Fb').textContent='✗ 不对 — 再读一遍句子'; }
+      });
+    });
+  }
+  return { reset:function(){ order=shuffle(EX1); idx=0; used={}; $('e1Score').textContent='0'; load(); } };
+})();
+
+/* ---------- 7c · 练习三 where does the word go ---------- */
+var E3=(function(){
+  var order=[], idx=0;
+  function finish(){ $('e3Prog').textContent=''; $('e3Sent').innerHTML=''; $('e3Word').textContent='✓';
+    $('e3Fb').className='fb ok';
+    $('e3Fb').innerHTML='<div class="done"><div class="n">'+SEC.e3+' / '+EX3.length+'</div><p>练习三做完了！</p></div>'; }
+  function load(){
+    if(idx>=order.length) return finish();
+    var q=order[idx], segs=q[1];
+    $('e3Prog').textContent=(idx+1)+' of '+order.length;
+    $('e3Word').textContent=q[0];
+    var html='';
+    for(var k=0;k<4;k++){ html+=segs[k]+'<button class="slotbtn" data-k="'+k+'">'+'ABCD'[k]+'</button>'; }
+    $('e3Sent').innerHTML=html;
+    $('e3Fb').className='fb'; $('e3Fb').innerHTML='';
+    Array.prototype.forEach.call($('e3Sent').querySelectorAll('.slotbtn'),function(b){
+      b.addEventListener('click',function(){
+        Array.prototype.forEach.call($('e3Sent').querySelectorAll('.slotbtn'),function(x){ x.disabled=true; });
+        if(+b.dataset.k===q[2]){ b.classList.add('good'); b.textContent=q[0]; add('e3',1); $('e3Score').textContent=SEC.e3; ding(true);
+          $('e3Fb').className='fb ok'; $('e3Fb').innerHTML='✓ '+esc(q[3])+'<small>'+esc(q[4])+'</small>';
+        } else { b.classList.add('wrong'); ding(false);
+          var right=$('e3Sent').querySelector('.slotbtn[data-k="'+q[2]+'"]'); right.classList.add('good'); right.textContent=q[0];
+          bump('练习三 '+q[0], 'ABCD'[+b.dataset.k], 'ABCD'[q[2]]+' — '+q[3]);
+          $('e3Fb').className='fb no'; $('e3Fb').innerHTML='✗ '+esc(q[3])+'<small>'+esc(q[4])+'</small>'; }
+        say(q[3]); idx++; setTimeout(load,2300);
+      });
+    });
+  }
+  return { reset:function(){ order=shuffle(EX3); idx=0; $('e3Score').textContent='0'; load(); } };
+})();
+
+/* ---------- 8 · retell gap fill ---------- */
+var R=(function(){
+  var sel=null, filled={};
+  function render(){
+    var body=RETELL;
+    for(var i=0;i<GAPS.length;i++){
+      body=body.replace('{'+i+'}','<span class="gap" data-g="'+i+'">'+'____'+'</span>');
+    }
+    $('rText').innerHTML=body;
+    $('rBank').innerHTML=shuffle(GAPS.map(function(g,i){ return {g:g,i:i}; }))
+      .map(function(x){ return '<button class="bw zh" data-w="'+esc(x.g)+'">'+x.g+'</button>'; }).join('');
+    Array.prototype.forEach.call($('rBank').querySelectorAll('.bw'),function(b){
+      b.addEventListener('click',function(){
+        if(sel===b){ b.classList.remove('sel'); sel=null; return; }
+        if(sel) sel.classList.remove('sel');
+        sel=b; b.classList.add('sel');
+      });
+    });
+    Array.prototype.forEach.call($('rText').querySelectorAll('.gap'),function(sp){
+      sp.addEventListener('click',function(){
+        if(sp.classList.contains('good')) return;
+        if(!sel){ $('rFb').className='fb no'; $('rFb').textContent='先点一个词 — pick a word first'; return; }
+        var w=sel.dataset.w, i=+sp.dataset.g;
+        if(w===GAPS[i]){ sp.textContent=w; sp.classList.add('good'); sel.classList.add('dead'); sel.classList.remove('sel'); sel=null;
+          filled[i]=1; add('ret',1); $('rScore').textContent=SEC.ret; ding(true);
+          $('rFb').className='fb ok'; $('rFb').textContent='✓ 对了！';
+          if(Object.keys(filled).length>=GAPS.length){ $('rFb').innerHTML='<div class="done"><div class="n">'+SEC.ret+' / '+MAX_RET+'</div><p>复述填空做完了！</p></div>'; say(RETELL.replace(/\{(\d)\}/g,function(m,d){ return GAPS[+d]; })); }
+        } else { bump('复述 第'+(i+1)+'空', w, GAPS[i]); ding(false);
+          sp.classList.add('bad'); setTimeout(function(){ sp.classList.remove('bad'); },340);
+          sel.classList.remove('sel'); sel=null;
+          $('rFb').className='fb no'; $('rFb').textContent='✗ 这个空不是这个词'; }
+      });
+    });
+  }
+  $('rPy').addEventListener('click',function(){ var b=$('rPyBox'); var on=b.style.display==='none';
+    b.style.display=on?'':'none'; $('rPy').textContent=on?'隐藏拼音 Hide pinyin':'显示拼音 Show pinyin'; });
+  return { reset:function(){ sel=null; filled={}; $('rScore').textContent='0'; $('rFb').className='fb'; $('rFb').textContent=''; render(); } };
+})();
+
+/* ---------- 9 · report ---------- */
+var SECDEF=[['kin','1 · 亲属称呼 Family words',MAX_KIN],['pin','3 · 写拼音 Type pinyin',MAX_PIN],
+  ['mcq','4 · 词义 Meaning',MAX_MCQ],['ord','5 · 课文排序 Story order',MAX_ORD],['grm','6 · 语法 Grammar',MAX_GRM],
+  ['e1','7 · 练习一 Gap fill',EX1.length],['e2','7 · 练习二 MCQ',EX2.length],['e3','7 · 练习三 Position',EX3.length],
+  ['e4','7 · 扩展 Extension',EX4.length],['ret','8 · 复述填空 Retell',MAX_RET]];
+function report(){
+  $('rTot').textContent=score; $('rName').textContent=($('who').value||'').trim()||'—';
+  $('rBars').innerHTML=SECDEF.map(function(s){ var pct=s[2]?Math.round(SEC[s[0]]/s[2]*100):0;
+    return '<div class="bar"><span class="t">'+s[1]+'</span><span class="track"><span class="fill" style="width:'+pct+'%"></span></span>'+
+      '<span class="v">'+SEC[s[0]]+' / '+s[2]+'</span></div>'; }).join('');
+  var k=Object.keys(MISS), tot=missTotal();
+  $('rTally').innerHTML='<div class="tcell'+(tot?'':' clean')+'"><div class="lab">Total mistakes</div><div class="num">'+tot+
+    '</div><div class="sub">time'+(tot===1?'':'s')+' marked wrong</div></div>'+
+    '<div class="tcell'+(k.length?'':' clean')+'"><div class="lab">Items with mistakes</div><div class="num">'+k.length+
+    '</div><div class="sub">different questions</div></div>'+
+    '<div class="tcell clean"><div class="lab">Score</div><div class="num">'+Math.round(score/MAX*100)+'%</div><div class="sub">'+score+' of '+MAX+'</div></div>';
+  if(!k.length){ $('rMiss').innerHTML='<div class="empty">零错误 — 全部一次做对。太棒了！</div>'; }
+  else { k.sort(function(a,b){ return MISS[b].n-MISS[a].n; });
+    $('rMiss').innerHTML='<table class="rev"><tr><th>题目 Question</th><th>Times wrong</th><th>What was answered</th><th>正确答案 Correct</th></tr>'+
+      k.map(function(x){ var e=MISS[x];
+        return '<tr><td class="c zh" style="font-size:17px">'+esc(x)+'</td><td class="n">'+e.n+'</td><td class="w">'+
+          e.gave.map(esc).join(' · ')+'</td><td class="r">'+esc(e.right)+'</td></tr>'; }).join('')+'</table>'; }
+  drawBoard();
+}
+function drawBoard(){
+  if(!BOARD.length){ $('rBoard').innerHTML='<div class="empty">还没有成绩 — nobody on the board yet.</div>'; return; }
+  var b=BOARD.slice().sort(function(x,y){ return y.s-x.s; });
+  $('rBoard').innerHTML='<table class="board"><tr><th>#</th><th>姓名 Name</th><th>Wrong</th><th>得分 Score</th></tr>'+
+    b.map(function(r,i){ return '<tr><td>'+(i+1)+'</td><td class="zh">'+esc(r.n)+'</td><td>'+r.m+'</td><td><b>'+r.s+' / '+MAX+'</b></td></tr>'; }).join('')+'</table>';
+}
+function resetAll(){
+  score=0; MISS={}; for(var s in SEC) SEC[s]=0; paint();
+  K.reset(); P.reset(); M.reset(); O.reset(); G.reset(); E1.reset(); E2.reset(); E3.reset(); E4.reset(); R.reset();
+  $('rFb2').className='fb'; $('rFb2').textContent='';
+}
+
+/* ---------- wiring ---------- */
+Array.prototype.forEach.call(document.querySelectorAll('.tab'),function(t){ t.addEventListener('click',function(){ show(t.dataset.s); }); });
+document.addEventListener('click',function(e){ var b=e.target.closest && e.target.closest('.say'); if(b&&b.dataset.t) say(b.dataset.t); });
+$('pyBtn').addEventListener('click',function(){ document.body.classList.toggle('nopy');
+  $('pyBtn').classList.toggle('on',!document.body.classList.contains('nopy')); });
+$('vTest').addEventListener('click',function(){ say('你好，欢迎来到爱睿娜的课堂。'); });
+$('rSave').addEventListener('click',function(){ var n=($('who').value||'').trim();
+  if(!n){ $('rFb2').className='fb no'; $('rFb2').textContent='请先写上名字 — type your name first'; $('who').focus(); return; }
+  BOARD.push({ n:n, s:score, m:missTotal() }); drawBoard();
+  $('rFb2').className='fb ok'; $('rFb2').textContent='✓ 已记录 — '+n+' '+score+' / '+MAX; });
+$('rNew').addEventListener('click',function(){ $('who').value=''; resetAll(); report(); $('who').focus(); });
+
+/* ---------- INIT (everything above is defined by now) ---------- */
+if('speechSynthesis' in window){ speechSynthesis.onvoiceschanged=loadV; loadV(); }
+resetAll();
+paint();
+})();
+</script>
+</body></html>

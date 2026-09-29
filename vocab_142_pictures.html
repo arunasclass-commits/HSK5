@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vocabulary 142: pictures + character stories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--ink:#1f2328;--muted:#646a73;--line:#e4e1da;--soft:#f6f4f0;--card:#ffffff;--seal:#b8322a;--jade:#1d7a62;--jadeSoft:#e3f3ee;--gold:#a8741a;--goldSoft:#fbf1dc;--sealSoft:#fbe8e6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171a;--ink:#ecebe7;--muted:#a3a7ad;--line:#33373d;--soft:#22262b;--card:#1d2024;--seal:#e0665c;--jade:#4cc3a1;--jadeSoft:#1b332c;--gold:#e0b25a;--goldSoft:#3a2f1a;--sealSoft:#3b2220}}
+:root[data-theme="dark"]{--bg:#15171a;--ink:#ecebe7;--muted:#a3a7ad;--line:#33373d;--soft:#22262b;--card:#1d2024;--seal:#e0665c;--jade:#4cc3a1;--jadeSoft:#1b332c;--gold:#e0b25a;--goldSoft:#3a2f1a;--sealSoft:#3b2220}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.45;-webkit-tap-highlight-color:transparent}
+.han{font-family:"Noto Serif SC","Songti SC","SimSun","PingFang SC","Microsoft YaHei",serif}
+.wrap{max-width:560px;margin:0 auto;padding:10px 12px 40px}
+header{display:flex;align-items:center;gap:10px;padding:6px 0 8px}
+.seal{width:42px;height:42px;border-radius:8px;background:var(--seal);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:700;flex:none}
+header h1{font-size:17px;margin:0;line-height:1.2}
+header p{margin:0;color:var(--muted);font-size:13px}
+.voice{margin-left:auto;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 9px;font:inherit;font-size:14px;cursor:pointer}
+#voiceBox{display:none;background:var(--soft);border-radius:10px;padding:10px;margin-bottom:8px;font-size:14px}
+#voiceBox.on{display:block}
+#voiceBox select{width:100%;margin-top:6px;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:14px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:6px;padding:6px 0 8px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:1 0 auto;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 13px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+nav button.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+section{display:none}section.on{display:block}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.row{display:flex;gap:8px;align-items:center}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:10px 12px;font:inherit;font-size:15px;font-weight:700;cursor:pointer;min-height:44px}
+.btn.main{background:var(--jade);border-color:var(--jade);color:#fff}
+.btn.grow{flex:1}
+.muted{color:var(--muted);font-size:14px}
+.score{font-size:14px;color:var(--muted);text-align:right}
+
+/* Flashcards */
+.search{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:15px;margin-bottom:8px}
+.fc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;cursor:pointer;user-select:none}
+.fcTop{display:flex;justify-content:space-between;align-items:center}
+.say{border:none;background:var(--soft);color:var(--ink);border-radius:999px;width:40px;height:40px;font-size:18px;cursor:pointer;flex:none}
+.fcHan{text-align:center;font-size:64px;font-weight:700;line-height:1.15;padding:10px 0 4px;letter-spacing:.04em}
+.tapHint{text-align:center;color:var(--muted);font-size:13px}
+.back{display:none;border-top:1px dashed var(--line);margin-top:10px;padding-top:10px}
+.fc.open .back{display:block}.fc.open .tapHint{display:none}
+.py{font-size:22px;color:var(--seal);font-weight:700;text-align:center}
+.mean{text-align:center;font-size:17px;margin:2px 0 10px}
+.ch{display:flex;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.chBig{font-size:34px;line-height:1;width:48px;height:48px;border:2px solid var(--seal);color:var(--seal);border-radius:6px;display:grid;place-items:center;flex:none}
+.ch b{color:var(--seal)}
+.ch p{margin:3px 0 0;font-size:14.5px}
+.note{background:var(--goldSoft);border-radius:10px;padding:9px 11px;margin-top:8px;font-size:14.5px}
+.note .han{font-size:16px}
+.fcNav{margin-top:10px}
+
+/* Tap match */
+.grid2{display:grid;grid-template-columns:1fr 1.35fr;gap:8px}
+.col{display:flex;flex-direction:column;gap:7px}
+.tile{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px;min-height:50px;font:inherit;font-size:14.5px;cursor:pointer;text-align:center}
+.tile.han{font-size:22px}
+.tile.sel,.chip.sel{border-color:var(--gold);background:var(--goldSoft)}
+.tile.ok{border-color:var(--jade);background:var(--jadeSoft);opacity:.55;pointer-events:none}
+.shake{animation:sh .32s}
+@keyframes sh{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.msg{margin:10px 0;font-size:14.5px;min-height:20px}
+
+/* Type + quiz */
+.qCard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.qHan{font-size:54px;font-weight:700;line-height:1.2}
+.qGloss{font-size:19px;font-weight:700;margin:6px 0 2px}
+.inp{width:100%;font:inherit;font-size:20px;padding:12px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);text-align:center;margin:10px 0 8px}
+.fb{margin-top:10px;border-radius:10px;padding:9px;font-size:15px;display:none}
+.fb.ok{display:block;background:var(--jadeSoft)}
+.fb.no{display:block;background:var(--sealSoft)}
+.fb .py{font-size:19px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.opt{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:10px 8px;min-height:56px;font:inherit;font-size:15px;cursor:pointer}
+.opt.han{font-size:24px}
+.opt.ok{border-color:var(--jade);background:var(--jadeSoft)}
+.opt.no{border-color:var(--seal);background:var(--sealSoft)}
+
+/* Drag */
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:10px;background:var(--soft);border-radius:12px;min-height:66px}
+.chip{touch-action:none;user-select:none;-webkit-user-select:none;border:1.5px solid var(--line);background:var(--card);border-radius:10px;padding:6px 12px;font-size:24px;cursor:grab;min-width:56px;text-align:center}
+.chip.used{visibility:hidden}
+.chip.lift{opacity:.3}
+.ghost{position:fixed;left:0;top:0;pointer-events:none;z-index:50;transform:translate(-50%,-60%) scale(1.1);box-shadow:0 6px 18px rgba(0,0,0,.25);border-color:var(--gold)}
+.slots{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.slot{display:flex;align-items:center;gap:10px;border:1.5px dashed var(--line);border-radius:10px;padding:6px 10px;min-height:52px;cursor:pointer;background:var(--card)}
+.slot .drop{width:74px;min-height:38px;border-radius:8px;background:var(--soft);display:grid;place-items:center;font-size:21px;flex:none}
+.slot .gl{font-size:14.5px}
+.slot.over{border-color:var(--gold);border-style:solid;background:var(--goldSoft)}
+.slot.done{border-style:solid;border-color:var(--jade);background:var(--jadeSoft)}
+.slot.done .drop{background:transparent;color:var(--jade);font-weight:700}
+.pic{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:6px 0 2px}
+.pt{background:var(--soft);border-radius:8px;padding:4px 6px;text-align:center;min-width:54px}
+.pt .e{font-size:26px;line-height:1.15}
+.pt .c{font-size:15px;line-height:1.1}
+.pt small{display:block;font-size:11.5px;color:var(--muted);line-height:1.2}
+.pt.res{background:var(--jadeSoft);border:1.5px solid var(--jade)}
+.op{font-weight:700;color:var(--muted);font-size:16px}
+.picTag{font-size:11.5px;color:var(--muted);margin-top:2px}
+@media (max-width:370px){.fcHan{font-size:54px}.tile.han{font-size:20px}.chip{font-size:21px}}
+@media (prefers-reduced-motion:reduce){.shake{animation:none}}
+</style>
+<style>
+.bar{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+.bar select{flex:1;padding:9px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:15px;font-weight:700}
+.stars{background:var(--goldSoft);color:var(--gold);border-radius:999px;padding:7px 12px;font-weight:700;font-size:15px;white-space:nowrap}
+.stars{display:none!important}
+.fcEmoji{text-align:center;font-size:54px;line-height:1.1;margin-top:6px}
+.lesTag{font-size:12.5px;background:var(--soft);border-radius:6px;padding:2px 7px;color:var(--muted)}
+.tile .em,.slot .em,.opt .em{font-size:20px;margin-right:4px}
+.qHan{font-size:60px}
+.tpy{display:block;font-family:"Atkinson Hyperlegible",system-ui,sans-serif;font-size:13px;font-weight:700;color:var(--seal);line-height:1.25;margin-top:2px}
+.pop{animation:pop .5s}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.25)}100%{transform:scale(1)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="seal han">词</div>
+  <div><h1>Vocabulary 142</h1><p>139 words · pictures · character stories</p></div>
+  <button class="voice" id="voiceBtn" aria-label="Voice settings">🔊 Voice</button>
+</header>
+<div id="voiceBox">
+  Tap 🔊 once to allow sound. If it sounds English, pick a Chinese voice:
+  <select id="voiceSel"></select>
+</div>
+<div class="bar">
+  <select id="lesSel" aria-label="Choose part"></select>
+  <span class="stars" id="stars">⭐ 0</span>
+</div>
+
+<nav>
+  <button class="active" data-t="cards">Cards</button>
+  <button data-t="match">Match</button>
+  <button data-t="quiz">Quiz</button>
+  <button data-t="drag">Drag</button>
+</nav>
+
+<section id="cards" class="on">
+  <input class="search" id="fcSearch" placeholder="Find a word (hanzi, pinyin or English)" autocomplete="off">
+  <div class="fc" id="fc">
+    <div class="fcTop"><span class="muted" id="fcCount"></span><button class="say" id="fcSay" aria-label="Play sound">🔊</button></div>
+    <div class="fcEmoji" id="fcEmoji"></div>
+    <div class="fcHan han" id="fcHan"></div>
+    <div class="tapHint">Tap the card to see the meaning and the story of each character</div>
+    <div class="back">
+      <div class="py" id="fcPy"></div>
+      <div class="mean" id="fcMean"></div>
+      <div id="fcChars"></div>
+      <div id="fcNote"></div>
+      <div class="picTag">Pictures are memory aids, not the original ancient drawings.</div>
+    </div>
+  </div>
+  <div class="row fcNav">
+    <button class="btn grow" id="fcPrev">◀ Back</button>
+    <button class="btn" id="fcShuf">Shuffle</button>
+    <button class="btn main grow" id="fcNext">Next ▶</button>
+  </div>
+</section>
+
+<section id="match">
+  <div class="score" id="mScore"></div>
+  <div class="grid2"><div class="col" id="mL"></div><div class="col" id="mR"></div></div>
+  <div class="msg" id="mMsg"></div>
+  <button class="btn main" id="mNewBtn" style="width:100%">New round</button>
+</section>
+
+<section id="quiz">
+  <div class="score" id="qScore">0 / 0</div>
+  <div class="qCard"><div id="qPrompt"></div></div>
+  <div class="opts" id="qOpts"></div>
+  <div class="fb" id="qFb"></div>
+  <button class="btn main" id="qNext" style="width:100%;margin-top:10px;display:none">Next question</button>
+</section>
+
+<section id="drag">
+  <div class="muted" style="margin-bottom:6px">Drag a word onto its meaning. Or tap a word, then tap the meaning.</div>
+  <div class="chips" id="dChips"></div>
+  <div class="slots" id="dSlots"></div>
+  <div class="msg" id="dMsg"></div>
+  <button class="btn main" id="dNewBtn" style="width:100%">New round</button>
+</section>
+</div>
+
+<script>
+/* ---------- STATE ---------- */
+let voice=null, allV=[], CUR=[], stars=0;
+let fcOrder=[], fcI=0;
+let mSel=null, mDone=0, mTries=0, mRight=0, mN=5;
+let tQ=null, tScore=0, tTotal=0, tAnswered=false;
+let qQ=null, qScore=0, qTotal=0, qAnswered=false;
+let dSel=null, dDone=0, dN=5, drag=null;
+let lastPick=null;
+
+/* ---------- CHARACTER STORIES + MEMORY PICTURES ---------- */
+/* [pinyin, meaning, story, [[emoji, part, label], ..., [result emoji, meaning]]] */
+const E={"在": ["zài", "at; in; to be at", "才 (a sprout) + 土 earth. Something rooted in the ground = be at, be in.", [["🌱", "才", "sprout"], ["🟫", "土", "earth"], ["📍", "be at"]]], "街": ["jiē", "street", "行 crossroads with 圭 (sound) in the middle. Roads in a town = street.", [["🛣", "行", "crossroads"], ["🔊", "圭", "sound"], ["🏙", "street"]]], "上": ["shàng", "up; on", "A short line above a long line = up, on top.", [["⬆️", "", "line above a line"], ["🔝", "up; on"]]], "白": ["bái", "white", "Its first picture is debated. Memory tip: the sun 日 with one ray of light on top = white, bright.", [["☀️", "", "sun with a ray (memory tip)"], ["⚪", "white"]]], "家": ["jiā", "home; family", "宀 roof + 豕 pig. In old times a pig under the roof meant a family home.", [["🏠", "宀", "roof"], ["🐖", "豕", "pig"], ["🏡", "home"]]], "月": ["yuè", "moon; month", "A picture of a crescent moon.", [["🌙", "", "crescent moon"], ["🌙", "moon; month"]]], "和": ["hé", "and; peace", "禾 grain (sound) + 口 mouth. Grain for every mouth → peace, together → and.", [["🌾", "禾", "grain"], ["👄", "口", "mouth"], ["🤝", "and; peace"]]], "李": ["lǐ", "plum; Li (surname)", "木 tree + 子 fruit. The fruit of a tree = plum. A very common family name.", [["🌳", "木", "tree"], ["👶", "子", "fruit"], ["🍑", "plum; Li"]]], "文": ["wén", "writing; culture", "A picture of a person with a pattern on the chest → pattern → writing.", [["🧍", "", "person with a pattern"], ["📝", "writing"]]], "边": ["biān", "side", "辶 walking + 力. Walk along the edge = side. 上边 = on top.", [["🚶", "辶", "walk"], ["💪", "力", "part"], ["↔️", "side"]]], "散": ["sàn", "to scatter; loose", "Things + 攵 a hand with a stick, knocking them apart = scatter. 散步 = a loose, easy walk.", [["🌿", "", "things"], ["✋", "攵", "hand with stick"], ["🍂", "scatter; loose"]]], "步": ["bù", "step", "Two feet 止, one in front of the other = step.", [["🦶", "止", "foot"], ["🦶", "", "foot"], ["👣", "step"]]], "聊": ["liáo", "to chat", "耳 ear + 卯 (sound). Lend someone your ear = chat.", [["👂", "耳", "ear"], ["🔊", "卯", "sound"], ["💬", "chat"]]], "天": ["tiān", "sky; day", "大 a big person + 一 a line above the head. The space above you = sky.", [["🧍", "大", "big person"], ["➖", "一", "line above"], ["☁️", "sky; day"]]], "儿": ["ér / r", "child; -r ending", "Old form 兒: a child with a big head. In 聊天儿, 点儿 it is just an -r sound.", [["👶", "", "child"], ["🧒", "child; -r"]]], "这": ["zhè", "this", "辶 walking + 文 (sound). Used for “this”.", [["🚶", "辶", "walk"], ["🔊", "文", "sound"], ["👇", "this"]]], "个": ["gè", "(general measure word)", "Thought to show one stalk of bamboo = one item.", [["🎋", "", "one bamboo stalk"], ["☝️", "one item"]]], "星": ["xīng", "star", "日 (was three stars) + 生 (sound). Stars in the sky.", [["✨", "日", "star"], ["🌱", "生", "sound"], ["⭐", "star"]]], "期": ["qī", "period of time", "其 (sound) + 月 moon. The moon's regular cycle = a set period. 星期 = week.", [["🔊", "其", "sound"], ["🌙", "月", "moon"], ["📅", "period"]]], "总": ["zǒng", "always; all", "Old form 總: many threads gathered into one → all, always.", [["🧵", "", "threads gathered"], ["❤️", "心", "heart"], ["🔁", "always; all"]]], "是": ["shì", "to be; yes", "日 sun + 正 straight. The sun right overhead = right, correct → yes, to be.", [["☀️", "日", "sun"], ["📏", "正", "straight"], ["✅", "to be; yes"]]], "阴": ["yīn", "shade; cloudy", "阝 hill + 月 moon. The dark, shady side of a hill → cloudy.", [["⛰️", "阝", "hill"], ["🌙", "月", "moon"], ["☁️", "cloudy"]]], "今": ["jīn", "now; today", "Its first picture is debated. Memory tip: people under one roof at this very moment.", [["🏠", "", "roof"], ["➖", "", "one moment"], ["⏱️", "now"]]], "终": ["zhōng", "end", "纟 thread + 冬 winter (sound; the end of the year). The end of the thread = end.", [["🧵", "纟", "thread"], ["❄️", "冬", "winter"], ["🏁", "end"]]], "于": ["yú", "at; to", "Its first picture is debated. A small word meaning “at, to”. 终于 = at the end = finally.", [["〰️", "", "shape (debated)"], ["➡️", "at; to"]]], "晴": ["qíng", "sunny", "日 sun + 青 blue (sound). Sun and blue sky = sunny.", [["☀️", "日", "sun"], ["🔵", "青", "blue"], ["🌤️", "sunny"]]], "现": ["xiàn", "to appear; now", "王 jade + 见 to see. The shine of jade becomes visible = appear, show.", [["💎", "王", "jade"], ["👀", "见", "see"], ["✨", "appear"]]], "气": ["qì", "air", "A picture of wavy lines of air or steam.", [["〰️", "", "wavy air lines"], ["💨", "air"]]], "好": ["hǎo", "good", "女 woman + 子 child. A mother with her child = good.", [["👩", "女", "woman"], ["👶", "子", "child"], ["👍", "good"]]], "得": ["de", "(after 觉, and in 好得很)", "彳 step + 旦 shell money + 寸 hand. Go and get money = get. In 觉得 it is light: de.", [["👣", "彳", "step"], ["🐚", "旦", "money"], ["✋", "寸", "hand"], ["💰", "get"]]], "很": ["hěn", "very", "彳 step + 艮 (sound). Borrowed to mean “very”.", [["👣", "彳", "step"], ["🔊", "艮", "sound"], ["💯", "very"]]], "我": ["wǒ", "I; me", "A picture of a weapon with a jagged blade. Borrowed for “I, me”.", [["🔱", "", "jagged weapon"], ["🙋", "I; me"]]], "们": ["men", "(plural ending)", "亻 person + 门 door (sound). Makes people plural: 我们, 你们.", [["🧑", "亻", "person"], ["🚪", "门", "door (sound)"], ["👥", "plural"]]], "去": ["qù", "to go", "Old form: a person 大 stepping out over a doorway → leave → go.", [["🧍", "", "person"], ["🚪", "厶", "doorway"], ["➡️", "go"]]], "爬": ["pá", "to climb", "爪 claw + 巴 (sound). Use your claws to climb.", [["🐾", "爪", "claw"], ["🔊", "巴", "sound"], ["🧗", "climb"]]], "山": ["shān", "mountain", "A picture of three mountain peaks.", [["⛰️", "", "three peaks"], ["🏔️", "mountain"]]], "怎": ["zěn", "how", "乍 (sound) + 心 heart. A question from the heart: how?", [["🔊", "乍", "sound"], ["❤️", "心", "heart"], ["❓", "how"]]], "么": ["me", "(question ending)", "A small, light word used in 什么 and 怎么.", [["🔹", "", "small word"], ["❓", "question ending"]]], "样": ["yàng", "shape; way", "木 wood + 羊 sheep (sound). The shape of something → the way it is.", [["🪵", "木", "wood"], ["🐑", "羊", "sheep (sound)"], ["🔷", "shape; way"]]], "啊": ["a", "ah (sound word)", "口 mouth + 阿 (sound). A soft “ah” at the end of a sentence.", [["👄", "口", "mouth"], ["🔊", "阿", "sound"], ["😮", "ah"]]], "又": ["yòu", "again", "A picture of a right hand. The hand again and again → again. 又…又… = both…and…", [["✋", "", "right hand"], ["🔁", "again"]]], "能": ["néng", "can; able", "First a picture of a bear, a strong animal → able, can.", [["🐻", "", "bear picture"], ["💪", "can"]]], "锻": ["duàn", "to forge", "钅 metal + 段 (sound; hammering). Hammer hot metal = forge.", [["⚙️", "钅", "metal"], ["🔨", "段", "hammering"], ["🔨", "forge"]]], "炼": ["liàn", "to refine", "火 fire + 柬 (sound). Melt in fire to make it pure. 锻炼 = forge and refine → exercise.", [["🔥", "火", "fire"], ["🔊", "柬", "sound"], ["🏋️", "refine"]]], "身": ["shēn", "body", "A picture of a person with a big belly.", [["🤰", "", "person with a big belly"], ["🧍", "body"]]], "体": ["tǐ", "body", "亻 person + 本 root. The root of a person = body.", [["🧑", "亻", "person"], ["🌳", "本", "root"], ["🧍", "body"]]], "照": ["zhào", "to shine; photo", "日 sun + 召 + 灬 fire. Light shining on something → take a photo.", [["☀️", "日", "sun"], ["🔥", "灬", "fire"], ["📷", "shine; photo"]]], "看": ["kàn", "to look", "手 a hand held over 目 an eye, shading it to look far.", [["✋", "手", "hand"], ["👁️", "目", "eye"], ["👀", "look"]]], "的": ["de", "of; 's", "白 white + 勺 (sound). First a bright target; now a small word for “of, 's”.", [["⚪", "白", "white"], ["🔊", "勺", "sound"], ["🎯", "of; 's"]]], "片": ["piàn", "flat piece", "Half of a tree 木, split into boards = a flat piece. 照片 = photo.", [["🪵", "", "half a tree"], ["🖼️", "flat piece"]]], "那": ["nà", "that", "阝 place + (sound). Used for “that”.", [["📍", "阝", "place"], ["🔊", "", "sound"], ["👉", "that"]]], "带": ["dài", "belt; to bring", "A picture of a belt with cloth hanging down. Things tied to your belt → bring.", [["🎗️", "", "belt with cloth"], ["🎒", "belt; bring"]]], "点": ["diǎn", "dot; a little", "占 (sound) + 灬 sparks. A small dot → a little.", [["🔊", "占", "sound"], ["🔥", "灬", "sparks"], ["🔴", "dot; a little"]]], "水": ["shuǐ", "water", "A picture of a flowing stream.", [["🌊", "", "flowing stream"], ["💧", "water"]]], "吃": ["chī", "to eat", "口 mouth + 乞 (sound). Put it in your mouth = eat.", [["👄", "口", "mouth"], ["🔊", "乞", "sound"], ["🍜", "eat"]]], "就": ["jiù", "then; right away", "京 tall building + 尤. First “go up close to”. Now a very common word for “then, right away” (现在就 = right now).", [["🏯", "京", "tall building"], ["🚶", "尤", "go"], ["🧗", "reach"]]], "回": ["huí", "to return", "A picture of a spiral, going round and back.", [["🌀", "", "spiral"], ["🔙", "return"]]], "穿": ["chuān", "to wear; go through", "穴 hole + 牙 tooth. A tooth making a hole = go through → put clothes on.", [["🕳️", "穴", "hole"], ["🦷", "牙", "tooth"], ["👕", "wear"]]], "运": ["yùn", "to move; transport", "辶 walking + 云 cloud (sound). Moving along like clouds.", [["🚶", "辶", "walk"], ["☁️", "云", "cloud"], ["🔄", "move"]]], "动": ["dòng", "to move", "云 (sound) + 力 strength. Use your strength = move.", [["🔊", "云", "sound"], ["💪", "力", "strength"], ["🏃", "move"]]], "鞋": ["xié", "shoe", "革 leather + 圭 (sound). Made of leather = shoe.", [["🐄", "革", "leather"], ["🔊", "圭", "sound"], ["👟", "shoe"]]], "拿": ["ná", "to take; hold", "合 together + 手 hand. A hand closing together = take, hold.", [["🤝", "合", "together"], ["✋", "手", "hand"], ["🤲", "take"]]], "大": ["dà", "big", "A picture of a person with arms and legs spread wide.", [["🙆", "", "arms spread wide"], ["🐘", "big"]]], "衣": ["yī", "clothes", "A picture of a jacket with a collar and sleeves.", [["👘", "", "jacket"], ["🧥", "clothes"]]], "要": ["yào", "to want", "It first showed a person with hands on the waist. Now it means “want”.", [["🙆", "", "hands on waist"], ["⭐", "want"]]], "不": ["bù", "not", "Its first picture is not certain (maybe a flower base). It means “not”. Say bú before a 4th tone: 不要, 不客气.", [["🌼", "", "flower base (not certain)"], ["🚫", "not"]]], "叫": ["jiào", "to call", "口 mouth + 丩 (sound). Call out with your mouth.", [["👄", "口", "mouth"], ["🔊", "丩", "sound"], ["📣", "call"]]], "一": ["yī", "one", "One line = one. Its tone changes: yí before a 4th tone (一下), yì before other tones (一直).", [["➖", "", "one line"], ["1️⃣", "one"]]], "雪": ["xuě", "snow", "雨 rain + 彐 a hand. Rain you can hold in your hand = snow.", [["🌧️", "雨", "rain"], ["✋", "彐", "hand"], ["❄️", "snow"]]], "给": ["gěi", "to give; for", "纟 thread + 合 together (sound). Passing something from hand to hand = give.", [["🧵", "纟", "thread"], ["🤝", "合", "together"], ["🎁", "give"]]], "打": ["dǎ", "to hit; to do", "扌 hand + 丁 nail (sound). Hitting a nail by hand = hit. Later “do”: 打工 do a job.", [["✋", "扌", "hand"], ["📌", "丁", "nail"], ["🔨", "hit; do"]]], "电": ["diàn", "electricity", "A picture of lightning coming from a cloud.", [["🌩️", "", "lightning from a cloud"], ["⚡", "electricity"]]], "话": ["huà", "words; talk", "讠 words + 舌 tongue. Words made with your tongue = talk.", [["💬", "讠", "words"], ["👅", "舌", "tongue"], ["💬", "talk"]]], "些": ["xiē", "some", "此 this + 二 a little. A few of these = some.", [["👉", "此", "this"], ["✌️", "二", "two"], ["🤏", "some"]]], "谁": ["shéi", "who", "讠 words + 隹 bird (sound). A question word: who?", [["💬", "讠", "words"], ["🐦", "隹", "bird (sound)"], ["❓", "who"]]], "您": ["nín", "you (polite)", "你 you + 心 heart. “You” said from the heart = polite you.", [["👉", "你", "you"], ["❤️", "心", "heart"], ["🙇", "you (polite)"]]], "张": ["zhāng", "to stretch; sheet", "弓 bow + 长 long. Pull a bow long = stretch. Also counts flat things: 一张照片.", [["🏹", "弓", "bow"], ["📏", "长", "long"], ["📄", "sheet"]]], "都": ["dōu", "all", "者 (sound) + 阝 city. A big city where everyone gathers → all.", [["🔊", "者", "sound"], ["🏙️", "阝", "city"], ["💯", "all"]]], "非": ["fēi", "not", "A picture of two wings pointing opposite ways → apart → not. 非常 = not ordinary = very.", [["↔️", "", "two wings apart"], ["🚫", "not"]]], "常": ["cháng", "often", "尚 (sound) + 巾 cloth. First a long flag; long-lasting → often.", [["🔊", "尚", "sound"], ["🧣", "巾", "cloth"], ["🔄", "often"]]], "飞": ["fēi", "to fly", "A picture of a bird's wings in flight.", [["🐦", "", "wings flying"], ["🕊️", "fly"]]], "她": ["tā", "she; her", "女 woman + 也 (sound).", [["👩", "女", "woman"], ["🔊", "也", "sound"], ["👩", "she"]]], "对": ["duì", "right; facing", "The old form showed a hand holding up a lamp to face someone → facing → right.", [["✋", "寸", "hand"], ["🕯️", "", "lamp"], ["✔️", "right; facing"]]], "拍": ["pāi", "to pat; take (a photo)", "扌 hand + 白 (sound). Pat with the hand → press the button → take a photo.", [["✋", "扌", "hand"], ["🔊", "白", "sound"], ["👏", "pat"]]], "直": ["zhí", "straight", "目 eye looking along a straight line.", [["👁️", "目", "eye"], ["📏", "", "straight line"], ["⬆️", "straight"]]], "感": ["gǎn", "to feel", "咸 all (sound) + 心 heart. Something moves your whole heart = feel.", [["🔊", "咸", "all (sound)"], ["❤️", "心", "heart"], ["🥹", "feel"]]], "兴": ["xìng", "interest", "Old form 興: four hands lifting together → rise up, get excited.", [["🙌", "", "hands lifting"], ["🤩", "interest"]]], "趣": ["qù", "fun", "走 run + 取 take (sound). Run to get what you like = fun.", [["🏃", "走", "run"], ["🤏", "取", "take"], ["🎉", "fun"]]], "经": ["jīng", "to pass through; experience", "纟 silk + 巠 (sound; the long threads on a loom). The long threads run all the way through → pass through, go through, experience.", [["🧵", "纟", "silk"], ["🧶", "巠", "loom threads"], ["🛤️", "go through"]]], "相": ["xiàng", "look; photo", "木 tree + 目 eye. An eye looking at a tree = look at → appearance. 照相 = take a photo.", [["🌳", "木", "tree"], ["👁️", "目", "eye"], ["🖼️", "look; photo"]]], "笑": ["xiào", "to laugh", "竹 bamboo + 夭 (a person bending). Bamboo bending in the wind like a person bent with laughter.", [["🎋", "竹", "bamboo"], ["🤸", "夭", "bending person"], ["😄", "laugh"]]], "起": ["qǐ", "to rise", "走 walk + 己 (sound). Stand up to walk = get up.", [["🚶", "走", "walk"], ["🔊", "己", "sound"], ["⬆️", "get up"]]], "来": ["lái", "to come", "Picture of a wheat plant. Borrowed for “come” (an old story says wheat came from heaven).", [["🌾", "", "wheat plant"], ["👋", "come"]]], "漂": ["piào", "(pretty)", "氵 water + 票 (sound). In 漂亮 it means pretty.", [["💧", "氵", "water"], ["🔊", "票", "sound"], ["✨", "pretty"]]], "亮": ["liang", "bright", "高 tall (top part) + 儿 person. A person standing high in the light = bright.", [["🗼", "高", "tall"], ["🧍", "儿", "person"], ["💡", "bright"]]], "有": ["yǒu", "to have", "A hand holding a piece of meat 月 = have.", [["✋", "", "hand"], ["🍖", "月", "meat"], ["🤲", "have"]]], "难": ["nán", "hard", "又 hand + 隹 bird. A bird that is hard to catch by hand = difficult.", [["✋", "又", "hand"], ["🐦", "隹", "bird"], ["😣", "hard"]]], "时": ["shí", "time", "日 sun + 寸 (measure). Measure by the sun = time.", [["☀️", "日", "sun"], ["✋", "寸", "measure"], ["⏰", "time"]]], "候": ["hòu", "to wait; time", "亻 person + (sound). A person waiting → a time, a season.", [["🧑", "亻", "person"], ["🔊", "", "sound"], ["⌛", "time; wait"]]], "知": ["zhī", "to know", "矢 arrow + 口 mouth. Words that hit the point like an arrow = know.", [["🏹", "矢", "arrow"], ["👄", "口", "mouth"], ["💡", "know"]]], "道": ["dào", "road; way; to say", "辶 walking + 首 head. The road your head leads you along. A road → a way → to say.", [["🚶", "辶", "walking"], ["👤", "首", "head"], ["🛣️", "way; to say"]]], "才": ["cái", "only then; talent", "A picture of a plant just breaking through the ground → just now, only then.", [["🌱", "", "sprout breaking ground"], ["⏳", "only then"]]], "吧": ["ba", "(suggestion word)", "口 mouth + 巴 (sound). A soft sound for “let's…”.", [["👄", "口", "mouth"], ["🔊", "巴", "sound"], ["💡", "let's"]]], "可": ["kě", "can; may", "口 mouth + a hook shape. Saying “yes” with your mouth = can, may.", [["👄", "口", "mouth"], ["🪝", "丁", "hook"], ["👍", "can; may"]]], "以": ["yǐ", "to use", "It first showed a person using a tool. 可以 = can, may.", [["🧑‍🔧", "", "person with a tool"], ["🔧", "use"]]], "比": ["bǐ", "to compare", "Two people standing side by side. You look to see who is bigger = compare.", [["🧍", "", "person"], ["🧍", "", "person"], ["⚖️", "compare"]]], "较": ["jiào", "to compare", "车 cart + 交 cross (sound). Put carts side by side to compare.", [["🛒", "车", "cart"], ["✖️", "交", "cross"], ["⚖️", "compare"]]], "下": ["xià", "down; below", "A short line under a long line = below, down.", [["⬇️", "", "line under a line"], ["⬇️", "down"]]], "你": ["nǐ", "you", "亻 person + 尔 (an old word for “you”).", [["🧑", "亻", "person"], ["👉", "尔", "you (old word)"], ["👉", "you"]]], "两": ["liǎng", "two", "A picture of a harness for two horses = two.", [["🐴", "", "harness for two horses"], ["2️⃣", "two"]]], "平": ["píng", "flat; level", "A picture of a level scale or still water = flat, level.", [["⚖️", "", "level scale"], ["➖", "flat; level"]]], "高": ["gāo", "tall; high", "A picture of a tall tower.", [["🗼", "", "tall tower"], ["📈", "tall; high"]]], "挺": ["tǐng", "straight; quite", "扌 hand + 廷 (sound). Stand up straight → quite, rather.", [["✋", "扌", "hand"], ["🔊", "廷", "sound"], ["👍", "quite"]]], "里": ["lǐ", "inside", "田 field + 土 earth. Where fields are = village → inside.", [["🌾", "田", "field"], ["🟫", "土", "earth"], ["📥", "inside"]]], "太": ["tài", "too", "大 big + a dot. Bigger than big = too much.", [["🧍", "大", "big"], ["➕", "丶", "extra dot"], ["😲", "too"]]], "阳": ["yáng", "sun", "阝 hill + 日 sun. The sunny side of a hill = sun.", [["⛰️", "阝", "hill"], ["☀️", "日", "sun"], ["🌞", "sun"]]], "站": ["zhàn", "to stand", "立 stand + 占 (sound). Also “station”.", [["🧍", "立", "stand"], ["🔊", "占", "sound"], ["🧍", "stand"]]], "树": ["shù", "tree", "木 tree + 对 (a hand planting). Plant a tree = tree.", [["🌳", "木", "tree"], ["✋", "对", "hand planting"], ["🌳", "tree"]]], "中": ["zhōng", "middle", "A picture of a flagpole in the centre of a circle = middle.", [["🎯", "", "flag in the centre"], ["🔘", "middle"]]], "间": ["jiān", "room; between", "门 door + 日 sun. Sunlight coming through the gap in a door = between, a room.", [["🚪", "门", "door"], ["☀️", "日", "sun"], ["🏠", "room"]]], "等": ["děng", "to wait", "竹 bamboo + 寺 (sound). Bamboo slips put in order → take your turn → wait.", [["🎋", "竹", "bamboo"], ["🔊", "寺", "sound"], ["✋", "wait"]]], "后": ["hòu", "behind; after", "Old form 後: 彳 step + 幺 small + 夂 slow feet. Small, slow steps = fall behind.", [["👣", "彳", "step"], ["🐌", "", "slow feet"], ["🔙", "behind"]]], "走": ["zǒu", "to walk", "A person swinging their arms above a foot 止.", [["🙆", "", "swinging arms"], ["🦶", "止", "foot"], ["🚶", "walk"]]], "过": ["guò", "to pass", "辶 walking + 寸 (sound). Walk past = pass.", [["🚶", "辶", "walk"], ["🔊", "寸", "sound"], ["↗️", "pass"]]], "人": ["rén", "person", "A picture of a person walking, seen from the side.", [["🚶", "", "person from the side"], ["🧑", "person"]]], "准": ["zhǔn", "accurate; ready", "冫 (was 氵 still water) + 隹 bird (sound). Level like still water = exact.", [["💧", "冫", "still water"], ["🐦", "隹", "bird (sound)"], ["🎯", "exact"]]], "备": ["bèi", "to prepare", "Old form showed a quiver full of arrows = ready.", [["🏹", "", "quiver of arrows"], ["✅", "prepare"]]], "告": ["gào", "to tell", "牛 ox + 口 mouth. Speaking over an ox offering → announce, tell.", [["🐂", "牛", "ox"], ["👄", "口", "mouth"], ["📢", "tell"]]], "诉": ["sù", "to tell", "讠 words + 斥 (sound).", [["💬", "讠", "words"], ["🔊", "斥", "sound"], ["🗣️", "tell"]]], "用": ["yòng", "to use", "Thought to draw a wooden bucket or fence. A tool → to use.", [["🪣", "", "bucket"], ["🛠️", "use"]]], "着": ["zhe", "(-ing)", "A small word after a verb: keep doing it. 看着 = keep looking.", [["👀", "目", "eye"], ["🔊", "", "sound"], ["⏳", "-ing"]]], "想": ["xiǎng", "to think", "相 look at (sound) + 心 heart. See it in your heart = think, imagine.", [["👀", "相", "look"], ["❤️", "心", "heart"], ["💭", "think"]]], "干": ["gàn", "to do", "A picture of a forked stick → do, work.", [["🔱", "", "forked stick"], ["🛠️", "do"]]], "什": ["shén", "what (in 什么)", "亻 person + 十 ten. First “a group of ten”; now used in 什么 = what.", [["🧑", "亻", "person"], ["🔟", "十", "ten"], ["❓", "what"]]], "几": ["jǐ", "how many; a few", "A picture of a small table. Borrowed for “how many, a few”.", [["🪑", "", "small table"], ["🔢", "how many"]]], "只": ["zhī", "one (animal)", "The old form 隻 showed a hand holding one bird. Now used to count animals.", [["✋", "", "hand"], ["🐦", "", "one bird"], ["🐱", "count animals"]]], "鸟": ["niǎo", "bird", "A picture of a bird.", [["🐦", "", "bird picture"], ["🐦", "bird"]]], "它": ["tā", "it", "A picture of a snake. Borrowed for “it” (animals and things).", [["🐍", "", "snake picture"], ["🐾", "it"]]], "哎": ["āi", "hey; oh", "口 mouth + 艾 (sound). A surprise sound.", [["👄", "口", "mouth"], ["🔊", "艾", "sound"], ["😮", "hey"]]], "手": ["shǒu", "hand", "A picture of a hand with five fingers.", [["🖐️", "", "five fingers"], ["✋", "hand"]]], "机": ["jī", "machine", "木 wood + 几 (sound). First a part of a wooden loom → machine. 手机 = hand machine.", [["🪵", "木", "wood"], ["🔊", "几", "sound"], ["⚙️", "machine"]]], "没": ["méi", "not have", "氵 water + a hand. A hand going under the water → gone → not have.", [["💧", "氵", "water"], ["✋", "殳", "hand"], ["🫥", "not have"]]], "咖": ["kā", "(ca- in coffee)", "口 + 加 (sound). Only used for sound: 咖啡 kāfēi = coffee.", [["👄", "口", "mouth"], ["🔊", "加", "sound"], ["☕", "ca-"]]], "啡": ["fēi", "(-ffee in coffee)", "口 + 非 (sound). Only used for sound: 咖啡 = coffee.", [["👄", "口", "mouth"], ["🔊", "非", "sound"], ["☕", "-ffee"]]], "厅": ["tīng", "hall", "厂 building + 丁 (sound). A big room = hall. 咖啡厅 = café.", [["🏠", "厂", "building"], ["🔊", "丁", "sound"], ["🏛️", "hall"]]], "发": ["fā", "to send", "Old form 發: shooting from a bow = send out.", [["🏹", "弓", "bow"], ["➡️", "", "shoot out"], ["📤", "send"]]], "短": ["duǎn", "short", "矢 arrow + 豆 (sound). Short like an arrow. 短信 = short letter = text message.", [["🏹", "矢", "arrow"], ["🔊", "豆", "sound"], ["📏", "short"]]], "信": ["xìn", "letter; trust", "亻 person + 言 words. A person keeping their word = trust → letter.", [["🧑", "亻", "person"], ["💬", "言", "words"], ["✉️", "letter; trust"]]], "收": ["shōu", "to receive", "丩 (sound) + 攵 hand. Take in with the hand = receive.", [["🔊", "丩", "sound"], ["✋", "攵", "hand"], ["📥", "receive"]]], "到": ["dào", "to arrive", "至 arrive + 刂 (sound). Get there = arrive, up to.", [["🎯", "至", "arrive"], ["🔊", "刂", "sound"], ["🏁", "arrive; until"]]], "封": ["fēng", "to seal; (letters)", "圭 piles of earth + 寸 hand. Mark a border → seal. Counts letters and emails.", [["🟫", "圭", "earth"], ["✋", "寸", "hand"], ["✉️", "seal"]]], "邮": ["yóu", "post; mail", "由 (sound) + 阝 town. The post station in a town.", [["🔊", "由", "sound"], ["🏘️", "阝", "town"], ["📮", "post"]]], "件": ["jiàn", "item", "亻 person + 牛 ox. A person cutting an ox into pieces → item. 邮件 = mail item.", [["🧑", "亻", "person"], ["🐂", "牛", "ox"], ["📦", "item"]]], "也": ["yě", "also", "Its first picture is not certain (maybe a snake shape). Now it means “also”.", [["🐍", "", "snake shape (not certain)"], ["➕", "also"]]], "已": ["yǐ", "already", "Its first picture is debated. Means “already”: 已经.", [["〰️", "", "shape (debated)"], ["✔️", "already"]]], "哈": ["hā", "ha (laugh)", "口 mouth + 合 (sound). The sound of laughing.", [["👄", "口", "mouth"], ["🔊", "合", "sound"], ["😆", "ha"]]], "国": ["guó", "country", "囗 border + 玉 jade. Treasure inside the borders = country.", [["🔲", "囗", "border"], ["💎", "玉", "jade"], ["🗺️", "country"]]], "音": ["yīn", "sound", "言 speech with an extra line in the mouth = sound.", [["💬", "言", "speech"], ["➖", "", "line in the mouth"], ["🔊", "sound"]]], "乐": ["yuè", "music", "Old form 樂: silk strings on a wooden frame = a musical instrument. Read lè for “happy”.", [["🧵", "", "silk strings"], ["🪵", "木", "wood"], ["🎵", "music"]]], "明": ["míng", "bright; clear", "日 sun + 月 moon. Both lights together = bright, clear. 表明: show it clearly.", [["☀️", "日", "sun"], ["🌙", "月", "moon"], ["💡", "bright; clear"]]], "午": ["wǔ", "noon", "First a picture of a pestle. Borrowed for noon. 下午 = afternoon.", [["🥣", "", "pestle"], ["🕛", "noon"]]], "会": ["huì", "can; meet", "The old form showed a lid on a pot: things coming together → meet → can do.", [["🍲", "", "lid on a pot"], ["🤝", "meet; can"]]], "门": ["mén", "door", "A picture of a two-panel door.", [["🚪", "", "double door"], ["🚪", "door"]]], "票": ["piào", "ticket", "First meant flying sparks. Now a ticket or slip of paper.", [["✨", "", "flying sparks"], ["🪧", "示", "sign"], ["🎫", "ticket"]]], "七": ["qī", "seven", "First a picture of a cross cut. Borrowed for seven.", [["✂️", "", "a cut"], ["🕖", "seven"]]], "多": ["duō", "many", "Two pieces of meat 夕 stacked up = many, lots.", [["🍖", "夕", "piece"], ["🍖", "夕", "piece"], ["➕", "many"]]], "结": ["jié", "to tie; end", "纟 thread + 吉 (sound). Tie a knot → finish.", [["🧵", "纟", "thread"], ["🔊", "吉", "sound"], ["🪢", "tie; end"]]], "束": ["shù", "to bundle", "木 wood with a rope tied round it = a bundle → tie up → end. 结束 = finish.", [["🪵", "木", "wood"], ["🪢", "口", "rope"], ["🎀", "bundle"]]], "听": ["tīng", "to listen", "口 mouth + 斤 (sound). The old form 聽 had 耳 ear.", [["👂", "耳", "ear (old form)"], ["🔊", "斤", "sound"], ["🎧", "listen"]]], "完": ["wán", "to finish", "宀 roof + 元 (sound). A house with the roof on = finished.", [["🏠", "宀", "roof"], ["🔊", "元", "sound"], ["✅", "finish"]]], "饭": ["fàn", "meal; rice", "饣 food + 反 (sound).", [["🍚", "饣", "food"], ["🔊", "反", "sound"], ["🍚", "meal"]]], "尝": ["cháng", "to taste", "尚 (sound) + old 旨 tasty.", [["🔊", "尚", "sound"], ["😋", "", "tasty"], ["😋", "taste"]]], "做": ["zuò", "to do; make", "亻 person + 故 (sound). A person doing something = do, make.", [["🧑", "亻", "person"], ["🔊", "故", "sound"], ["🛠️", "do; make"]]], "菜": ["cài", "vegetable; dish", "艹 plant + 采 pick. Plants you pick = vegetables → dishes of food.", [["🌿", "艹", "plant"], ["✋", "采", "pick"], ["🥬", "dish"]]], "觉": ["jué", "sleep / to feel", "见 see at the bottom. Read jiào in 睡觉 (sleep) and jué in 觉得 (feel).", [["👀", "见", "see"], ["😴", "sleep; feel"]]]};
+function picRow(c){
+  const p=E[c]&&E[c][3];if(!p)return '';
+  const parts=p.slice(0,-1),r=p[p.length-1];
+  return '<div class="pic">'+parts.map(x=>`<div class="pt"><div class="e">${x[0]}</div>${x[1]?`<div class="c han">${x[1]}</div>`:''}<small>${x[2]}</small></div>`).join('<span class="op">+</span>')+
+    `<span class="op">=</span><div class="pt res"><div class="e">${r[0]}</div><div class="c han">${c}</div><small>${r[1]}</small></div></div>`;
+}
+
+/* ---------- WORDS (Let's learn boxes, Lessons 1–10) ---------- */
+const W=[{"L": 1, "h": "在", "p": "zài", "g": "at; in; on", "e": "📍"}, {"L": 1, "h": "街上", "p": "jiē shàng", "g": "on the street", "e": "🛣"}, {"L": 1, "h": "白家月", "p": "Bái Jiāyuè", "g": "Bai Jiayue (name)", "e": "👩"}, {"L": 1, "h": "和", "p": "hé", "g": "and", "e": "🔗"}, {"L": 1, "h": "李文", "p": "Lǐ Wén", "g": "Li Wen (name)", "e": "👨"}, {"L": 1, "h": "边……边……", "p": "biān...biān...", "g": "while doing...; doing two things at once", "e": "🚶💬"}, {"L": 1, "h": "散步", "p": "sànbù", "g": "take a walk", "e": "🚶"}, {"L": 1, "h": "聊天儿", "p": "liáotiānr", "g": "chat; talk", "e": "💬"}, {"L": 1, "h": "这个星期", "p": "zhège xīngqī", "g": "this week", "e": "📅"}, {"L": 1, "h": "总是", "p": "zǒngshì", "g": "always", "e": "🔁"}, {"L": 1, "h": "阴天", "p": "yīntiān", "g": "cloudy day", "e": "☁"}, {"L": 1, "h": "今天", "p": "jīntiān", "g": "today", "e": "📆"}, {"L": 1, "h": "终于", "p": "zhōngyú", "g": "finally", "e": "🏁"}, {"L": 1, "h": "晴", "p": "qíng", "g": "sunny; clear", "e": "☀"}, {"L": 1, "h": "现在", "p": "xiànzài", "g": "now", "e": "⏰"}, {"L": 1, "h": "天气", "p": "tiānqì", "g": "weather", "e": "🌦"}, {"L": 1, "h": "好得很", "p": "hǎo de hěn", "g": "extremely good", "e": "👍"}, {"L": 1, "h": "我们", "p": "wǒmen", "g": "we; us", "e": "👥"}, {"L": 1, "h": "去", "p": "qù", "g": "go", "e": "➡"}, {"L": 1, "h": "爬山", "p": "páshān", "g": "go hiking; climb a mountain", "e": "⛰"}, {"L": 1, "h": "怎么样", "p": "zěnmeyàng", "g": "how about...?; how is...?", "e": "🤔"}, {"L": 1, "h": "好啊", "p": "hǎo a", "g": "sure; good idea", "e": "👌"}, {"L": 1, "h": "又……又……", "p": "yòu...yòu...", "g": "both...and...", "e": "✌"}, {"L": 1, "h": "能", "p": "néng", "g": "can; be able to", "e": "💪"}, {"L": 1, "h": "锻炼", "p": "duànliàn", "g": "exercise", "e": "🏃"}, {"L": 1, "h": "身体", "p": "shēntǐ", "g": "body", "e": "🏋"}, {"L": 1, "h": "照", "p": "zhào", "g": "take a photograph", "e": "📷"}, {"L": 1, "h": "好看的", "p": "hǎokàn de", "g": "good-looking; attractive", "e": "😍"}, {"L": 1, "h": "照片", "p": "zhàopiàn", "g": "photograph", "e": "🖼"}, {"L": 1, "h": "那", "p": "nà", "g": "then; that", "e": "👉"}, {"L": 1, "h": "带", "p": "dài", "g": "bring; take", "e": "🎒"}, {"L": 1, "h": "点儿", "p": "diǎnr", "g": "a little; some", "e": "🤏"}, {"L": 1, "h": "水", "p": "shuǐ", "g": "water", "e": "💧"}, {"L": 1, "h": "吃的", "p": "chī de", "g": "something to eat", "e": "🍙"}, {"L": 1, "h": "现在就", "p": "xiànzài jiù", "g": "right now", "e": "🚀"}, {"L": 1, "h": "回去", "p": "huíqù", "g": "go back", "e": "🏠"}, {"L": 1, "h": "穿上", "p": "chuān shàng", "g": "put on", "e": "👕"}, {"L": 1, "h": "运动鞋", "p": "yùndòngxié", "g": "sports shoes; sneakers", "e": "👟"}, {"L": 1, "h": "拿上", "p": "ná shàng", "g": "take and bring along", "e": "🤲"}, {"L": 1, "h": "大衣", "p": "dàyī", "g": "overcoat", "e": "🧥"}, {"L": 1, "h": "要不要", "p": "yào bu yào", "g": "would you like to...?; shall we...?", "e": "🙋"}, {"L": 1, "h": "叫", "p": "jiào", "g": "call; invite", "e": "📣"}, {"L": 1, "h": "一雪", "p": "Yīxuě", "g": "Yixue (name)", "e": "👧"}, {"L": 1, "h": "给", "p": "gěi", "g": "give; to", "e": "🎁"}, {"L": 1, "h": "打电话", "p": "dǎ diànhuà", "g": "make a phone call", "e": "📞"}, {"L": 2, "h": "这些", "p": "zhèxiē", "g": "these", "e": "👇"}, {"L": 2, "h": "是", "p": "shì", "g": "be; is; are", "e": "🟰"}, {"L": 2, "h": "谁", "p": "shéi", "g": "who", "e": "❓"}, {"L": 2, "h": "您", "p": "nín", "g": "you (polite)", "e": "🙇"}, {"L": 2, "h": "张张", "p": "zhāngzhāng", "g": "every photograph; each one", "e": "🗂"}, {"L": 2, "h": "都", "p": "dōu", "g": "all; both", "e": "💯"}, {"L": 2, "h": "非常", "p": "fēicháng", "g": "very; extremely", "e": "🔥"}, {"L": 2, "h": "一飞", "p": "Yīfēi", "g": "Yifei (name)", "e": "👦"}, {"L": 2, "h": "她", "p": "tā", "g": "she; her", "e": "👩"}, {"L": 2, "h": "对", "p": "duì", "g": "toward; regarding; for", "e": "🎯"}, {"L": 2, "h": "拍照", "p": "pāizhào", "g": "take photographs", "e": "📸"}, {"L": 2, "h": "一直", "p": "yìzhí", "g": "always; all along", "e": "⏩"}, {"L": 2, "h": "感兴趣", "p": "gǎn xìngqù", "g": "be interested in", "e": "🤩"}, {"L": 2, "h": "经常", "p": "jīngcháng", "g": "often; frequently", "e": "🔄"}, {"L": 2, "h": "照相", "p": "zhàoxiàng", "g": "take a photograph", "e": "📷"}, {"L": 2, "h": "大笑", "p": "dàxiào", "g": "laugh loudly", "e": "😂"}, {"L": 2, "h": "这张", "p": "zhè zhāng", "g": "this one; this photograph", "e": "🖼"}, {"L": 2, "h": "看起来", "p": "kàn qǐlái", "g": "look; appear", "e": "👀"}, {"L": 2, "h": "漂亮", "p": "piàoliang", "g": "beautiful; pretty", "e": "🌸"}, {"L": 2, "h": "有点儿", "p": "yǒudiǎnr", "g": "a little; somewhat", "e": "🤏"}, {"L": 2, "h": "难看", "p": "nánkàn", "g": "unattractive; ugly", "e": "😖"}, {"L": 2, "h": "那时候", "p": "nà shíhou", "g": "at that time", "e": "🕰"}, {"L": 2, "h": "不知道", "p": "bù zhīdào", "g": "not know", "e": "🤷"}, {"L": 2, "h": "给我", "p": "gěi wǒ", "g": "to me; for me", "e": "📥"}, {"L": 2, "h": "这样", "p": "zhèyàng", "g": "like this; this way", "e": "👈"}, {"L": 2, "h": "才", "p": "cái", "g": "only then; only in this way", "e": "☝"}, {"L": 2, "h": "的照片", "p": "de zhàopiàn", "g": "the photograph that...", "e": "🖼"}, {"L": 2, "h": "时候", "p": "shíhou", "g": "time; when", "e": "⌛"}, {"L": 2, "h": "照张照片", "p": "zhào zhāng zhàopiàn", "g": "take a photograph", "e": "📷"}, {"L": 2, "h": "吧", "p": "ba", "g": "particle for a suggestion", "e": "💡"}, {"L": 2, "h": "可以", "p": "kěyǐ", "g": "can; may", "e": "🙆"}, {"L": 2, "h": "比较", "p": "bǐjiào", "g": "compare", "e": "⚖"}, {"L": 2, "h": "一下", "p": "yíxià", "g": "a little; briefly", "e": "⏱"}, {"L": 2, "h": "你们", "p": "nǐmen", "g": "you (plural)", "e": "👥"}, {"L": 2, "h": "两个", "p": "liǎng ge", "g": "two", "e": "👬"}, {"L": 2, "h": "水平", "p": "shuǐpíng", "g": "level; skill level", "e": "📊"}, {"L": 2, "h": "高", "p": "gāo", "g": "high", "e": "📈"}, {"L": 2, "h": "山上", "p": "shān shàng", "g": "on the mountain", "e": "🏔"}, {"L": 2, "h": "挺", "p": "tǐng", "g": "quite; pretty", "e": "😊"}, {"L": 2, "h": "这里", "p": "zhèlǐ", "g": "here", "e": "📍"}, {"L": 2, "h": "这边", "p": "zhèbiān", "g": "this side; here", "e": "⬅"}, {"L": 2, "h": "太阳", "p": "tàiyáng", "g": "sun", "e": "🌞"}, {"L": 2, "h": "那边", "p": "nàbiān", "g": "over there", "e": "🔭"}, {"L": 2, "h": "站", "p": "zhàn", "g": "stand", "e": "🧍"}, {"L": 2, "h": "这些树", "p": "zhèxiē shù", "g": "these trees", "e": "🌳"}, {"L": 2, "h": "中间", "p": "zhōngjiān", "g": "middle; among", "e": "🔘"}, {"L": 2, "h": "等一下", "p": "děng yíxià", "g": "wait a moment", "e": "✋"}, {"L": 2, "h": "后边", "p": "hòubian", "g": "behind; at the back", "e": "🔙"}, {"L": 2, "h": "走过去", "p": "zǒu guòqù", "g": "walk over; walk past", "e": "👣"}, {"L": 2, "h": "两个人", "p": "liǎng ge rén", "g": "two people", "e": "👫"}, {"L": 2, "h": "准备好", "p": "zhǔnbèi hǎo", "g": "be ready; get ready", "e": "✅"}, {"L": 2, "h": "告诉", "p": "gàosu", "g": "tell", "e": "🗣"}, {"L": 2, "h": "不用", "p": "bú yòng", "g": "don't need to", "e": "🙅"}, {"L": 2, "h": "看着", "p": "kànzhe", "g": "look at; keep looking at", "e": "🧐"}, {"L": 2, "h": "想干什么", "p": "xiǎng gàn shénme", "g": "whatever you want to do", "e": "🎈"}, {"L": 2, "h": "都可以", "p": "dōu kěyǐ", "g": "anything is okay", "e": "🆗"}, {"L": 2, "h": "树上", "p": "shù shàng", "g": "on the tree", "e": "🌲"}, {"L": 2, "h": "飞来", "p": "fēi lái", "g": "fly over; come flying", "e": "🕊"}, {"L": 2, "h": "几只", "p": "jǐ zhī", "g": "several (animals/birds)", "e": "🐦🐦"}, {"L": 2, "h": "鸟", "p": "niǎo", "g": "bird", "e": "🐦"}, {"L": 2, "h": "它们", "p": "tāmen", "g": "they; them (animals/things)", "e": "🐾"}, {"L": 2, "h": "就", "p": "jiù", "g": "then; in that case", "e": "⏭"}, {"L": 2, "h": "哎", "p": "āi", "g": "oh; hey", "e": "😮"}, {"L": 2, "h": "手机", "p": "shǒujī", "g": "mobile phone", "e": "📱"}, {"L": 2, "h": "没电", "p": "méi diàn", "g": "battery is dead", "e": "🔋❌"}, {"L": 2, "h": "电", "p": "diàn", "g": "electricity; power", "e": "⚡"}, {"L": 3, "h": "咖啡厅", "p": "kāfēitīng", "g": "café; coffee shop", "e": "☕"}, {"L": 3, "h": "发短信", "p": "fā duǎnxìn", "g": "send a text message", "e": "📨"}, {"L": 3, "h": "收到", "p": "shōudào", "g": "receive", "e": "📩"}, {"L": 3, "h": "那封", "p": "nà fēng", "g": "that (email/letter)", "e": "✉"}, {"L": 3, "h": "邮件", "p": "yóujiàn", "g": "email; mail", "e": "📧"}, {"L": 3, "h": "也", "p": "yě", "g": "also; too", "e": "➕"}, {"L": 3, "h": "已经", "p": "yǐjīng", "g": "already", "e": "✔"}, {"L": 3, "h": "比", "p": "bǐ", "g": "than; compared with", "e": "📏"}, {"L": 3, "h": "她的", "p": "tā de", "g": "her", "e": "👜"}, {"L": 3, "h": "难过", "p": "nánguò", "g": "sad; upset", "e": "😢"}, {"L": 3, "h": "哈哈", "p": "hāhā", "g": "haha", "e": "😆"}, {"L": 3, "h": "中国", "p": "Zhōngguó", "g": "China; Chinese", "e": "🏯"}, {"L": 3, "h": "音乐", "p": "yīnyuè", "g": "music", "e": "🎵"}, {"L": 3, "h": "有没有", "p": "yǒu méiyǒu", "g": "is there...or not?", "e": "❔"}, {"L": 3, "h": "一张", "p": "yì zhāng", "g": "one (flat thing: ticket, photo)", "e": "🎫"}, {"L": 3, "h": "明天", "p": "míngtiān", "g": "tomorrow", "e": "🌅"}, {"L": 3, "h": "下午", "p": "xiàwǔ", "g": "afternoon", "e": "🌇"}, {"L": 3, "h": "音乐会", "p": "yīnyuèhuì", "g": "concert", "e": "🎻"}, {"L": 3, "h": "门票", "p": "ménpiào", "g": "admission ticket", "e": "🎟"}, {"L": 3, "h": "七点多", "p": "qī diǎn duō", "g": "a little after seven", "e": "🕖"}, {"L": 3, "h": "结束", "p": "jiéshù", "g": "finish; end", "e": "🔚"}, {"L": 3, "h": "听完", "p": "tīng wán", "g": "finish listening", "e": "🎧"}, {"L": 3, "h": "来我家", "p": "lái wǒ jiā", "g": "come to my home", "e": "🏡"}, {"L": 3, "h": "吃饭", "p": "chīfàn", "g": "eat; have a meal", "e": "🍚"}, {"L": 3, "h": "尝尝", "p": "chángchang", "g": "have a taste; try", "e": "😋"}, {"L": 3, "h": "做", "p": "zuò", "g": "make; cook; do", "e": "🍳"}, {"L": 3, "h": "中国菜", "p": "Zhōngguó cài", "g": "Chinese food", "e": "🥟"}, {"L": 3, "h": "你觉得怎么样", "p": "nǐ juéde zěnmeyàng", "g": "what do you think?", "e": "💭"}];
+W.forEach((w,i)=>{w.i=i;w.s=w.h.replace(/[()（）]/g,'');w.m=w.g});
+
+/* ---------- HELPERS ---------- */
+function $(id){return document.getElementById(id)}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function plain(p){return p.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/v/g,'u').replace(/[^a-z]/g,'')}
+function answers(p){const a=[plain(p)];const s=plain(p.replace(/\([^)]*\)/g,''));if(s&&s!==a[0])a.push(s);return a}
+function pick(){let w;do{w=CUR[Math.floor(Math.random()*CUR.length)]}while(w===lastPick&&CUR.length>1);lastPick=w;return w}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function addStar(){stars++;const s=$('stars');s.textContent='⭐ '+stars;s.classList.remove('pop');void s.offsetWidth;s.classList.add('pop');try{localStorage.setItem('v142_stars',stars)}catch(e){}}
+
+/* ---------- VOICE ---------- */
+function loadV(){
+  if(!('speechSynthesis' in window))return;
+  allV=speechSynthesis.getVoices();
+  const zh=allV.filter(v=>/^(zh|cmn)/i.test(v.lang)||/chinese|mandarin|普通话|中文/i.test(v.name));
+  const sel=$('voiceSel');
+  let saved=-1;try{saved=parseInt(localStorage.getItem('v142_voice'),10)}catch(e){}
+  sel.innerHTML=zh.length?zh.map(v=>`<option value="${allV.indexOf(v)}">${esc(v.name)} (${v.lang})</option>`).join(''):'<option value="-1">No Chinese voice on this device</option>';
+  let idx=-1;
+  if(saved>=0&&allV[saved]&&zh.includes(allV[saved]))idx=saved;
+  else if(zh.length)idx=allV.indexOf(zh.find(v=>/zh[-_]CN/i.test(v.lang))||zh[0]);
+  voice=idx>=0?allV[idx]:null;if(idx>=0)sel.value=idx;
+}
+function say(t){
+  if(!('speechSynthesis' in window)||!t)return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';if(voice)u.voice=voice;u.rate=.85;
+  speechSynthesis.speak(u);
+}
+
+/* ---------- LESSON FILTER ---------- */
+const LT={1:"Words 1–45",2:"Words 46–112",3:"Words 113–142"};
+function setLesson(v){
+  CUR=v==='all'?W.slice():W.filter(w=>w.L===+v);
+  try{localStorage.setItem('v142_les',v)}catch(e){}
+  fcOrder=CUR.map((_,i)=>i);fcI=0;fcRender();
+  mNew();qNew();dNew();
+}
+
+/* ---------- FLASHCARDS ---------- */
+function fcRender(){
+  const w=CUR[fcOrder[fcI]];
+  $('fc').classList.remove('open');
+  $('fcCount').innerHTML=(fcI+1)+' of '+CUR.length+` <span class="lesTag">Part ${w.L}</span>`;
+  $('fcEmoji').textContent=w.e;
+  $('fcHan').textContent=w.h;
+  $('fcPy').textContent=w.p;
+  $('fcMean').textContent=w.g;
+  $('fcChars').innerHTML=[...w.h].filter(c=>E[c]).map(c=>{const e=E[c];return `<div class="ch"><div class="chBig han">${c}</div><div><b>${e[0]}</b> · ${e[1]}${picRow(c)}<p>${e[2]}</p></div></div>`}).join('');
+  $('fcNote').innerHTML=w.n?`<div class="note">${w.n}</div>`:'';
+}
+function fcGo(d){fcI=(fcI+d+CUR.length)%CUR.length;fcRender()}
+function fcShuffle(){fcOrder=shuffle(CUR.map((_,i)=>i));fcI=0;fcRender()}
+function fcFind(q){
+  q=q.trim();if(!q)return;
+  const pq=plain(q);
+  const i=CUR.findIndex(w=>w.h.includes(q)||(pq&&plain(w.p).startsWith(pq))||w.g.toLowerCase().includes(q.toLowerCase()));
+  if(i<0)return;
+  fcOrder=CUR.map((_,k)=>k);fcI=i;fcRender();
+}
+
+/* ---------- TAP MATCH ---------- */
+function mNew(){
+  mN=Math.min(5,CUR.length);
+  const round=shuffle(CUR).slice(0,mN);mDone=0;mSel=null;
+  $('mL').innerHTML=shuffle(round).map(w=>`<button class="tile han" data-k="${w.i}" data-s="L">${w.h}<span class="tpy">${w.p}</span></button>`).join('');
+  $('mR').innerHTML=shuffle(round).map(w=>`<button class="tile" data-k="${w.i}" data-s="R"><span class="em">${w.e}</span>${w.g}</button>`).join('');
+  $('mMsg').textContent='Tap a word, then tap its meaning.';
+}
+function mTap(b){
+  if(!b||b.classList.contains('ok'))return;
+  if(!mSel||mSel.dataset.s===b.dataset.s){
+    if(mSel)mSel.classList.remove('sel');
+    mSel=b;b.classList.add('sel');if(b.dataset.s==='L')say(W[+b.dataset.k].s);return;
+  }
+  mTries++;
+  if(mSel.dataset.k===b.dataset.k){
+    mRight++;addStar();[mSel,b].forEach(x=>{x.classList.remove('sel');x.classList.add('ok')});
+    const w=W[+b.dataset.k];say(w.s);mDone++;mSel=null;
+    $('mMsg').textContent=mDone===mN?'🎉 Great job! Tap New round for more.':`✓ ${w.h} ${w.p}`;
+  }else{
+    const a=mSel;a.classList.add('shake');b.classList.add('shake');
+    setTimeout(()=>{a.classList.remove('shake','sel');b.classList.remove('shake')},340);
+    mSel=null;$('mMsg').textContent='Oops! Try again.';
+  }
+  $('mScore').textContent=mRight+' right of '+mTries+' tries';
+}
+
+/* ---------- TYPE PINYIN ---------- */
+function tNew(){
+  tQ=pick();tAnswered=false;
+  $('tEmoji').textContent=tQ.e;$('tHan').textContent=tQ.h;$('tHint').textContent=tQ.g;
+  $('tIn').value='';$('tFb').className='fb';$('tFb').innerHTML='';$('tBtn').textContent='Check';
+}
+function tCheck(){
+  if(tAnswered){tNew();$('tIn').focus();return}
+  const v=$('tIn').value;if(!plain(v))return;
+  tAnswered=true;tTotal++;
+  const ok=answers(tQ.p).includes(plain(v));if(ok){tScore++;addStar()}
+  $('tFb').className='fb '+(ok?'ok':'no');
+  $('tFb').innerHTML=(ok?'🎉 Correct!':'Answer:')+` <span class="py">${tQ.p}</span><div>${tQ.g}</div>`;
+  $('tScore').textContent=tScore+' / '+tTotal;
+  $('tBtn').textContent='Next';say(tQ.s);
+}
+
+/* ---------- QUIZ ---------- */
+function qNew(){
+  qAnswered=false;
+  const w=pick(), rev=Math.random()<.4;
+  const pool=CUR.length>=4?CUR:W;
+  const opts=shuffle([w,...shuffle(pool.filter(x=>x!==w)).slice(0,3)]);
+  qQ={w,rev};
+  $('qPrompt').innerHTML=rev?`<div class="fcEmoji">${w.e}</div><div class="qGloss">${w.g}</div><div class="muted">Which word is this?</div>`:`<div class="qHan han">${w.h}</div><div class="py">${w.p}</div><div class="muted">What does it mean?</div>`;
+  $('qOpts').innerHTML=opts.map(o=>`<button class="opt${rev?' han':''}" data-k="${o.i}">${rev?`${o.h}<span class="tpy">${o.p}</span>`:`<span class="em">${o.e}</span>${o.g}`}</button>`).join('');
+  $('qFb').className='fb';$('qFb').innerHTML='';$('qNext').style.display='none';
+}
+function qTap(b){
+  if(!b||qAnswered)return;qAnswered=true;qTotal++;
+  const w=qQ.w, ok=+b.dataset.k===w.i;if(ok){qScore++;addStar()}
+  b.classList.add(ok?'ok':'no');
+  if(!ok)$('qOpts').querySelector(`[data-k="${w.i}"]`).classList.add('ok');
+  $('qFb').className='fb '+(ok?'ok':'no');
+  $('qFb').innerHTML=`${ok?'🎉 ':''}<span class="han" style="font-size:22px">${w.h}</span> <span class="py">${w.p}</span><div>${w.e} ${w.g}</div>`;
+  $('qScore').textContent=qScore+' / '+qTotal;
+  $('qNext').style.display='block';say(w.s);
+}
+
+/* ---------- DRAG & DROP ---------- */
+function dNew(){
+  dN=Math.min(5,CUR.length);
+  const round=shuffle(CUR).slice(0,dN);dDone=0;dSel=null;
+  $('dChips').innerHTML=shuffle(round).map(w=>`<div class="chip han" data-k="${w.i}">${w.h}<span class="tpy">${w.p}</span></div>`).join('');
+  $('dSlots').innerHTML=round.map(w=>`<div class="slot" data-k="${w.i}"><span class="drop han"></span><span class="gl"><span class="em">${w.e}</span>${w.g}</span></div>`).join('');
+  $('dMsg').textContent='';
+}
+function dPlace(chip,slot){
+  if(!chip||!slot||slot.classList.contains('done')||chip.classList.contains('used'))return;
+  chip.classList.remove('sel');dSel=null;
+  if(chip.dataset.k===slot.dataset.k){
+    const w=W[+chip.dataset.k];addStar();
+    slot.classList.add('done');slot.querySelector('.drop').textContent=w.h;
+    chip.classList.add('used');say(w.s);dDone++;
+    $('dMsg').textContent=dDone===dN?'🎉 All done! Tap New round for more.':`✓ ${w.h} ${w.p}`;
+  }else{
+    slot.classList.add('shake');setTimeout(()=>slot.classList.remove('shake'),340);
+    $('dMsg').textContent='Oops! Try another one.';
+  }
+}
+function slotAt(x,y){const el=document.elementFromPoint(x,y);return el?el.closest('.slot'):null}
+function clearOver(){document.querySelectorAll('.slot.over').forEach(s=>s.classList.remove('over'))}
+function dDown(e){
+  const c=e.target.closest('.chip');if(!c||c.classList.contains('used'))return;
+  drag={c,x:e.clientX,y:e.clientY,g:null};
+  try{c.setPointerCapture(e.pointerId)}catch(err){}
+}
+function dMove(e){
+  if(!drag)return;
+  if(!drag.g&&Math.hypot(e.clientX-drag.x,e.clientY-drag.y)>6){
+    drag.g=drag.c.cloneNode(true);drag.g.className='chip han ghost';document.body.appendChild(drag.g);
+    drag.c.classList.add('lift');if(dSel){dSel.classList.remove('sel');dSel=null}
+  }
+  if(drag.g){
+    e.preventDefault();
+    drag.g.style.left=e.clientX+'px';drag.g.style.top=e.clientY+'px';
+    clearOver();const s=slotAt(e.clientX,e.clientY);if(s&&!s.classList.contains('done'))s.classList.add('over');
+  }
+}
+function dUp(e){
+  if(!drag)return;
+  const d=drag;drag=null;
+  if(d.g){
+    const s=slotAt(e.clientX,e.clientY);
+    d.g.remove();d.c.classList.remove('lift');clearOver();
+    if(s)dPlace(d.c,s);
+  }else{
+    if(dSel===d.c){d.c.classList.remove('sel');dSel=null;return}
+    if(dSel)dSel.classList.remove('sel');
+    dSel=d.c;d.c.classList.add('sel');say(W[+d.c.dataset.k].s);
+    $('dMsg').textContent='Now tap its meaning below.';
+  }
+}
+function dCancel(){if(!drag)return;if(drag.g)drag.g.remove();drag.c.classList.remove('lift');clearOver();drag=null}
+
+/* ---------- INIT ---------- */
+if('speechSynthesis' in window){speechSynthesis.onvoiceschanged=loadV}
+loadV();
+try{stars=parseInt(localStorage.getItem('v142_stars'),10)||0}catch(e){stars=0}
+$('stars').textContent='⭐ '+stars;
+$('lesSel').innerHTML='<option value="all">All parts ('+W.length+' words)</option>'+Object.keys(LT).map(k=>`<option value="${k}">Part ${k}: ${LT[k]} (${W.filter(w=>w.L===+k).length})</option>`).join('');
+let savedLes='all';try{savedLes=localStorage.getItem('v142_les')||'all'}catch(e){}
+if(![...$('lesSel').options].some(o=>o.value===savedLes))savedLes='all';
+$('lesSel').value=savedLes;
+$('lesSel').addEventListener('change',e=>setLesson(e.target.value));
+$('voiceSel').addEventListener('change',()=>{const i=+$('voiceSel').value;voice=i>=0?allV[i]:null;try{localStorage.setItem('v142_voice',i)}catch(e){}say('你好')});
+$('voiceBtn').addEventListener('click',()=>$('voiceBox').classList.toggle('on'));
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('on'));$(b.dataset.t).classList.add('on');
+  if('speechSynthesis' in window)speechSynthesis.cancel();
+}));
+$('fc').addEventListener('click',e=>{if(e.target.closest('.say'))return;$('fc').classList.toggle('open')});
+$('fcSay').addEventListener('click',()=>say(CUR[fcOrder[fcI]].s));
+$('fcPrev').addEventListener('click',()=>fcGo(-1));
+$('fcNext').addEventListener('click',()=>fcGo(1));
+$('fcShuf').addEventListener('click',fcShuffle);
+$('fcSearch').addEventListener('input',e=>fcFind(e.target.value));
+$('mL').addEventListener('click',e=>mTap(e.target.closest('.tile')));
+$('mR').addEventListener('click',e=>mTap(e.target.closest('.tile')));
+$('mNewBtn').addEventListener('click',mNew);
+$('qOpts').addEventListener('click',e=>qTap(e.target.closest('.opt')));
+$('qNext').addEventListener('click',qNew);
+$('dChips').addEventListener('pointerdown',dDown);
+window.addEventListener('pointermove',dMove,{passive:false});
+window.addEventListener('pointerup',dUp);
+window.addEventListener('pointercancel',dCancel);
+$('dSlots').addEventListener('click',e=>{const s=e.target.closest('.slot');if(s&&dSel)dPlace(dSel,s)});
+$('dNewBtn').addEventListener('click',dNew);
+setLesson(savedLes);
+$('mScore').textContent='Match the words';
+</script>
+</body>
+</html>

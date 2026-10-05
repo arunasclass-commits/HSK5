@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aruna's French Classes — Présent &amp; Imparfait</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#3f5f9e;--blue-dark:#2c4470;--red:#e0475a;--gold:#f5b342;--green:#4caf6d;--grey:#8a94a6;--card:#fff;--radius:18px;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{margin:0;padding:14px;font-family:'Nunito',sans-serif;color:#2b2f3a;min-height:100vh;
+ background:linear-gradient(160deg,#eaf1ff 0%,#fff8ee 55%,#ffeef0 100%);}
+h1,h2,h3,.btn,.sec-btn,.badge{font-family:'Baloo 2',sans-serif;}
+#app{max-width:720px;margin:0 auto;}
+.header{text-align:center;padding:8px 4px 10px;}
+.header h1{margin:0;font-size:1.6rem;color:var(--blue-dark);}
+.header .sub{margin:0;font-family:'Baloo 2',sans-serif;font-weight:700;color:var(--red);letter-spacing:.5px;}
+.flag{height:6px;border-radius:4px;background:linear-gradient(90deg,#3f5f9e 0 33%,#fff 33% 66%,#e0475a 66%);margin:8px 0 14px;}
+.card{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:0 3px 0 #d8dfec;margin-bottom:14px;}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.sec-btn{background:var(--card);border:none;border-radius:var(--radius);padding:12px;text-align:left;box-shadow:0 3px 0 #d8dfec;cursor:pointer;display:flex;flex-direction:column;gap:3px;color:#2b2f3a;}
+.sec-btn .n{color:var(--grey);font-size:.75rem;font-weight:700;}
+.sec-btn .v{color:var(--blue-dark);font-weight:800;font-size:1rem;}
+.sec-btn .best{font-size:.78rem;color:var(--green);font-weight:700;}
+.sec-btn .acts{display:flex;gap:6px;margin-top:6px;}
+.mini{border:none;border-radius:10px;padding:6px 10px;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;color:#fff;background:var(--blue);}
+.mini.alt{background:var(--grey);}
+.btn{background:var(--blue);color:#fff;border:none;border-radius:14px;padding:11px 18px;font-weight:700;font-size:.95rem;cursor:pointer;box-shadow:0 3px 0 var(--blue-dark);}
+.btn.sec{background:var(--grey);box-shadow:0 3px 0 #6b7385;}
+.btn.green{background:var(--green);box-shadow:0 3px 0 #327349;}
+.btn:disabled{opacity:.5;cursor:not-allowed;}
+.btn-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px;}
+.topbar{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.back{background:var(--card);border:none;border-radius:12px;padding:8px 12px;font-weight:700;cursor:pointer;color:var(--blue-dark);box-shadow:0 2px 0 #d8dfec;}
+.ttl{font-weight:800;color:var(--blue-dark);font-family:'Baloo 2',sans-serif;flex:1;}
+.prog{display:flex;justify-content:space-between;font-size:.8rem;color:var(--grey);font-weight:700;margin-bottom:8px;}
+.verb{font-family:'Baloo 2',sans-serif;font-size:1.5rem;font-weight:800;color:var(--blue-dark);text-transform:uppercase;}
+.verb small{font-size:.85rem;color:var(--grey);text-transform:none;font-weight:600;}
+.badge{display:inline-block;padding:3px 12px;border-radius:20px;color:#fff;font-weight:700;font-size:.85rem;margin:4px 0 10px;}
+.badge.pres{background:var(--blue);} .badge.imp{background:var(--gold);}
+.row{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.row label{width:96px;font-weight:800;color:var(--blue-dark);font-family:'Baloo 2',sans-serif;}
+.row label small{display:block;font-family:'Nunito',sans-serif;font-weight:600;color:var(--grey);font-size:.68rem;}
+.row input{flex:1;min-width:120px;font-size:1.05rem;padding:9px 12px;border:2px solid #d5deef;border-radius:12px;font-family:'Nunito',sans-serif;}
+.row input:focus{outline:none;border-color:var(--blue);}
+.row.ok input{border-color:var(--green);background:#e2f7e8;}
+.row.bad input{border-color:var(--red);background:#fde3e6;}
+.fix{width:100%;padding-left:106px;color:var(--green);font-weight:800;font-size:.9rem;margin-top:-4px;}
+.accents{position:sticky;top:0;z-index:5;display:flex;gap:5px;flex-wrap:wrap;justify-content:center;background:#ffffffee;padding:6px;border-radius:12px;margin-bottom:10px;box-shadow:0 2px 0 #d8dfec;}
+.accents button{border:none;background:#eaf1ff;color:var(--blue-dark);font-size:1.05rem;font-weight:700;border-radius:8px;min-width:32px;height:34px;cursor:pointer;}
+.fb{text-align:center;font-weight:800;margin-top:8px;}
+.fb.good{color:var(--green);} .fb.bad{color:var(--red);}
+.done{text-align:center;} .big{font-size:2.4rem;font-weight:800;color:var(--blue-dark);font-family:'Baloo 2',sans-serif;} .medal{font-size:3rem;}
+.stepline{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eef1f8;font-size:.92rem;}
+.mis{padding:8px 0;border-bottom:1px solid #eef1f8;font-size:.92rem;}
+.mis .ctx{color:var(--grey);font-size:.78rem;} .mis .u{color:var(--red);text-decoration:line-through;} .mis .c{color:var(--green);font-weight:800;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin-bottom:6px;}
+th,td{padding:6px 8px;border-bottom:1px solid #eef1f8;text-align:left;} th{color:var(--blue-dark);}
+details{margin-bottom:14px;} summary{cursor:pointer;font-weight:800;color:var(--blue-dark);font-family:'Baloo 2',sans-serif;}
+.bar{height:10px;background:#e5eaf5;border-radius:6px;overflow:hidden;margin-top:6px;} .bar i{display:block;height:100%;background:var(--green);}
+footer{text-align:center;color:var(--grey);font-size:.78rem;margin:22px 0 8px;font-weight:700;}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const PRON=["je","tu","il / elle","nous","vous","ils / elles"];
+const PREFIX=[["j'","je "],["tu "],["il ","elle "],["nous "],["vous "],["ils ","elles "]];
+const VERBS=[
+{inf:"aller",en:"to go",elide:true,pres:["vais","vas","va","allons","allez","vont"],imp:["allais","allais","allait","allions","alliez","allaient"]},
+{inf:"avoir",en:"to have",elide:true,pres:["ai","as","a","avons","avez","ont"],imp:["avais","avais","avait","avions","aviez","avaient"]},
+{inf:"dire",en:"to say",pres:["dis","dis","dit","disons","dites","disent"],imp:["disais","disais","disait","disions","disiez","disaient"]},
+{inf:"écrire",en:"to write",elide:true,pres:["écris","écris","écrit","écrivons","écrivez","écrivent"],imp:["écrivais","écrivais","écrivait","écrivions","écriviez","écrivaient"]},
+{inf:"faire",en:"to do / make",pres:["fais","fais","fait","faisons","faites","font"],imp:["faisais","faisais","faisait","faisions","faisiez","faisaient"]},
+{inf:"lire",en:"to read",pres:["lis","lis","lit","lisons","lisez","lisent"],imp:["lisais","lisais","lisait","lisions","lisiez","lisaient"]},
+{inf:"mettre",en:"to put",pres:["mets","mets","met","mettons","mettez","mettent"],imp:["mettais","mettais","mettait","mettions","mettiez","mettaient"]},
+{inf:"ouvrir",en:"to open",elide:true,pres:["ouvre","ouvres","ouvre","ouvrons","ouvrez","ouvrent"],imp:["ouvrais","ouvrais","ouvrait","ouvrions","ouvriez","ouvraient"]},
+{inf:"partir",en:"to leave",pres:["pars","pars","part","partons","partez","partent"],imp:["partais","partais","partait","partions","partiez","partaient"]},
+{inf:"pouvoir",en:"can / to be able",pres:["peux","peux","peut","pouvons","pouvez","peuvent"],imp:["pouvais","pouvais","pouvait","pouvions","pouviez","pouvaient"]},
+{inf:"prendre",en:"to take",pres:["prends","prends","prend","prenons","prenez","prennent"],imp:["prenais","prenais","prenait","prenions","preniez","prenaient"]},
+{inf:"recevoir",en:"to receive",pres:["reçois","reçois","reçoit","recevons","recevez","reçoivent"],imp:["recevais","recevais","recevait","recevions","receviez","recevaient"]},
+{inf:"savoir",en:"to know",pres:["sais","sais","sait","savons","savez","savent"],imp:["savais","savais","savait","savions","saviez","savaient"]},
+{inf:"sortir",en:"to go out",pres:["sors","sors","sort","sortons","sortez","sortent"],imp:["sortais","sortais","sortait","sortions","sortiez","sortaient"]},
+{inf:"venir",en:"to come",pres:["viens","viens","vient","venons","venez","viennent"],imp:["venais","venais","venait","venions","veniez","venaient"]},
+{inf:"voir",en:"to see",pres:["vois","vois","voit","voyons","voyez","voient"],imp:["voyais","voyais","voyait","voyions","voyiez","voyaient"]},
+{inf:"vouloir",en:"to want",pres:["veux","veux","veut","voulons","voulez","veulent"],imp:["voulais","voulais","voulait","voulions","vouliez","voulaient"]}
+];
+const SECTIONS=[];for(let i=0;i<VERBS.length;i+=2)SECTIONS.push(i+1<VERBS.length?[i,i+1]:[i]);
+const TNAME={pres:"Présent",imp:"Imparfait"};
+const app=document.getElementById('app');
+let lastInput=null,S=null,cur=null;
+
+function best(){try{return JSON.parse(localStorage.getItem('ac_best')||'{}')}catch(e){return{}}}
+function saveBest(si,sc){try{const b=best();if(!(b[si]>=sc)){b[si]=sc;localStorage.setItem('ac_best',JSON.stringify(b));}}catch(e){}}
+function norm(s){return s.toLowerCase().replace(/[’‘`´]/g,"'").replace(/\s+/g," ").trim();}
+function clean(ans,pi){let a=norm(ans).replace(/^j' /,"j'");for(const p of PREFIX[pi]){if(a.startsWith(p)){a=a.slice(p.length);break;}}return a;}
+function header(){return `<div class="header"><h1>🇫🇷 Aruna's French Classes</h1><p class="sub">ChineseFrench</p></div><div class="flag"></div>`;}
+function footer(){return `<footer>ChineseFrench · Aruna's French Classes</footer>`;}
+
+/* ---------- HOME ---------- */
+function renderHome(){
+  const b=best();let tot=0;SECTIONS.forEach((s,i)=>{tot+=b[i]||0;});
+  const max=VERBS.length*12;
+  let h=header()+`<div class="card"><b>Présent &amp; Imparfait</b> — 17 verbes, 9 sections.<br>
+  Chaque verbe : écris les 6 personnes au <b>présent</b>, puis à l'<b>imparfait</b>. Les accents comptent !
+  <div class="prog" style="margin-top:8px"><span>Score total (meilleurs résultats)</span><span>${tot} / ${max}</span></div>
+  <div class="bar"><i style="width:${Math.round(tot/max*100)}%"></i></div></div>
+  <details class="card"><summary>Rappel : l'imparfait</summary>
+  <p>Radical = forme <b>nous</b> du présent − <b>ons</b> + terminaisons :</p>
+  <table><tr><th>je</th><th>tu</th><th>il/elle</th><th>nous</th><th>vous</th><th>ils/elles</th></tr><tr><td>-ais</td><td>-ais</td><td>-ait</td><td>-ions</td><td>-iez</td><td>-aient</td></tr></table>
+  <p>Ex. nous parl<b>ons</b> → je parlais, tu parlais… <br>Exception : <b>être</b> → j'étais, tu étais, il était, nous étions, vous étiez, ils étaient.</p></details>
+  <div class="grid">`;
+  SECTIONS.forEach((s,i)=>{
+    const mx=s.length*12;
+    h+=`<div class="sec-btn"><span class="n">Section ${i+1}</span><span class="v">${s.map(v=>VERBS[v].inf).join(' · ')}</span>
+    <span class="best">${b[i]!=null?'Meilleur : '+b[i]+' / '+mx:'Pas encore fait'}</span>
+    <span class="acts"><button class="mini alt" onclick="renderStudy(${i})">📖 Étudier</button><button class="mini" onclick="startSection(${i})">✏️ Test</button></span></div>`;
+  });
+  app.innerHTML=h+`</div>`+footer();
+}
+
+/* ---------- STUDY ---------- */
+function renderStudy(si){
+  let h=header()+`<div class="topbar"><button class="back" onclick="renderHome()">← Accueil</button><div class="ttl">Section ${si+1} — étudier</div></div>`;
+  SECTIONS[si].forEach(vi=>{const v=VERBS[vi];
+    h+=`<div class="card"><div class="verb">${v.inf} <small>${v.en}</small></div><table><tr><th></th><th>Présent</th><th>Imparfait</th></tr>`;
+    PRON.forEach((p,i)=>{const l=(i===0&&v.elide)?"j'":p;const sp=l==="j'"?"":" ";h+=`<tr><td>${l}</td><td>${sp?'':''}${v.pres[i]}</td><td>${v.imp[i]}</td></tr>`;});
+    h+=`</table></div>`;});
+  h+=`<div class="btn-row"><button class="btn" onclick="startSection(${si})">✏️ Commencer le test</button></div>`;
+  app.innerHTML=h+footer();
+}
+
+/* ---------- CARD RUNNER ---------- */
+function accentBar(){return `<div class="accents">${"é è ê ë à â ç î ï ô œ ù û".split(" ").map(c=>`<button type="button" onmousedown="event.preventDefault()" onclick="ins('${c}')">${c}</button>`).join('')}</div>`;}
+function ins(c){
+  let el=lastInput;if(!el||el.disabled){el=document.querySelector('.row input:not([disabled])');}
+  if(!el)return;el.focus();const s=el.selectionStart??el.value.length,e=el.selectionEnd??s;
+  el.value=el.value.slice(0,s)+c+el.value.slice(e);el.setSelectionRange(s+1,s+1);
+}
+function showCard(o){
+  cur={rows:o.rows,checked:false,onDone:o.onDone};
+  let h=header()+`<div class="topbar"><button class="back" onclick="renderHome()">← Accueil</button><div class="ttl">${o.top}</div></div>`+accentBar()+
+  `<div class="card"><div class="prog"><span>${o.progress}</span><span id="cardscore"></span></div>${o.title}`;
+  o.rows.forEach((r,i)=>{h+=`<div class="row" id="r${i}"><label>${r.label}${r.small?`<small>${r.small}</small>`:''}</label><input id="in${i}" data-i="${i}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"></div>`;});
+  h+=`<div class="fb" id="fb"></div><div class="btn-row"><button class="btn" id="chk" onclick="checkCard()">Vérifier</button><button class="btn green" id="nxt" style="display:none" onclick="nextCard()">${o.nextLabel}</button></div></div>`;
+  app.innerHTML=h+footer();
+  document.querySelectorAll('.row input').forEach(inp=>{
+    inp.addEventListener('focus',()=>lastInput=inp);
+    inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();if(cur.checked)return;const n=document.getElementById('in'+(+inp.dataset.i+1));if(n)n.focus();else checkCard();}});
+  });
+  const f=document.getElementById('in0');if(f)f.focus();
+}
+function checkCard(){
+  if(cur.checked)return;cur.checked=true;let ok=0;
+  cur.rows.forEach((r,i)=>{
+    const inp=document.getElementById('in'+i);r.user=inp.value;inp.disabled=true;
+    r.ok=clean(inp.value,r.pi)===norm(r.correct);if(r.ok)ok++;
+    const row=document.getElementById('r'+i);row.classList.add(r.ok?'ok':'bad');
+    if(!r.ok)row.insertAdjacentHTML('beforeend',`<div class="fix">✔ ${r.show}</div>`);
+  });
+  cur.score=ok;
+  document.getElementById('cardscore').textContent=`✅ ${ok} / ${cur.rows.length}`;
+  const fb=document.getElementById('fb');
+  fb.textContent=ok===cur.rows.length?'🎉 Parfait !':`${ok} / ${cur.rows.length} — regarde les corrections`;
+  fb.className='fb '+(ok===cur.rows.length?'good':'bad');
+  document.getElementById('chk').style.display='none';document.getElementById('nxt').style.display='inline-block';
+}
+function nextCard(){cur.onDone(cur.rows);}
+
+/* ---------- SECTION TEST ---------- */
+function startSection(si){
+  const steps=[];SECTIONS[si].forEach(vi=>{steps.push({vi,t:'pres'});steps.push({vi,t:'imp'});});
+  S={si,steps,k:0,results:[]};renderStep();
+}
+function makeRows(vi,t){
+  const v=VERBS[vi],forms=t==='pres'?v.pres:v.imp;
+  return PRON.map((p,i)=>{const el=i===0&&v.elide;return{label:el?"j'":p,pi:i,correct:forms[i],show:(el?"j'":p+" ")+forms[i],inf:v.inf,tense:TNAME[t]};});
+}
+function renderStep(){
+  const st=S.steps[S.k],v=VERBS[st.vi];
+  showCard({top:`Section ${S.si+1}`,progress:`Exercice ${S.k+1} / ${S.steps.length}`,
+    title:`<div class="verb">${v.inf} <small>${v.en}</small></div><span class="badge ${st.t}">${TNAME[st.t]}</span>`,
+    rows:makeRows(st.vi,st.t),nextLabel:S.k+1<S.steps.length?'Suivant →':'Voir le résultat',
+    onDone(res){S.results.push({vi:st.vi,t:st.t,rows:res});S.k++;S.k<S.steps.length?renderStep():renderResult();}});
+}
+
+/* ---------- RESULT + REVIEW ---------- */
+function renderResult(){
+  const total=S.results.length*6;let sc=0;S.results.forEach(r=>r.rows.forEach(x=>{if(x.ok)sc++;}));
+  saveBest(S.si,sc);
+  const pct=Math.round(sc/total*100),medal=pct>=90?'🏆':pct>=70?'🥈':pct>=50?'🥉':'💪';
+  const mis=[];S.results.forEach(r=>r.rows.forEach(x=>{if(!x.ok)mis.push(x);}));
+  let h=header()+`<div class="topbar"><button class="back" onclick="renderHome()">← Accueil</button><div class="ttl">Section ${S.si+1} — résultat</div></div>
+  <div class="card done"><div class="medal">${medal}</div><div class="big">${sc} / ${total}</div><div>${pct}% de bonnes réponses</div></div>
+  <div class="card"><h3 style="margin:0 0 6px">Score par exercice</h3>`;
+  S.results.forEach(r=>{const n=r.rows.filter(x=>x.ok).length;h+=`<div class="stepline"><span>${VERBS[r.vi].inf} — ${TNAME[r.t]}</span><b>${n} / 6</b></div>`;});
+  h+=`</div><div class="card"><h3 style="margin:0 0 6px">Revoir les erreurs (${mis.length})</h3>`;
+  if(!mis.length)h+=`<p>Aucune erreur — bravo ! 🎉</p>`;
+  mis.forEach(x=>{h+=`<div class="mis"><div class="ctx">${x.inf} · ${x.tense}</div><span class="u">${x.user.trim()||'(vide)'}</span> → <span class="c">${x.show}</span></div>`;});
+  h+=`</div><div class="btn-row">`;
+  if(mis.length)h+=`<button class="btn green" onclick="startPractice()">🔁 Refaire mes erreurs</button>`;
+  h+=`<button class="btn" onclick="startSection(${S.si})">🔄 Recommencer</button><button class="btn sec" onclick="renderHome()">Accueil</button></div>`;
+  app.innerHTML=h+footer();
+  window.__mis=mis;
+}
+function startPractice(){
+  const rows=window.__mis.map(x=>({label:x.label,small:`${x.inf} · ${x.tense}`,pi:x.pi,correct:x.correct,show:x.show,inf:x.inf,tense:x.tense}));
+  showCard({top:'Refaire mes erreurs',progress:`${rows.length} formes à revoir`,title:`<div class="verb">Mes erreurs</div>`,rows,nextLabel:'Continuer',
+    onDone(res){const left=res.filter(x=>!x.ok);window.__mis=left;renderPracticeEnd(res.length,left.length);}});
+}
+function renderPracticeEnd(n,left){
+  let h=header()+`<div class="card done"><div class="medal">${left?'💪':'🏆'}</div><div class="big">${n-left} / ${n}</div>
+  <p>${left?left+' erreur(s) restante(s). Continue !':'Toutes les erreurs sont corrigées !'}</p></div><div class="btn-row">`;
+  if(left)h+=`<button class="btn green" onclick="startPractice()">🔁 Encore</button>`;
+  h+=`<button class="btn" onclick="renderHome()">Accueil</button></div>`;
+  app.innerHTML=h+footer();
+}
+window.__t={VERBS,SECTIONS};
+renderHome();
+</script>
+</body>
+</html>

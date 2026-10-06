@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HSK5 Words 3481–3520</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--ink:#1f2328;--muted:#646a73;--line:#e4e1da;--soft:#f6f4f0;--card:#ffffff;--seal:#b8322a;--jade:#1d7a62;--jadeSoft:#e3f3ee;--gold:#a8741a;--goldSoft:#fbf1dc;--sealSoft:#fbe8e6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171a;--ink:#ecebe7;--muted:#a3a7ad;--line:#33373d;--soft:#22262b;--card:#1d2024;--seal:#e0665c;--jade:#4cc3a1;--jadeSoft:#1b332c;--gold:#e0b25a;--goldSoft:#3a2f1a;--sealSoft:#3b2220}}
+:root[data-theme="dark"]{--bg:#15171a;--ink:#ecebe7;--muted:#a3a7ad;--line:#33373d;--soft:#22262b;--card:#1d2024;--seal:#e0665c;--jade:#4cc3a1;--jadeSoft:#1b332c;--gold:#e0b25a;--goldSoft:#3a2f1a;--sealSoft:#3b2220}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.45;-webkit-tap-highlight-color:transparent}
+.han{font-family:"Noto Serif SC","Songti SC","SimSun","PingFang SC","Microsoft YaHei",serif}
+.wrap{max-width:560px;margin:0 auto;padding:10px 12px 40px}
+header{display:flex;align-items:center;gap:10px;padding:6px 0 8px}
+.seal{width:42px;height:42px;border-radius:8px;background:var(--seal);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:700;flex:none}
+header h1{font-size:17px;margin:0;line-height:1.2}
+header p{margin:0;color:var(--muted);font-size:13px}
+.voice{margin-left:auto;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 9px;font:inherit;font-size:14px;cursor:pointer}
+#voiceBox{display:none;background:var(--soft);border-radius:10px;padding:10px;margin-bottom:8px;font-size:14px}
+#voiceBox.on{display:block}
+#voiceBox select{width:100%;margin-top:6px;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:14px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:6px;padding:6px 0 8px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:1 0 auto;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 13px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+nav button.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+section{display:none}section.on{display:block}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.row{display:flex;gap:8px;align-items:center}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:10px 12px;font:inherit;font-size:15px;font-weight:700;cursor:pointer;min-height:44px}
+.btn.main{background:var(--jade);border-color:var(--jade);color:#fff}
+.btn.grow{flex:1}
+.muted{color:var(--muted);font-size:14px}
+.score{font-size:14px;color:var(--muted);text-align:right}
+
+/* Flashcards */
+.search{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:15px;margin-bottom:8px}
+.fc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;cursor:pointer;user-select:none}
+.fcTop{display:flex;justify-content:space-between;align-items:center}
+.say{border:none;background:var(--soft);color:var(--ink);border-radius:999px;width:40px;height:40px;font-size:18px;cursor:pointer;flex:none}
+.fcHan{text-align:center;font-size:64px;font-weight:700;line-height:1.15;padding:10px 0 4px;letter-spacing:.04em}
+.tapHint{text-align:center;color:var(--muted);font-size:13px}
+.back{display:none;border-top:1px dashed var(--line);margin-top:10px;padding-top:10px}
+.fc.open .back{display:block}.fc.open .tapHint{display:none}
+.py{font-size:22px;color:var(--seal);font-weight:700;text-align:center}
+.mean{text-align:center;font-size:17px;margin:2px 0 10px}
+.ch{display:flex;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.chBig{font-size:34px;line-height:1;width:48px;height:48px;border:2px solid var(--seal);color:var(--seal);border-radius:6px;display:grid;place-items:center;flex:none}
+.ch b{color:var(--seal)}
+.ch p{margin:3px 0 0;font-size:14.5px}
+.note{background:var(--goldSoft);border-radius:10px;padding:9px 11px;margin-top:8px;font-size:14.5px}
+.note .han{font-size:16px}
+.fcNav{margin-top:10px}
+
+/* Tap match */
+.grid2{display:grid;grid-template-columns:1fr 1.35fr;gap:8px}
+.col{display:flex;flex-direction:column;gap:7px}
+.tile{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px;min-height:50px;font:inherit;font-size:14.5px;cursor:pointer;text-align:center}
+.tile.han{font-size:22px}
+.tile.sel,.chip.sel{border-color:var(--gold);background:var(--goldSoft)}
+.tile.ok{border-color:var(--jade);background:var(--jadeSoft);opacity:.55;pointer-events:none}
+.shake{animation:sh .32s}
+@keyframes sh{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.msg{margin:10px 0;font-size:14.5px;min-height:20px}
+
+/* Type + quiz */
+.qCard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.qHan{font-size:54px;font-weight:700;line-height:1.2}
+.qGloss{font-size:19px;font-weight:700;margin:6px 0 2px}
+.inp{width:100%;font:inherit;font-size:20px;padding:12px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);text-align:center;margin:10px 0 8px}
+.fb{margin-top:10px;border-radius:10px;padding:9px;font-size:15px;display:none}
+.fb.ok{display:block;background:var(--jadeSoft)}
+.fb.no{display:block;background:var(--sealSoft)}
+.fb .py{font-size:19px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.opt{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:10px 8px;min-height:56px;font:inherit;font-size:15px;cursor:pointer}
+.opt.han{font-size:24px}
+.opt.ok{border-color:var(--jade);background:var(--jadeSoft)}
+.opt.no{border-color:var(--seal);background:var(--sealSoft)}
+
+/* Drag */
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:10px;background:var(--soft);border-radius:12px;min-height:66px}
+.chip{touch-action:none;user-select:none;-webkit-user-select:none;border:1.5px solid var(--line);background:var(--card);border-radius:10px;padding:6px 12px;font-size:24px;cursor:grab;min-width:56px;text-align:center}
+.chip.used{visibility:hidden}
+.chip.lift{opacity:.3}
+.ghost{position:fixed;left:0;top:0;pointer-events:none;z-index:50;transform:translate(-50%,-60%) scale(1.1);box-shadow:0 6px 18px rgba(0,0,0,.25);border-color:var(--gold)}
+.slots{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.slot{display:flex;align-items:center;gap:10px;border:1.5px dashed var(--line);border-radius:10px;padding:6px 10px;min-height:52px;cursor:pointer;background:var(--card)}
+.slot .drop{width:74px;min-height:38px;border-radius:8px;background:var(--soft);display:grid;place-items:center;font-size:21px;flex:none}
+.slot .gl{font-size:14.5px}
+.slot.over{border-color:var(--gold);border-style:solid;background:var(--goldSoft)}
+.slot.done{border-style:solid;border-color:var(--jade);background:var(--jadeSoft)}
+.slot.done .drop{background:transparent;color:var(--jade);font-weight:700}
+.pic{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:6px 0 2px}
+.pt{background:var(--soft);border-radius:8px;padding:4px 6px;text-align:center;min-width:54px}
+.pt .e{font-size:26px;line-height:1.15}
+.pt .c{font-size:15px;line-height:1.1}
+.pt small{display:block;font-size:11.5px;color:var(--muted);line-height:1.2}
+.pt.res{background:var(--jadeSoft);border:1.5px solid var(--jade)}
+.op{font-weight:700;color:var(--muted);font-size:16px}
+.picTag{font-size:11.5px;color:var(--muted);margin-top:2px}
+@media (max-width:370px){.fcHan{font-size:54px}.tile.han{font-size:20px}.chip{font-size:21px}}
+@media (prefers-reduced-motion:reduce){.shake{animation:none}}
+</style>
+<style>
+.bar{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+.bar select{flex:1;padding:9px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:15px;font-weight:700}
+.stars{background:var(--goldSoft);color:var(--gold);border-radius:999px;padding:7px 12px;font-weight:700;font-size:15px;white-space:nowrap}
+.stars{display:none!important}
+.fcEmoji{text-align:center;font-size:54px;line-height:1.1;margin-top:6px}
+.lesTag{font-size:12.5px;background:var(--soft);border-radius:6px;padding:2px 7px;color:var(--muted)}
+.tile .em,.slot .em,.opt .em{font-size:20px;margin-right:4px}
+.qHan{font-size:60px}
+.tpy{display:block;font-family:"Atkinson Hyperlegible",system-ui,sans-serif;font-size:13px;font-weight:700;color:var(--seal);line-height:1.25;margin-top:2px}
+.pop{animation:pop .5s}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.25)}100%{transform:scale(1)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="seal han">词</div>
+  <div><h1>HSK5 Words 3481–3520</h1><p>40 words in 7 families · 真诚 to 中华</p></div>
+  <button class="voice" id="voiceBtn" aria-label="Voice settings">🔊 Voice</button>
+</header>
+<div id="voiceBox">
+  Tap 🔊 once to allow sound. If it sounds English, pick a Chinese voice:
+  <select id="voiceSel"></select>
+</div>
+<div class="bar">
+  <select id="lesSel" aria-label="Choose family"></select>
+  <span class="stars" id="stars">⭐ 0</span>
+</div>
+
+<nav>
+  <button class="active" data-t="cards">Cards</button>
+  <button data-t="match">Match</button>
+  <button data-t="quiz">Quiz</button>
+  <button data-t="drag">Drag</button>
+</nav>
+
+<section id="cards" class="on">
+  <input class="search" id="fcSearch" placeholder="Find a word (hanzi, pinyin or English)" autocomplete="off">
+  <div class="fc" id="fc">
+    <div class="fcTop"><span class="muted" id="fcCount"></span><button class="say" id="fcSay" aria-label="Play sound">🔊</button></div>
+    <div class="fcEmoji" id="fcEmoji"></div>
+    <div class="fcHan han" id="fcHan"></div>
+    <div class="tapHint">Tap the card to see the meaning and the story of each character</div>
+    <div class="back">
+      <div class="py" id="fcPy"></div>
+      <div class="mean" id="fcMean"></div>
+      <div id="fcChars"></div>
+      <div id="fcNote"></div>
+      <div class="picTag">Pictures are memory aids, not the original ancient drawings.</div>
+    </div>
+  </div>
+  <div class="row fcNav">
+    <button class="btn grow" id="fcPrev">◀ Back</button>
+    <button class="btn" id="fcShuf">Shuffle</button>
+    <button class="btn main grow" id="fcNext">Next ▶</button>
+  </div>
+</section>
+
+<section id="match">
+  <div class="score" id="mScore"></div>
+  <div class="grid2"><div class="col" id="mL"></div><div class="col" id="mR"></div></div>
+  <div class="msg" id="mMsg"></div>
+  <button class="btn main" id="mNewBtn" style="width:100%">New round</button>
+</section>
+
+<section id="quiz">
+  <div class="score" id="qScore">0 / 0</div>
+  <div class="qCard"><div id="qPrompt"></div></div>
+  <div class="opts" id="qOpts"></div>
+  <div class="fb" id="qFb"></div>
+  <button class="btn main" id="qNext" style="width:100%;margin-top:10px;display:none">Next question</button>
+</section>
+
+<section id="drag">
+  <div class="muted" style="margin-bottom:6px">Drag a word onto its meaning. Or tap a word, then tap the meaning.</div>
+  <div class="chips" id="dChips"></div>
+  <div class="slots" id="dSlots"></div>
+  <div class="msg" id="dMsg"></div>
+  <button class="btn main" id="dNewBtn" style="width:100%">New round</button>
+</section>
+</div>
+
+<script>
+/* ---------- STATE ---------- */
+let voice=null, allV=[], CUR=[], stars=0;
+let fcOrder=[], fcI=0;
+let mSel=null, mDone=0, mTries=0, mRight=0, mN=5;
+let tQ=null, tScore=0, tTotal=0, tAnswered=false;
+let qQ=null, qScore=0, qTotal=0, qAnswered=false;
+let dSel=null, dDone=0, dN=5, drag=null;
+let lastPick=null;
+
+/* ---------- CHARACTER STORIES + MEMORY PICTURES ---------- */
+/* [pinyin, meaning, story, [[emoji, part, label], ..., [result emoji, meaning]]] */
+const E={"真": ["zhēn", "true; real", "Its first picture is not certain. Memory tip: 十 ten + 目 eye — ten eyes check it, so it's really true!", [["🔟", "十", "ten"], ["👁️", "目", "eye"], ["✅", "really"]]], "诚": ["chéng", "honest; sincere", "讠 speech + 成 complete (sound). Words fully kept = honest, sincere.", [["💬", "讠", "speech"], ["✅", "成", "complete"], ["🤝", "sincere"]]], "实": ["shí", "real; solid", "Old form 實: 宀 roof + 贯 strings of coins. A house full of money = full, solid → real.", [["🏠", "宀", "roof"], ["💰", "贯", "strings of coins"], ["💯", "real; solid"]]], "珍": ["zhēn", "precious", "王 jade + 㐱 (sound). Jade was a treasure → precious.", [["💎", "王", "jade"], ["🔊", "㐱", "sound"], ["💎", "precious"]]], "贵": ["guì", "expensive", "贝 shell money under a full basket. Lots of money = expensive.", [["🧺", "", "basket"], ["🐚", "贝", "shell money"], ["💎", "expensive"]]], "惜": ["xī", "to cherish; regret", "忄 heart + 昔 the past (sound). A heart that does not want to lose something → cherish, regret.", [["❤️", "忄", "heart"], ["⏳", "昔", "the past (sound)"], ["🤲", "cherish"]]], "针": ["zhēn", "needle", "钅 metal + 十 (sound). A metal needle → something that points exactly at a target.", [["⚙️", "钅", "metal"], ["🔊", "十", "sound"], ["🪡", "needle"]]], "对": ["duì", "facing; toward", "The old form showed a hand holding up a lamp to face someone → facing → right.", [["✋", "寸", "hand"], ["🕯️", "", "lamp"], ["✔️", "right; facing"]]], "诊": ["zhěn", "to examine (a patient)", "讠 words + 㐱 (sound). A doctor asks questions and checks the patient = examine.", [["💬", "讠", "words"], ["🔊", "㐱", "sound"], ["🩺", "examine"]]], "断": ["duàn", "to cut; decide", "Old form 斷: threads + 斤 axe. An axe cutting threads = cut → decide. 诊断 = examine + decide = diagnose.", [["🧵", "", "threads"], ["🪓", "斤", "axe"], ["✂️", "cut off"]]], "阵": ["zhèn", "battle line; a burst", "阝 hill + 车 chariot. Chariots lined up by a hill = battle line → a spell, a burst (一阵风).", [["⛰️", "阝", "hill"], ["🛒", "车", "chariot"], ["🌬️", "a burst"]]], "争": ["zhēng", "to fight for; argue", "Two hands pulling one thing from both sides = fight over it.", [["✋", "", "hand"], ["🦴", "", "thing pulled"], ["✋", "", "hand"], ["🤼", "fight for"]]], "取": ["qǔ", "to take", "耳 ear + 又 hand. Soldiers once cut off an enemy's ear as proof = take, get.", [["👂", "耳", "ear"], ["✋", "又", "hand"], ["🤏", "take"]]], "整": ["zhěng", "whole; put in order", "束 bundle + 攵 hand + 正 correct. Tie things into a bundle and make them correct → orderly, whole.", [["🎀", "束", "bundle"], ["✋", "攵", "hand"], ["✅", "正", "correct"], ["📐", "whole; tidy"]]], "顿": ["dùn", "to pause; settle", "屯 (sound) + 页 head. Bowing the head to the ground → pause, settle → put in order.", [["🔊", "屯", "sound"], ["👤", "页", "head"], ["⏸️", "pause; settle"]]], "体": ["tǐ", "body", "亻 person + 本 root. The whole of a person = body → the whole thing. 总体 = the whole, overall.", [["🧑", "亻", "person"], ["🌳", "本", "root"], ["🧍", "body"]]], "挣": ["zhèng", "to earn", "扌 hand + 争 fight for (sound). Fight with your hands to get something = earn. Read zhēng for “struggle”.", [["✋", "扌", "hand"], ["🤼", "争", "fight for"], ["💵", "earn"]]], "政": ["zhèng", "to govern", "正 correct (sound) + 攵 a hand with a stick. Make things correct by action = govern.", [["✅", "正", "correct"], ["✋", "攵", "hand with stick"], ["🏛️", "govern"]]], "府": ["fǔ", "government office", "广 building + 付 hand over (sound). The building where things are handed in = office.", [["🏠", "广", "building"], ["🤝", "付", "hand over"], ["🏛️", "office"]]], "证": ["zhèng", "to prove", "讠 words + 正 correct (sound). Words that show what is correct = prove, certify.", [["💬", "讠", "words"], ["✅", "正", "correct"], ["📜", "prove"]]], "据": ["jù", "basis; according to", "扌 hand + 居 (sound). Hold on to something → rely on → basis.", [["✋", "扌", "hand"], ["🪑", "居", "sound"], ["📎", "basis"]]], "正": ["zhèng", "correct; exactly", "一 a line (the goal) + 止 foot. A foot walking straight to the goal → correct, exactly.", [["🎯", "一", "goal"], ["🦶", "止", "foot"], ["✅", "correct; exactly"]]], "如": ["rú", "like; as", "女 woman + 口 mouth. Old idea: following someone's words → like, as.", [["👩", "女", "woman"], ["👄", "口", "mouth"], ["🟰", "like; as"]]], "书": ["shū", "book", "The old form showed a hand holding a brush, writing = book.", [["✋", "", "hand"], ["🖌️", "", "brush"], ["📖", "book"]]], "治": ["zhì", "to govern; treat", "氵 water + 台 (sound). Control rivers → bring order → govern → treat illness.", [["💧", "氵", "water"], ["🔊", "台", "sound"], ["🩹", "govern; treat"]]], "支": ["zhī", "branch; support", "十 a branch held by 又 a hand. A branch → support. Also counts long thin things: 一支笔.", [["🌿", "十", "branch"], ["✋", "又", "hand"], ["🖊️", "branch; support"]]], "知": ["zhī", "to know", "矢 arrow + 口 mouth. Words that hit the point like an arrow = know.", [["🏹", "矢", "arrow"], ["👄", "口", "mouth"], ["💡", "know"]]], "名": ["míng", "name", "夕 evening + 口 mouth. In the dark, you call out your name so people know you.", [["🌙", "夕", "evening"], ["👄", "口", "mouth"], ["📛", "name"]]], "直": ["zhí", "straight", "目 eye looking along a straight line.", [["👁️", "目", "eye"], ["📏", "", "straight line"], ["⬆️", "straight"]]], "播": ["bō", "to sow; to spread", "扌 hand + 番 (sound; linked to sowing). Scatter seeds by hand → spread → broadcast.", [["✋", "扌", "hand"], ["🌾", "番", "sowing"], ["📡", "broadcast"]]], "职": ["zhí", "job; duty", "耳 ear + 只 (sound). Listening to orders → duty, job.", [["👂", "耳", "ear"], ["🔊", "只", "sound"], ["💼", "job"]]], "场": ["chǎng", "field; place", "土 earth + 昜 (sound; the sun rising). Open, sunny ground = field, place.", [["🟫", "土", "earth"], ["🌅", "昜", "sunrise"], ["🏟️", "field"]]], "工": ["gōng", "work", "Picture of a carpenter's tool (a square ruler) = work.", [["📐", "", "carpenter's tool"], ["👷", "work"]]], "执": ["zhí", "to hold; carry out", "扌 hand + 丸 (the old form 執 showed hands in cuffs). Grip → hold → carry out.", [["✋", "扌", "hand"], ["⛓️", "丸", "cuffs (old form)"], ["🤝", "hold; carry out"]]], "行": ["xíng", "to go; carry out", "Picture of a crossroads. Roads for walking → to go → to work → OK. 不行 = won't work.", [["🛣️", "", "crossroads"], ["🚶", "go; OK"]]], "止": ["zhǐ", "to stop", "A picture of a foot. A foot standing still = stop.", [["🦶", "", "foot"], ["🛑", "stop"]]], "指": ["zhǐ", "finger; to point", "扌 hand + 旨 (sound). Pointing with a finger.", [["✋", "扌", "hand"], ["🔊", "旨", "sound"], ["👉", "point"]]], "导": ["dǎo", "to guide", "Old form 導: 道 road + 寸 hand. A hand leading someone along the road = guide.", [["🛣️", "", "road (old form)"], ["✋", "寸", "hand"], ["🧭", "guide"]]], "至": ["zhì", "to arrive; until", "A picture of an arrow landing on the ground = arrive → until.", [["🏹", "", "arrow hitting the ground"], ["🏁", "arrive; until"]]], "制": ["zhì", "to make; control", "A tree + 刂 knife. Cut and shape wood → make → control, rule.", [["🌳", "未", "tree"], ["🔪", "刂", "knife"], ["🛠️", "make; control"]]], "订": ["dìng", "to fix; book", "讠 words + 丁 nail (sound). Words nailed down → agree, fix, book.", [["💬", "讠", "words"], ["📌", "丁", "nail"], ["📝", "fix; book"]]], "定": ["dìng", "to fix; decide", "宀 roof + 正 (bottom part). Settled correctly under a roof → fixed, decided.", [["🏠", "宀", "roof"], ["✅", "正", "correct"], ["📌", "fix; decide"]]], "度": ["dù", "degree; measure", "又 hand + 庶 (sound). Measure with the span of your hand → degree, measure, extent.", [["✋", "又", "hand span"], ["🔊", "庶", "sound"], ["🌡️", "degree"]]], "智": ["zhì", "wisdom", "知 know + 日 sun. Knowledge as clear as daylight = wisdom.", [["💡", "知", "know"], ["☀️", "日", "sun"], ["🦉", "wisdom"]]], "慧": ["huì", "clever", "彗 a broom (sound) + 心 heart. A mind swept clean → clever, wise.", [["🧹", "彗", "broom (sound)"], ["❤️", "心", "heart"], ["💡", "clever"]]], "今": ["jīn", "now; today", "Its first picture is debated. It means now, the present. 至今 = up to now.", [["🏠", "", "roof"], ["➖", "", "one moment"], ["⏱️", "now"]]], "疗": ["liáo", "to treat (illness)", "疒 sickbed + 了 (sound; old form 尞). Treating illness.", [["🛏️", "疒", "sickbed"], ["🔊", "了", "sound"], ["💊", "treat"]]], "能": ["néng", "can; able", "First a picture of a bear, a strong animal → able, can.", [["🐻", "", "bear picture"], ["💪", "can"]]], "志": ["zhì", "aim; will", "士 (was 之 go) + 心 heart. Where the heart wants to go = aim, will.", [["➡️", "士", "go (old form)"], ["❤️", "心", "heart"], ["🎯", "aim; will"]]], "愿": ["yuàn", "wish; willing", "原 source (sound) + 心 heart. A wish from the heart.", [["⛲", "原", "source (sound)"], ["❤️", "心", "heart"], ["🙏", "wish"]]], "者": ["zhě", "person who…", "The first picture is debated. Added after a word = “the person who…”: 作者, 志愿者.", [["〰️", "", "shape (debated)"], ["🧑", "person who…"]]], "造": ["zào", "to make; build", "辶 walking + 告 (sound). Go and create → make, build.", [["🚶", "辶", "walk"], ["🔊", "告", "sound"], ["🏭", "make; build"]]], "作": ["zuò", "to do; make", "亻 person + 乍 start (sound). A person starting work = do, make.", [["🧑", "亻", "person"], ["🔊", "乍", "start (sound)"], ["🎬", "do; make"]]], "中": ["zhōng", "middle", "A picture of a flagpole in the centre of a circle = middle.", [["🎯", "", "flag in the centre"], ["🔘", "middle"]]], "华": ["huá", "splendid; China", "Old form 華 = a tree covered in flowers → splendid, flourishing → China (中华).", [["🌸", "", "tree in full bloom"], ["🏮", "splendid; China"]]]};
+function picRow(c){
+  const p=E[c]&&E[c][3];if(!p)return '';
+  const parts=p.slice(0,-1),r=p[p.length-1];
+  return '<div class="pic">'+parts.map(x=>`<div class="pt"><div class="e">${x[0]}</div>${x[1]?`<div class="c han">${x[1]}</div>`:''}<small>${x[2]}</small></div>`).join('<span class="op">+</span>')+
+    `<span class="op">=</span><div class="pt res"><div class="e">${r[0]}</div><div class="c han">${c}</div><small>${r[1]}</small></div></div>`;
+}
+
+/* ---------- WORDS (Let's learn boxes, Lessons 1–10) ---------- */
+const W=[{"L": 1, "h": "真诚", "p": "zhēnchéng", "g": "sincere", "e": "🤝", "n": "Describes a person. 他很真诚。He is sincere."}, {"L": 1, "h": "真实", "p": "zhēnshí", "g": "real; true", "e": "✅", "n": "Describes facts. 真实的故事 = a true story."}, {"L": 1, "h": "珍贵", "p": "zhēnguì", "g": "precious; valuable", "e": "💎", "n": "precious + valuable. 珍贵的照片 = a precious photo."}, {"L": 1, "h": "珍惜", "p": "zhēnxī", "g": "to cherish", "e": "⏳", "n": "precious + don't want to lose. 珍惜时间 = value your time."}, {"L": 2, "h": "证据", "p": "zhèngjù", "g": "evidence", "e": "🔍", "n": "prove + basis. 没有证据 = there's no evidence."}, {"L": 2, "h": "证书", "p": "zhèngshū", "g": "certificate", "e": "📜", "n": "a document that proves something. 毕业证书 = graduation certificate."}, {"L": 2, "h": "正如", "p": "zhèngrú", "g": "just as", "e": "🟰", "n": "exactly + as. 正如你所说 = just as you said."}, {"L": 2, "h": "政府", "p": "zhèngfǔ", "g": "government", "e": "🏛️", "n": "govern + office."}, {"L": 2, "h": "政治", "p": "zhèngzhì", "g": "politics", "e": "🗳️", "n": "政 govern + 治 bring order."}, {"L": 3, "h": "制订", "p": "zhìdìng", "g": "to draw up (a plan)", "e": "📝", "n": "For plans and documents. 制订计划 = draw up a plan."}, {"L": 3, "h": "制定", "p": "zhìdìng", "g": "to set; establish (a policy)", "e": "📏", "n": "For policies, laws, rules, standards. 制定政策 = set a policy. Same sound as 制订."}, {"L": 3, "h": "制度", "p": "zhìdù", "g": "system; rules", "e": "🗂️", "n": "made + measure. 教育制度 = education system."}, {"L": 3, "h": "制造", "p": "zhìzào", "g": "to manufacture", "e": "🏭", "n": "Physical products. 制造汽车 = manufacture cars. Also 制造问题 = create problems."}, {"L": 3, "h": "制作", "p": "zhìzuò", "g": "to make; produce", "e": "🎬", "n": "Content, food, programmes. 制作视频 = produce a video. 制作医疗视频 = produce medical videos."}, {"L": 4, "h": "至", "p": "zhì", "g": "to arrive; until", "e": "🏁", "n": "至少 = at least. 至于 = as for."}, {"L": 4, "h": "至今", "p": "zhìjīn", "g": "until now; to this day", "e": "📆", "n": "至今我还记得。I still remember it to this day."}, {"L": 4, "h": "治", "p": "zhì", "g": "to govern; to treat", "e": "🩹", "n": "water → order → govern → treat. 治病 = treat an illness."}, {"L": 4, "h": "治疗", "p": "zhìliáo", "g": "to treat; treatment", "e": "💊", "n": "治疗疾病 = treat a disease. 治疗方案 = treatment plan."}, {"L": 4, "h": "智慧", "p": "zhìhuì", "g": "wisdom", "e": "🦉", "n": "know + clever mind."}, {"L": 4, "h": "智能", "p": "zhìnéng", "g": "smart; intelligent", "e": "🤖", "n": "智能手机 = smartphone. 人工智能 = artificial intelligence."}, {"L": 4, "h": "志愿者", "p": "zhìyuànzhě", "g": "volunteer", "e": "🙋", "n": "aim + wish + person who → volunteer."}, {"L": 5, "h": "直", "p": "zhí", "g": "straight; direct", "e": "⬆️", "n": "直线 = straight line. 直接 = directly."}, {"L": 5, "h": "直播", "p": "zhíbō", "g": "live broadcast", "e": "📡", "n": "direct + broadcast."}, {"L": 5, "h": "职场", "p": "zhíchǎng", "g": "workplace", "e": "💼", "n": "job + place."}, {"L": 5, "h": "职工", "p": "zhígōng", "g": "staff; employees", "e": "👷", "n": "job + worker."}, {"L": 5, "h": "执行", "p": "zhíxíng", "g": "to carry out", "e": "🛠️", "n": "hold + carry out. 执行计划 = carry out a plan."}, {"L": 5, "h": "止", "p": "zhǐ", "g": "to stop", "e": "🛑", "n": "停止 = stop. 禁止 = forbid."}, {"L": 5, "h": "指导", "p": "zhǐdǎo", "g": "to guide; instruct", "e": "🧭", "n": "point + lead. 指导老师 = supervising teacher."}, {"L": 5, "h": "知名", "p": "zhīmíng", "g": "well-known", "e": "⭐", "n": "known + name. 知名品牌 = famous brand."}, {"L": 5, "h": "支", "p": "zhī", "g": "(for pens); to support", "e": "🖊️", "n": "一支笔 = one pen. 支持 = support."}, {"L": 6, "h": "争", "p": "zhēng", "g": "to fight for; argue", "e": "🤼", "n": "Two sides pulling one thing. 争第一 = compete for first place."}, {"L": 6, "h": "争取", "p": "zhēngqǔ", "g": "to strive for", "e": "🏆", "n": "fight for + take. 争取机会 = strive for a chance. 争取时间 = gain time."}, {"L": 6, "h": "整顿", "p": "zhěngdùn", "g": "to rectify; reorganize", "e": "🧹", "n": "put in order + settle."}, {"L": 6, "h": "整体", "p": "zhěngtǐ", "g": "whole; overall", "e": "🌐", "n": "whole + body."}, {"L": 6, "h": "整整", "p": "zhěngzhěng", "g": "a whole; full", "e": "💯", "n": "整整三年 = a full three years. 整整一天 = the whole day."}, {"L": 6, "h": "挣", "p": "zhèng", "g": "to earn", "e": "💵", "n": "挣钱 = earn money. Read zhēng in 挣扎 (struggle)."}, {"L": 7, "h": "针对", "p": "zhēnduì", "g": "to aim at; target", "e": "🎯", "n": "needle + toward. 针对这个问题 = aimed at this problem."}, {"L": 7, "h": "诊断", "p": "zhěnduàn", "g": "to diagnose; diagnosis", "e": "🩺", "n": "examine + decide. 诊断结果 = result of the diagnosis."}, {"L": 7, "h": "阵", "p": "zhèn", "g": "a burst; a spell", "e": "🌬️", "n": "一阵风 = a gust of wind. 一阵笑声 = a burst of laughter."}, {"L": 7, "h": "中华", "p": "Zhōnghuá", "g": "China; Chinese", "e": "🏮", "n": "中华文化 = Chinese culture. 中华民族 = the Chinese nation."}];
+W.forEach((w,i)=>{w.i=i;w.s=w.h.replace(/[()（）]/g,'');w.m=w.g});
+
+/* ---------- HELPERS ---------- */
+function $(id){return document.getElementById(id)}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function plain(p){return p.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/v/g,'u').replace(/[^a-z]/g,'')}
+function answers(p){const a=[plain(p)];const s=plain(p.replace(/\([^)]*\)/g,''));if(s&&s!==a[0])a.push(s);return a}
+function pick(){let w;do{w=CUR[Math.floor(Math.random()*CUR.length)]}while(w===lastPick&&CUR.length>1);lastPick=w;return w}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function addStar(){stars++;const s=$('stars');s.textContent='⭐ '+stars;s.classList.remove('pop');void s.offsetWidth;s.classList.add('pop');try{localStorage.setItem('hsk5_3481_stars',stars)}catch(e){}}
+
+/* ---------- VOICE ---------- */
+function loadV(){
+  if(!('speechSynthesis' in window))return;
+  allV=speechSynthesis.getVoices();
+  const zh=allV.filter(v=>/^(zh|cmn)/i.test(v.lang)||/chinese|mandarin|普通话|中文/i.test(v.name));
+  const sel=$('voiceSel');
+  let saved=-1;try{saved=parseInt(localStorage.getItem('hsk5_3481_voice'),10)}catch(e){}
+  sel.innerHTML=zh.length?zh.map(v=>`<option value="${allV.indexOf(v)}">${esc(v.name)} (${v.lang})</option>`).join(''):'<option value="-1">No Chinese voice on this device</option>';
+  let idx=-1;
+  if(saved>=0&&allV[saved]&&zh.includes(allV[saved]))idx=saved;
+  else if(zh.length)idx=allV.indexOf(zh.find(v=>/zh[-_]CN/i.test(v.lang))||zh[0]);
+  voice=idx>=0?allV[idx]:null;if(idx>=0)sel.value=idx;
+}
+function say(t){
+  if(!('speechSynthesis' in window)||!t)return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';if(voice)u.voice=voice;u.rate=.85;
+  speechSynthesis.speak(u);
+}
+
+/* ---------- LESSON FILTER ---------- */
+const LT={"1": "① 真 & 珍 (zhēn)", "2": "② 证 / 正 / 政 (zhèng)", "3": "③ 制 family", "4": "④ 至 / 治 / 智 / 志 (zhì)", "5": "⑤ 直 / 职 / 执 / 止 / 指 / 知 / 支", "6": "⑥ 争 / 整 / 挣", "7": "⑦ More words"};
+function setLesson(v){
+  CUR=v==='all'?W.slice():W.filter(w=>w.L===+v);
+  try{localStorage.setItem('hsk5_3481_les',v)}catch(e){}
+  fcOrder=CUR.map((_,i)=>i);fcI=0;fcRender();
+  mNew();qNew();dNew();
+}
+
+/* ---------- FLASHCARDS ---------- */
+function fcRender(){
+  const w=CUR[fcOrder[fcI]];
+  $('fc').classList.remove('open');
+  $('fcCount').innerHTML=(fcI+1)+' of '+CUR.length+` <span class="lesTag">${LT[w.L]}</span>`;
+  $('fcEmoji').textContent=w.e;
+  $('fcHan').textContent=w.h;
+  $('fcPy').textContent=w.p;
+  $('fcMean').textContent=w.g;
+  $('fcChars').innerHTML=[...w.h].filter(c=>E[c]).map(c=>{const e=E[c];return `<div class="ch"><div class="chBig han">${c}</div><div><b>${e[0]}</b> · ${e[1]}${picRow(c)}<p>${e[2]}</p></div></div>`}).join('');
+  $('fcNote').innerHTML=w.n?`<div class="note">${w.n}</div>`:'';
+}
+function fcGo(d){fcI=(fcI+d+CUR.length)%CUR.length;fcRender()}
+function fcShuffle(){fcOrder=shuffle(CUR.map((_,i)=>i));fcI=0;fcRender()}
+function fcFind(q){
+  q=q.trim();if(!q)return;
+  const pq=plain(q);
+  const i=CUR.findIndex(w=>w.h.includes(q)||(pq&&plain(w.p).startsWith(pq))||w.g.toLowerCase().includes(q.toLowerCase()));
+  if(i<0)return;
+  fcOrder=CUR.map((_,k)=>k);fcI=i;fcRender();
+}
+
+/* ---------- TAP MATCH ---------- */
+function mNew(){
+  mN=Math.min(5,CUR.length);
+  const round=shuffle(CUR).slice(0,mN);mDone=0;mSel=null;
+  $('mL').innerHTML=shuffle(round).map(w=>`<button class="tile han" data-k="${w.i}" data-s="L">${w.h}<span class="tpy">${w.p}</span></button>`).join('');
+  $('mR').innerHTML=shuffle(round).map(w=>`<button class="tile" data-k="${w.i}" data-s="R"><span class="em">${w.e}</span>${w.g}</button>`).join('');
+  $('mMsg').textContent='Tap a word, then tap its meaning.';
+}
+function mTap(b){
+  if(!b||b.classList.contains('ok'))return;
+  if(!mSel||mSel.dataset.s===b.dataset.s){
+    if(mSel)mSel.classList.remove('sel');
+    mSel=b;b.classList.add('sel');if(b.dataset.s==='L')say(W[+b.dataset.k].s);return;
+  }
+  mTries++;
+  if(mSel.dataset.k===b.dataset.k){
+    mRight++;addStar();[mSel,b].forEach(x=>{x.classList.remove('sel');x.classList.add('ok')});
+    const w=W[+b.dataset.k];say(w.s);mDone++;mSel=null;
+    $('mMsg').textContent=mDone===mN?'🎉 Great job! Tap New round for more.':`✓ ${w.h} ${w.p}`;
+  }else{
+    const a=mSel;a.classList.add('shake');b.classList.add('shake');
+    setTimeout(()=>{a.classList.remove('shake','sel');b.classList.remove('shake')},340);
+    mSel=null;$('mMsg').textContent='Oops! Try again.';
+  }
+  $('mScore').textContent=mRight+' right of '+mTries+' tries';
+}
+
+/* ---------- TYPE PINYIN ---------- */
+function tNew(){
+  tQ=pick();tAnswered=false;
+  $('tEmoji').textContent=tQ.e;$('tHan').textContent=tQ.h;$('tHint').textContent=tQ.g;
+  $('tIn').value='';$('tFb').className='fb';$('tFb').innerHTML='';$('tBtn').textContent='Check';
+}
+function tCheck(){
+  if(tAnswered){tNew();$('tIn').focus();return}
+  const v=$('tIn').value;if(!plain(v))return;
+  tAnswered=true;tTotal++;
+  const ok=answers(tQ.p).includes(plain(v));if(ok){tScore++;addStar()}
+  $('tFb').className='fb '+(ok?'ok':'no');
+  $('tFb').innerHTML=(ok?'🎉 Correct!':'Answer:')+` <span class="py">${tQ.p}</span><div>${tQ.g}</div>`;
+  $('tScore').textContent=tScore+' / '+tTotal;
+  $('tBtn').textContent='Next';say(tQ.s);
+}
+
+/* ---------- QUIZ ---------- */
+function qNew(){
+  qAnswered=false;
+  const w=pick(), rev=Math.random()<.4;
+  const pool=CUR.length>=4?CUR:W;
+  const opts=shuffle([w,...shuffle(pool.filter(x=>x!==w)).slice(0,3)]);
+  qQ={w,rev};
+  $('qPrompt').innerHTML=rev?`<div class="fcEmoji">${w.e}</div><div class="qGloss">${w.g}</div><div class="muted">Which word is this?</div>`:`<div class="qHan han">${w.h}</div><div class="py">${w.p}</div><div class="muted">What does it mean?</div>`;
+  $('qOpts').innerHTML=opts.map(o=>`<button class="opt${rev?' han':''}" data-k="${o.i}">${rev?`${o.h}<span class="tpy">${o.p}</span>`:`<span class="em">${o.e}</span>${o.g}`}</button>`).join('');
+  $('qFb').className='fb';$('qFb').innerHTML='';$('qNext').style.display='none';
+}
+function qTap(b){
+  if(!b||qAnswered)return;qAnswered=true;qTotal++;
+  const w=qQ.w, ok=+b.dataset.k===w.i;if(ok){qScore++;addStar()}
+  b.classList.add(ok?'ok':'no');
+  if(!ok)$('qOpts').querySelector(`[data-k="${w.i}"]`).classList.add('ok');
+  $('qFb').className='fb '+(ok?'ok':'no');
+  $('qFb').innerHTML=`${ok?'🎉 ':''}<span class="han" style="font-size:22px">${w.h}</span> <span class="py">${w.p}</span><div>${w.e} ${w.g}</div>`;
+  $('qScore').textContent=qScore+' / '+qTotal;
+  $('qNext').style.display='block';say(w.s);
+}
+
+/* ---------- DRAG & DROP ---------- */
+function dNew(){
+  dN=Math.min(5,CUR.length);
+  const round=shuffle(CUR).slice(0,dN);dDone=0;dSel=null;
+  $('dChips').innerHTML=shuffle(round).map(w=>`<div class="chip han" data-k="${w.i}">${w.h}<span class="tpy">${w.p}</span></div>`).join('');
+  $('dSlots').innerHTML=round.map(w=>`<div class="slot" data-k="${w.i}"><span class="drop han"></span><span class="gl"><span class="em">${w.e}</span>${w.g}</span></div>`).join('');
+  $('dMsg').textContent='';
+}
+function dPlace(chip,slot){
+  if(!chip||!slot||slot.classList.contains('done')||chip.classList.contains('used'))return;
+  chip.classList.remove('sel');dSel=null;
+  if(chip.dataset.k===slot.dataset.k){
+    const w=W[+chip.dataset.k];addStar();
+    slot.classList.add('done');slot.querySelector('.drop').textContent=w.h;
+    chip.classList.add('used');say(w.s);dDone++;
+    $('dMsg').textContent=dDone===dN?'🎉 All done! Tap New round for more.':`✓ ${w.h} ${w.p}`;
+  }else{
+    slot.classList.add('shake');setTimeout(()=>slot.classList.remove('shake'),340);
+    $('dMsg').textContent='Oops! Try another one.';
+  }
+}
+function slotAt(x,y){const el=document.elementFromPoint(x,y);return el?el.closest('.slot'):null}
+function clearOver(){document.querySelectorAll('.slot.over').forEach(s=>s.classList.remove('over'))}
+function dDown(e){
+  const c=e.target.closest('.chip');if(!c||c.classList.contains('used'))return;
+  drag={c,x:e.clientX,y:e.clientY,g:null};
+  try{c.setPointerCapture(e.pointerId)}catch(err){}
+}
+function dMove(e){
+  if(!drag)return;
+  if(!drag.g&&Math.hypot(e.clientX-drag.x,e.clientY-drag.y)>6){
+    drag.g=drag.c.cloneNode(true);drag.g.className='chip han ghost';document.body.appendChild(drag.g);
+    drag.c.classList.add('lift');if(dSel){dSel.classList.remove('sel');dSel=null}
+  }
+  if(drag.g){
+    e.preventDefault();
+    drag.g.style.left=e.clientX+'px';drag.g.style.top=e.clientY+'px';
+    clearOver();const s=slotAt(e.clientX,e.clientY);if(s&&!s.classList.contains('done'))s.classList.add('over');
+  }
+}
+function dUp(e){
+  if(!drag)return;
+  const d=drag;drag=null;
+  if(d.g){
+    const s=slotAt(e.clientX,e.clientY);
+    d.g.remove();d.c.classList.remove('lift');clearOver();
+    if(s)dPlace(d.c,s);
+  }else{
+    if(dSel===d.c){d.c.classList.remove('sel');dSel=null;return}
+    if(dSel)dSel.classList.remove('sel');
+    dSel=d.c;d.c.classList.add('sel');say(W[+d.c.dataset.k].s);
+    $('dMsg').textContent='Now tap its meaning below.';
+  }
+}
+function dCancel(){if(!drag)return;if(drag.g)drag.g.remove();drag.c.classList.remove('lift');clearOver();drag=null}
+
+/* ---------- INIT ---------- */
+if('speechSynthesis' in window){speechSynthesis.onvoiceschanged=loadV}
+loadV();
+try{stars=parseInt(localStorage.getItem('hsk5_3481_stars'),10)||0}catch(e){stars=0}
+$('stars').textContent='⭐ '+stars;
+$('lesSel').innerHTML='<option value="all">All families ('+W.length+' words)</option>'+Object.keys(LT).map(k=>`<option value="${k}">${LT[k]} (${W.filter(w=>w.L===+k).length})</option>`).join('');
+let savedLes='all';try{savedLes=localStorage.getItem('hsk5_3481_les')||'all'}catch(e){}
+if(![...$('lesSel').options].some(o=>o.value===savedLes))savedLes='all';
+$('lesSel').value=savedLes;
+$('lesSel').addEventListener('change',e=>setLesson(e.target.value));
+$('voiceSel').addEventListener('change',()=>{const i=+$('voiceSel').value;voice=i>=0?allV[i]:null;try{localStorage.setItem('hsk5_3481_voice',i)}catch(e){}say('你好')});
+$('voiceBtn').addEventListener('click',()=>$('voiceBox').classList.toggle('on'));
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('on'));$(b.dataset.t).classList.add('on');
+  if('speechSynthesis' in window)speechSynthesis.cancel();
+}));
+$('fc').addEventListener('click',e=>{if(e.target.closest('.say'))return;$('fc').classList.toggle('open')});
+$('fcSay').addEventListener('click',()=>say(CUR[fcOrder[fcI]].s));
+$('fcPrev').addEventListener('click',()=>fcGo(-1));
+$('fcNext').addEventListener('click',()=>fcGo(1));
+$('fcShuf').addEventListener('click',fcShuffle);
+$('fcSearch').addEventListener('input',e=>fcFind(e.target.value));
+$('mL').addEventListener('click',e=>mTap(e.target.closest('.tile')));
+$('mR').addEventListener('click',e=>mTap(e.target.closest('.tile')));
+$('mNewBtn').addEventListener('click',mNew);
+$('qOpts').addEventListener('click',e=>qTap(e.target.closest('.opt')));
+$('qNext').addEventListener('click',qNew);
+$('dChips').addEventListener('pointerdown',dDown);
+window.addEventListener('pointermove',dMove,{passive:false});
+window.addEventListener('pointerup',dUp);
+window.addEventListener('pointercancel',dCancel);
+$('dSlots').addEventListener('click',e=>{const s=e.target.closest('.slot');if(s&&dSel)dPlace(dSel,s)});
+$('dNewBtn').addEventListener('click',dNew);
+setLesson(savedLes);
+$('mScore').textContent='Match the words';
+</script>
+</body>
+</html>
